@@ -49,6 +49,7 @@ label amelie_finds_forum:
 
     # Todo have amelie enter by easing in from the left
 
+    show amelie neutral  at left zorder 100
     amelie "Well, finally settled back in."
     amelie "Feels off being home so soon."
     amelie "Not much to do, and most of my friends are still away…"
@@ -80,6 +81,7 @@ label amelie_pref_commentary:
     pass
 
 label amelie_chooses_forum:
+    hide screen signup
     show screen choose_forum
     amelie "Oh, I love Hallowed games! It'll be nice to talk with other fans."
     show screen choose_forum(True)

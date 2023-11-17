@@ -1,5 +1,5 @@
 define nvl_mode = "phone"  ##Allow the NVL mode to become a phone conversation
-define MC_Name = "Nighten" ##The name of the main character, used to place them on the screen
+define MC_Name = "Amelie" ##The name of the main character, used to place them on the screen
 
 screen PhoneDialogue(dialogue, items=None):
 
@@ -114,7 +114,7 @@ screen nvl_phonetext(dialogue,items):
 
                                     
                                 id texter.what_id
-                    $ new_pos += 180        
+                    $ new_pos += 250        
             $ prior_texter_who = texter.who
            
                     

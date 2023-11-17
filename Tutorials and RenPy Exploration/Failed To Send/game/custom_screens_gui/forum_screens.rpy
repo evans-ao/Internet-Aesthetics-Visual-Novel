@@ -139,16 +139,10 @@ screen forum_tutorial:
         ypos 140
         xsize 2500
         ysize 1400
-        background "images/Figma UI Componenet/choose_forum.png"
-        if is_done:
-            imagebutton:
-                xpos 1070
-                ypos 249
-                idle "images/Figma UI Componenet/choose_hw.png"
-                action Jump('hw_first_day')
+        background "images/Figma UI Componenet/tutorial_pop_up.png"
 
 #Forum side-menu
-screen forum_side_menu():
+screen forum_side_menu(is_done = False):
     style_prefix "forum-menu"
     frame:
         xpos 0
@@ -157,26 +151,13 @@ screen forum_side_menu():
         ysize 2023
         background "images/Figma UI Componenet/Menu-Bar.png"
         viewport:
-            vbox:
-                #user image
-                hbox:                
-                    #user status row
-                    pass
+            ypos 1208
+            if is_done:
+                imagebutton:
+                    idle "images/Figma UI Componenet/msg_btn.png"
+                    action Jump("new_text_msg")
+                    
 
-            vbox:
-                # line barrier
-                hbox:
-                    # hotdogstand button - text
-                    # events button - text
-                    # settings-prefferences - text
-                    pass
-
-            vbox:
-                # line barrier
-                hbox:
-                    #post button - text
-                    #dm button - text
-                    pass 
 
 #Home Screen
 screen forum_home():
@@ -203,10 +184,15 @@ screen forum_home():
                     add "images/Figma UI Componenet/forum_logo.png"
                     add "images/Figma UI Componenet/page_numbers.png":
                         xpos 1273
+                # first thread
                 hbox:
                     ypos 150
-                    add "images/Figma UI Componenet/large_post.png":
+                    imagebutton:
                         ypos 243
+                        idle "images/Figma UI Componenet/large_post_idle.png"
+                        hover "images/Figma UI Componenet/large_post.png"
+                        action Call("home_to_thread")
+
                     add "images/Figma UI Componenet/forum_active_mods.png":
                         xpos 133
                         ypos 86
@@ -256,7 +242,8 @@ screen forum_standard(first_post, first_comment, posters,comments):
 
             vbox:
                 add "images/Figma UI Componenet/search_bar.png":
-                    ypos 49             
+                    ypos 49
+         
                 add "images/Figma UI Componenet/forum_dvider.png":
                     ypos 84
                 hbox:

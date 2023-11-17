@@ -1,27 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 56, in script
-    $ renpy.pause(float('inf'),hard=True)
-  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 56, in <module>
-    $ renpy.pause(float('inf'),hard=True)
-TypeError: can't multiply sequence by non-int of type 'float'
+While loading <renpy.display.im.Image object ('images/Figma UI Componenet/forum_logo_idle.png') at 0x0000000005060430>:
+  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 59, in script
+    amelie "Better make the most of it"
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+OSError: Couldn't find file 'images/Figma UI Componenet/forum_logo_idle.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 56, in script
-    $ renpy.pause(float('inf'),hard=True)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 56, in <module>
-    $ renpy.pause(float('inf'),hard=True)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "game/story_chapters/hawllowed_winds/first_day_hw.rpy", line 59, in script
+    amelie "Better make the most of it"
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 898, in execute
+    statement_name(stmt_name)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 47, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\exports.py", line 1758, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 2978, in do_with
+    return self.interact(trans_pause=True,
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 3582, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 4175, in interact_core
@@ -32,6 +36,10 @@ Full traceback:
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 888, in render
     surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\transition.py", line 377, in render
+    bottom = render(self.old_widget, width, height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 888, in render
@@ -72,33 +80,19 @@ Full traceback:
     surf = render(d, rw, height - y, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 1109, in render
-    surf = render(d, width - x, rh, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\text.py", line 2171, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\text.py", line 665, in __init__
-    glyphs = ts.glyphs(s, self)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\text.py", line 257, in glyphs
-    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\font.py", line 722, in get_font
-    rv = ftfont.FTFont(face, int(size * scale), bold, italics, outline, antialias, vertical, hinting) # @UndefinedVariable
-TypeError: can't multiply sequence by non-int of type 'float'
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\im.py", line 676, in render
+    return cache.get(self, render=True)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\im.py", line 330, in get
+    surf = image.load()
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\im.py", line 803, in load
+    raise e
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\im.py", line 757, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\loader.py", line 833, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/Figma UI Componenet/forum_logo_idle.png'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.3.23091805
 Failed To Send 1.0
-Fri Nov 17 09:25:48 2023
+Fri Nov 17 16:47:34 2023

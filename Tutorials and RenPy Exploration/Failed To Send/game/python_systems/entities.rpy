@@ -42,4 +42,5 @@ init python:
             self.friends.add(new_friend)
             self.reputation += base_power
 
+
     
