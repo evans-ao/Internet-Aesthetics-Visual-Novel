@@ -1,4 +1,4 @@
-init offset = 0
+
 
 #Overlay
 screen story_overlay:
@@ -10,29 +10,142 @@ screen story_overlay:
         background "images/Figma UI Componenet/Overlay.png"
 
 #Login Screen
-screen sign_up:
+screen signup(is_done=False):
     frame:
-        xpos 0
-        ypos 86
-        xsize 3840
-        ysize 2074
+        xpos 655
+        ypos 140
+        xsize 2500
+        ysize 1400
+        background "images/Figma UI Componenet/signup.png"
+        if is_done:
+            imagebutton:
+                xpos 1402
+                ypos 1045
+                idle "images/Figma UI Componenet/continue_login.png"
+                action Jump('amelie_chooses_forum')
 
-        background "images/Figma UI Componenet/Overlay.png"
+#preferences:
+screen prefs_select:
 
-
-
-#Game-Bar
-screen window_bar: 
     frame:
-        xpos 0
-        ypos 0
-        xsize 3840    
-        ysize 66
-        background "images/Figma UI Componenet/Window-bar.png"
+        xpos 655
+        ypos 140
+        xsize 2500
+        ysize 1400
+        background "images/Figma UI Componenet/prefs.png"
 
-init python:
-    config.overlay_screens.append("window_bar")
+        $ print(str(all_prefs_set))
 
+        hbox:
+            xpos 800
+            ypos 484
+            spacing 95
+
+            vbox:
+                spacing 95
+
+                $ has_vg_btn = accepted_pref("Videogames", profile_prefs_set)
+                if has_vg_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/vg_%s.png" 
+                        action Function(set_next_pref("Videogames"))
+                else:
+                    add "images/Figma UI Componenet/pref_buttons/vg_action.png"
+                                
+                $ has_s_btn = accepted_pref("Sports", profile_prefs_set)
+                if has_s_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/s_%s.png" 
+                        action Function(lambda: print("Hello World"))
+                else:
+                    add "images/Figma UI Componenet/pref_buttons/s_action.png"
+
+                $ has_f_btn = accepted_pref("Food", profile_prefs_set)
+                if has_f_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/f_%s.png" 
+                        action Function(set_next_pref("Food"))
+                else:
+                    add "images/Figma UI Componenet/pref_buttons/f_action.png"
+
+            vbox:
+                spacing 126
+                ypos -126
+
+                $ has_me_btn = accepted_pref("Music",profile_prefs_set)
+                if has_me_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/me_%s.png" 
+                        action Function(set_next_pref("Music"))
+                else: 
+                    add "images/Figma UI Componenet/pref_buttons/me_action.png"
+                 
+                $ has_bf_btn = accepted_pref("Business",profile_prefs_set)
+                if has_bf_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/bf_%s.png" 
+                        action Function(set_next_pref("Business"))
+                else: 
+                    add "images/Figma UI Componenet/pref_buttons/bf_action.png"
+
+            vbox:
+                spacing 95
+
+                $ has_am_btn = accepted_pref("Anime",profile_prefs_set)
+                if has_am_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/am_%s.png" 
+                        action Function(set_next_pref("Anime"))
+                else: 
+                    add "images/Figma UI Componenet/pref_buttons/am_action.png"
+
+                $ has_ef_btn = accepted_pref("Exercise",profile_prefs_set)
+                if has_ef_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/ef_%s.png" 
+                        action Function(set_next_pref("Exercise"))
+                else: 
+                    add "images/Figma UI Componenet/pref_buttons/ef_action.png"
+
+                # action Function(lambda: print("Hello World"))
+                $ has_cc_btn = accepted_pref("Celebrity",profile_prefs_set)
+                if has_cc_btn:
+                    imagebutton: 
+                        auto "images/Figma UI Componenet/pref_buttons/cc_%s.png" 
+                        action Function(lambda: print("Hello World"))
+                else: 
+                    add "images/Figma UI Componenet/pref_buttons/cc_action.png"
+    $ print(str(next_prefs) + " pushed")
+
+#choose_forum:
+screen choose_forum(is_done=False):
+    frame:
+        xpos 655
+        ypos 140
+        xsize 2500
+        ysize 1400
+        background "images/Figma UI Componenet/choose_forum.png"
+        if is_done:
+            imagebutton:
+                xpos 1070
+                ypos 249
+                idle "images/Figma UI Componenet/choose_hw.png"
+                action Jump('hw_first_day')
+
+#Forum Tutorial
+screen forum_tutorial:
+    frame:
+        xpos 655
+        ypos 140
+        xsize 2500
+        ysize 1400
+        background "images/Figma UI Componenet/choose_forum.png"
+        if is_done:
+            imagebutton:
+                xpos 1070
+                ypos 249
+                idle "images/Figma UI Componenet/choose_hw.png"
+                action Jump('hw_first_day')
 
 #Forum side-menu
 screen forum_side_menu():
@@ -64,7 +177,6 @@ screen forum_side_menu():
                     #post button - text
                     #dm button - text
                     pass 
-
 
 #Home Screen
 screen forum_home():
@@ -116,10 +228,6 @@ screen forum_home():
                 add "images/Figma UI Componenet/footer.png":
                     ypos 25
 
-      
-
-
- 
 style forum_home_vscrollbar:
     base_bar None
     thumb "images/Figma UI Componenet/Bar-thumb.png"
@@ -130,29 +238,83 @@ style forum_home_vscrollbar:
     ymaximum 1947
 
 #Standard forum Screen
-screen forum_standard():
+screen forum_standard(first_post, first_comment, posters,comments):
     style_prefix "standard_blog"
 
     frame: 
         xpos 730
-        ypos 0 
-        xsize 2993
-        ysize 2160
-
+        ypos 86 
+        xsize 3050
+        ysize 1932
+        background None
         viewport:
+            style_prefix "forum_home"
+
             scrollbars "vertical"
             mousewheel True
             pagekeys True
 
             vbox:
-                text "Imagine the blanks:1"
+                add "images/Figma UI Componenet/search_bar.png":
+                    ypos 49             
+                add "images/Figma UI Componenet/forum_dvider.png":
+                    ypos 84
+                hbox:
+                    ypos 372
+                    xpos 277
+                    spacing 157
+                    vbox:
+                        spacing 64
+                        frame:
+                            xsize 2023
+                            ysize 509
+                            text first_post:
+                                xpos 538
+                                ypos 69
+                            text first_comment:
+                                xpos 746
+                                ypos 194                           
+                            background "images/Figma UI Componenet/thread_start.png"
+
+                        use fill_thread(posters,comments)
+                    add "images/Figma UI Componenet/forum_active_mods.png"
+
+# just two list of strings ya_know
+screen fill_thread(posters,comments):
+        for item in range(len(posters)):
+            frame:
+                xsize 2026
+                ysize 395
+                background "images/Figma UI Componenet/thread_reply.png"
+
+                $ next_post = posters[item]
+                $ next_comment = comments[item]
+                $ post_area = (0, 0, 1374, 66)  # (xpos, ypos, width, height)
+                $ comment_area = (0, 0, 1369, 245)  # (xpos, ypos, width, height)
+
+                vbox: 
+                    spacing 50
+                    #poster text
+                    frame:
+                        xpos 587
+                        ypos 30
+                        text next_post
+                            #size (post_area[2], post_area[3])
+
+                    #comment text                   
+                    frame: 
+                        xpos 587
+                        text next_comment
+                            #size (comment_area[2], comment_area[3])
+
+
+
 
 #Events Screen
 screen forum_events():
     frame:
         viewport:
             text "Imagine the blanks:1"
-
 
 #Hot Dog Page
 screen hotdog_stand():

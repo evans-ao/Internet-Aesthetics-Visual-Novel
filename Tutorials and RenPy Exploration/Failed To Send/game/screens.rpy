@@ -97,6 +97,7 @@ style frame:
 
 screen say(who, what):
     style_prefix "say"
+    zorder 1
 
     window:
         id "window"
@@ -229,53 +230,6 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
-
-
-## Quick Menu screen ###########################################################
-##
-## The quick menu is displayed in-game to provide easy access to the out-of-game
-## menus.
-# TODO add image buttons and customizations
-screen quick_menu():
-
-    ## Ensure this appears on top of other screens.
-    zorder 100
-
-    if quick_menu:
-        frame:
-            ypos 1981
-            xpos 0
-            ysize 178
-            xsize 3840
-            background "images/Figma UI Componenet/Task-bar.png"
-
-            hbox:
-                xpos 1161
-                spacing 85
-                style_prefix "quick"
-
-                #HotDogStand application
-                imagebutton:
-                    # xpos 1161
-                    idle "images/Figma UI Componenet/Hotdog_btn.png"
-                    action ShowMenu('save')
-
-                #save button
-                imagebutton:
-                    # xpos 1563
-                    idle "images/Figma UI Componenet/Save_btn.png"
-                    action ShowMenu('save')
-                
-                # history button
-                imagebutton:
-                    # xpos 1946
-                    idle "images/Figma UI Componenet/History_btn.png"
-                    action ShowMenu('history')
-                
-                # preferences button
-                imagebutton:
-                    idle "images/Figma UI Componenet/Prefs_btn.png"
-                    action ShowMenu('preferences')
 
 
 
@@ -1317,33 +1271,35 @@ style notify_text:
 
 
 screen nvl(dialogue, items=None):
+    if nvl_mode == "phone":
+        use PhoneDialogue(dialogue, items)
+    else:
+        window:
+            style "nvl_window"
 
-    window:
-        style "nvl_window"
+            has vbox:
+                spacing gui.nvl_spacing
 
-        has vbox:
-            spacing gui.nvl_spacing
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
 
-        ## Displays dialogue in either a vpgrid or the vbox.
-        if gui.nvl_height:
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
 
-            vpgrid:
-                cols 1
-                yinitial 1.0
+                    use nvl_dialogue(dialogue)
+
+            else:
 
                 use nvl_dialogue(dialogue)
 
-        else:
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True.
+            for i in items:
 
-            use nvl_dialogue(dialogue)
-
-        ## Displays the menu, if given. The menu may be displayed incorrectly if
-        ## config.narrator_menu is set to True.
-        for i in items:
-
-            textbutton i.caption:
-                action i.action
-                style "nvl_button"
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
 
     add SideImage() xalign 0.0 yalign 1.0
 
