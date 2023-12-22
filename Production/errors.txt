@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/custom_gui/forum_gui/forum_screens.rpy", line 99: Line is indented, but the preceding vbox statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    text thread_info.title
+    ^
+
+Ren'Py Version: Ren'Py 8.1.3.23091805
+Wed Dec 20 11:20:51 2023

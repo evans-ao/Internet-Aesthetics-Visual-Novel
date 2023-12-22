@@ -82,7 +82,6 @@ label hw_first_day:
 label home_to_thread():
         hide screen forum_home
 
-
         show screen forum_standard( first_poster, first_comment, posters, comments)
         #display hot dog weidness
 
@@ -98,7 +97,7 @@ label home_to_thread():
 
 label new_text_msg:
         hide screen forum_standard
-        hide screen forum_home
+        window hide
         
         show amelie neutral  at right zorder 100
         show moment37 neutral  at left zorder 100 
