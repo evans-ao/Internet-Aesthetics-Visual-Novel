@@ -30,7 +30,6 @@ screen quick_menu():
 
 #Game-Bar
 screen window_bar: 
-    zorder 2
     frame:
         xpos 0
         ypos 0

@@ -4,13 +4,13 @@ define e = Character("Eileen")
 
 init python:
     #making 4 normal threads for testing & 4 fake profiles
-
     user_1 = ForumProfile("player_1", "yolo")
     user_2 = ForumProfile("player_2", "noob")
     user_3 = ForumProfile("Eileen", "Eileen")
-    
+
     thread_1 = make_thread(user_1)   
     thread_1.title = "Vizual Killah"
+    thread_1.social_cost = 2
     thread_1.msg = """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -18,18 +18,21 @@ init python:
         Eleifend donec pretium vulputate sapien nec sagittis aliquam
     """
 
+
     thread_2 = make_thread(user_2)   
-    thread_2.title = "Mad Hunter"
+    thread_2.title = "Mad Hunter"        
+    thread_2.social_cost = 8
     thread_2.msg =  """
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Sodales ut eu sem integer vitae justo eget magna. 
         Eleifend donec pretium vulputate sapien nec sagittis aliquam
     """
-    
+
 
     thread_3 = make_thread(user_3)   
     thread_3.title = "Foolish Desperado"
+    thread_3.social_cost = 1
     thread_3.msg =  """
     Velit laoreet id donec ultrices tincidunt arcu. Sed risus
         ultricies tristique nulla aliquet enim tortor at auctor.
@@ -38,6 +41,7 @@ init python:
 
     thread_4 = make_thread(user_3)   
     thread_4.title = "Amazing Commander"
+    thread_4.social_cost = 4
     thread_4.msg = """ 
     Ornare quam viverra orci sagittis eu volutpat. Eu consequat
         ac felis donec et odio pellentesque diam volutpat. Integer malesuada nunc 
@@ -52,7 +56,6 @@ init python:
         velit. Volutpat est velit egestas dui id. Egestas maecenas pharetra convallis 
         posuere morbi leo. Sagittis orci a scelerisque purus.
     """
-
     forum.todays_threads = set([thread_1,thread_2,thread_3,thread_4])
     
 
@@ -64,6 +67,7 @@ label start:
     scene bg room
 
     # the main forum aspects 
+    # show screen home_page
     show screen home_page
     show screen side_menu
     show screen top_menu

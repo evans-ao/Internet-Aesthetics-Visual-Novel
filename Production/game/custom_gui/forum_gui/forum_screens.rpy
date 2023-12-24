@@ -1,3 +1,4 @@
+init offset = 1
 screen home_page():
     # Home Screen UI that loads the current day's thread
     frame: 
@@ -77,19 +78,42 @@ screen top_menu:
     frame:
         background None
 
+default has_hovered = False
+
 
 screen threads_display(thread_info):
+    zorder 2 #to be over textbox, disappears right after tho as it is still a tooltip
     # generate the mini thread UI displayed on the home page and past days
     frame:
         # background None
-        xsize 2026
-        ysize 395
-        
+        xsize 2500
+        ysize 750
         viewport:
             vbox:
+                text "Testing!" size 100
                 text thread_info.title
-                textbutton "full thread displaty" action Show("display_full_thread",None,thread_info)
+                imagebutton: 
+                    idle "images/forum ui/Figma UI Import/continue_login.png"
+                    action Show("display_full_thread",None,thread_info)
+                    # hovered SetVariable("has_hovered", True)
+                    hovered Show("show_social_cost",None,thread_info)
+                    unhovered Function(conditional_hide,"show_social_cost")
                 text thread_info.msg
+
+
+screen show_social_cost(thread_info):
+    zorder 3
+    $ x_mouse, y_mouse = renpy.get_mouse_pos()
+
+    frame:
+        ypadding 50
+        xpadding 50
+        xpos x_mouse
+        ypos y_mouse
+        # background None
+        vbox:
+            $ current_social_cost = str(thread_info.social_cost)
+            text current_social_cost size 50
 
 
 screen display_full_thread (thread_info):

@@ -57,9 +57,14 @@ init python:
             self.short_msg = short_msg
             self.replies = set()
             self.social_cost = 0
+            self.has_payed_cost = False
 
         def has_more_replies(self):
             return (len(self.replies) > 0)
+
+
+        def get_social_cost(self):
+            return str(self.social_cost)
     
 
     class Replies():
