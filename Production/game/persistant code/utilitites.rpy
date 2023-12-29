@@ -10,6 +10,7 @@ init python:
     before_game_start = 0
     at_base_game = -1
     at_application = -2
+    at_renpy_base = -3
 
     # definine zorder offset values and what they correlate with
     # for example zorder = -2 happens at application level
@@ -25,8 +26,6 @@ init python:
         # remove a screen if its on the screen
         if renpy.get_screen(screen_name):
             renpy.hide_screen(screen_name)
-
-
 
 
 label switch_forum_pages():
@@ -45,3 +44,5 @@ label close_forum:
     pass
 
 
+label not_enough_battery:
+    "Not enough Battery"

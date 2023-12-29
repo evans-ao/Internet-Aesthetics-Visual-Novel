@@ -56,7 +56,24 @@ init python:
         velit. Volutpat est velit egestas dui id. Egestas maecenas pharetra convallis 
         posuere morbi leo. Sagittis orci a scelerisque purus.
     """
+
+    thread_5 = make_thread(user_3)   
+    thread_5.title = "Events Thread"
+    thread_5.social_cost = 4
+    thread_5.msg = """ 
+    Ornare quam viverra orci sagittis eu volutpat. Eu consequat
+        ac felis donec et odio pellentesque diam volutpat. Integer malesuada nunc 
+        vel risus. Et netus et malesuada fames ac turpis egestas sed. Vitae semper 
+        posuere morbi leo. Sagittis orci a scelerisque purus.
+    """
+
+    # setting up the configuration of the current day
+    day_1 = [thread_1,thread_2]
+    day_2 = [thread_4]
     forum.todays_threads = set([thread_1,thread_2,thread_3,thread_4])
+    forum.past_threads = list([day_1,day_2])
+    forum.events_thread = thread_5
+    forum.hotdog_thread = None
     
 
 
@@ -68,7 +85,7 @@ label start:
 
     # the main forum aspects 
     # show screen home_page
-    show screen home_page
+    $ forum.load_home()
     show screen side_menu
     show screen top_menu
 

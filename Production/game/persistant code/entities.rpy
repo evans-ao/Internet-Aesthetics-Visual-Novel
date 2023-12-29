@@ -1,4 +1,4 @@
-init offset = -2
+init offset = -4
 
 
 init python:
@@ -8,7 +8,9 @@ init python:
         Forum Profile
         Thread
         Replies
-    """    
+    """  
+    simple_declarations = -4
+    custom_game_tools = -3
     at_application = -2
     at_base_game = -1
     before_game_start = 0
@@ -58,12 +60,14 @@ init python:
             self.replies = set()
             self.social_cost = 0
             self.has_payed_cost = False
+            self.has_story_beat = False
 
         def has_more_replies(self):
             return (len(self.replies) > 0)
 
 
         def get_social_cost(self):
+            # cost of an interaction using the social battery
             return str(self.social_cost)
     
 
