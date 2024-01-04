@@ -78,7 +78,7 @@ init python:
         def not_enough_battery(self):
             # call forth a visual novel interactiion where Amelie laments
             # about their low energy TODO rotate/random self -commentary options
-            # renpy.call("not_enough_battery")
+            renpy.call("not_enough_battery")
             pass
 
     class ForumNovlelManager(object):

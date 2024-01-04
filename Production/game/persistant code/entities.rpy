@@ -29,6 +29,7 @@ init python:
             self.activity = 0
             self.is_moderator = is_mod
             self.preferances = set()
+            self.alignment_list = list()
             self.friends = set()
             self.threads_made = set()
             self.threads_commented = set()

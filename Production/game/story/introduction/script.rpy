@@ -29,6 +29,8 @@ init python:
         Eleifend donec pretium vulputate sapien nec sagittis aliquam
     """
 
+    thread_1
+
 
     thread_3 = make_thread(user_3)   
     thread_3.title = "Foolish Desperado"
@@ -95,9 +97,14 @@ label start:
     e "2"
     e "3"
     e "4"
+    jump second_part
     # stops game advancement
     $ visual_novel.stop_story()
     e "5"
 
     # This ends the game.
     return
+
+
+label second_part:
+    e "second part"
