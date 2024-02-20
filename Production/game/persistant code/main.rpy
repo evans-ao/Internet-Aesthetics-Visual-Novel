@@ -4,5 +4,13 @@ init python:
     game_manager = GameManager()
     visual_novel = VisualNovelManager()
     forum = ForumNovlelManager()
+    print("intit main()")
+    
+    """
+        $ config.overlay_screens.append("quick_menu")
+        # config.overlay_screens.append("window_bar")
+    """
+
+    amelie_profile = ForumProfile("Amelie", "randomUserMakeName")
 
     

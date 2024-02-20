@@ -6,8 +6,8 @@ init python:
     Managers (global singletons pattern) responsible for running core 
     aspects of "Failed TO Send" and their attributes:
 
-    Game Progresssion: GameManager
-    Visual Progresssion: VisualNovelManager
+    Game Progresssion & data: GameManager
+    Visual Progresssion Story Control: VisualNovelManager
     Forum Management & Navigation: ForumNovlelManager
     """
 
@@ -23,14 +23,35 @@ init python:
 
         def __init__(self):
             self.day = 0
-            self.social_battery = 10
-            self.manage_input()
+            self.social_battery = 100
+            self.init_game_cofigs()
+            self.amelie_profile = ForumProfile("Amelie", "ThreateningDesperado")
+            self.context = "visual novel"
 
-        def manage_input(self):
-            # limit actions the player can do to maintain game structure
+
+        def init_game_cofigs(self):
+            # control aand enablge the custom game configureations    
+            # default screens and their order [ 'master', 'transient', 'screens', 'overlay']
             config.rollback_enabled = False
 
-        
+
+        def switch_game_context(self, context, has_show_display = False):
+            self.context = context
+
+            if has_show_display:
+                conditional_hide("quick_menu")
+                renpy.show_screen("quick_menu")
+
+
+        def show_ui(self):
+            renpy.show_screen("quick_menu")
+
+
+        def show_laptop_ui(self):
+            renpy.show_screen("window_bar")
+            renpy.show_screen("quick_menu")
+
+
         def print_gm(self, msg):
             # just  function to debug and fill sections in progress
             print(str(msg))
@@ -57,7 +78,6 @@ init python:
             self.social_battery += charge_amount
 
 
-  
     class VisualNovelManager(object):
         def __new__(cls):
             # create a singleton and have all intances be the same 
@@ -68,18 +88,55 @@ init python:
 
         def __init__(self):
             self.name = "Visual Novel Manager"
+            self.has_active_forum = True
+            self.has_continue_flag = False
 
-        def stop_story(self):
+
+        def hard_stop_story(self):
             # stop all forward progression of game via cliking to continue
             renpy.pause(float('inf'), hard=True)
-            print("debug")
+            print("Stoped Story")
+
+
+        def enable_forum(self):
+            # controls the sensitve option of forum buttons
+            # specifically enabling all interactions
+            self.has_active_forum = True
+            print("Enabled Forum")
+
+
+        def stop_forum(self):
+            # controls the sensitve option of forum buttons
+            # specifically disabling all interactions
+            self.has_active_forum = False
+            print("Stoped Forum")
+
+        
+        def needs_forum_interactions(self, required_battery_left=0):
+            # returns if the player needs to interact with the threads 
+            # to continue the story
+            has_any_battery = game_manager.social_battery > required_battery_left
+            # print("has battery " + str(has_any_battery))
+            # print("has continue " + str(self.has_continue_flag))
+
+            if self.has_continue_flag:
+                return False
+            return has_any_battery
+
+
+        def stop_until_forum_precondition(self,required_battery_left=0):
+            # loop until player meets precondition to continue forum 
+            # to continue the story
+            while visual_novel.needs_forum_interactions(required_battery_left):
+                renpy.pause()
 
 
         def not_enough_battery(self):
             # call forth a visual novel interactiion where Amelie laments
             # about their low energy TODO rotate/random self -commentary options
-            renpy.call("not_enough_battery")
+            # renpy.call("not_enough_battery")
             pass
+
 
     class ForumNovlelManager(object):
         def __new__(cls):
@@ -90,13 +147,14 @@ init python:
 
 
         def __init__(self):
-            self.story_thread = None
-            self.todays_threads = set()
+            self.story_thread = 0
+            self.todays_threads = list()
             self.events_thread = None
             self.hotdog_thread = None
             self.past_threads = list()
             self.all_forum_profiles = dict()
-            self.is_forum_clikable = False
+            self.current_dms_screen = None
+            self.is_dm_accesible = False
 
 
         def _clear_forum_stack(self):
@@ -108,17 +166,18 @@ init python:
             conditional_hide("display_full_thread")
             conditional_hide("display_replies")
             conditional_hide("show_social_cost")
+            
+            # TODO doesn't work with DMS
+            #conditional_hide("PhoneDialogue")
+            #conditional_hide("nvl_phonetext")
+            #conditional_hide("nvl")
 
+            # If there's still dialogue left a 
+            # call would be needed to switch story types
+            renpy.hide_screen("PhoneDialogue")
+            renpy.hide_screen("nvl_phonetext")
+            renpy.hide_screen("nvl")
 
-        def disable_forum(self):
-            # disable all forum buttons and navigation
-            self.is_forum_clikable = False
-
-
-        def enable_forum(self):
-            # enable all forum buttons and navigation
-            self.is_forum_clikable = True
-        
         
         def _loading_buffer(self, buffer_timer=0.2):
             # adding a transition switching from one screen
@@ -129,6 +188,11 @@ init python:
             # bring up the home page with optional buffering
             self._clear_forum_stack()
             renpy.show_screen("home_page")
+
+
+        def load_forum_vestiges(self):
+            renpy.show_screen("side_menu")
+            # renpy.show_screen("top_menu")
 
 
         def load_events(self,has_buffer=False,buffer_timer=0.2):
@@ -148,6 +212,8 @@ init python:
             social interaction: any use of the social battery
             checks if a social interation has already used the battery
             if not see if a social interaction can be done and proceed
+
+            This is also where alignments for Amelie are updated live
             """
             is_accessible = True
             social_cost = thread_info.social_cost
@@ -156,6 +222,8 @@ init python:
                 if game_manager.can_use_battery(social_cost):
                     game_manager.drain_social_battery(social_cost)
                     thread_info.has_payed_cost = True
+                    game_manager.amelie_profile.update_forum_perception(thread_info)
+
                 else:
                     is_accessible = False
             
@@ -170,8 +238,13 @@ init python:
             else:
                 visual_novel.not_enough_battery()
 
+            if thread_info.is_story: 
+                if not thread_info.has_played_story:                    
+                    print("Story factor " + str(thread_info.has_played_story))
+                    thread_info.has_played_story = True
+                    renpy.jump(thread_info.story_label_tag)
 
-
+        
         def load_page(self, page_name,has_buffer=False,buffer_timer=0.2):
             # bring up any specific page with optional buffering
             self._clear_forum_stack()
@@ -193,5 +266,14 @@ init python:
                 renpy.show_screen("folio_page",page_num)
 
 
-        
+        def load_current_dms(self, isJump=False):
+            # bring up the dms page and associated labels with optional buffering
 
+            if self.is_dm_accesible:
+                self._clear_forum_stack()
+                nvl_clear()
+                self.is_dm_accesible = False # ensure only one use per new dms
+                if isJump:
+                    renpy.jump(self.current_dms_screen)
+                else:
+                    renpy.call(self.current_dms_screen)

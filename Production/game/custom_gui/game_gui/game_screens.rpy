@@ -1,141 +1,94 @@
 init offset = -2
 ## Quick Menu screen ###########################################################
-##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
-## menus.
-
-screen quick_menu():
-
-    ## Ensure this appears on top of other screens.
-    zorder 100 # default_renpy_order
-
-    if quick_menu:
-
-        hbox:
-            style_prefix "quick"
-
-            xalign 0.5
-            yalign 1.0
-
-            textbutton _("History") action ShowMenu('history')
-            # textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            # btextbutton _("Q.Save") action QuickSave()
-            # textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-            text "Social Battery : " + str(game_manager.social_battery) 
-
 
 default quick_menu = True
-
 style quick_button is default
 style quick_button_text is button_text
+style quick_button properties gui.button_properties("quick_button")
+style quick_button_text properties gui.button_text_properties("quick_button")
 
-style quick_button:
-    properties gui.button_properties("quick_button")
+screen quick_menu():
+    ## Ensure this appears on top of other screens.
+    zorder 100 # default_renpy_order
+    
+    if quick_menu:
 
-style quick_button_text:
-    properties gui.button_text_properties("quick_button")
+        # regular standard menu
+        if game_manager.context == "visual novel":
+            use renpy_quick_menu()
+            
+        # quick menu for laptop: online
+        if game_manager.context == "laptop": 
+            use laptop_quick_menu()
 
-#Game-Bar
+
+screen renpy_quick_menu():
+    zorder 100 # default_renpy_order
+
+    hbox:
+        style_prefix "quick"
+
+        xalign 0.5
+        yalign 1.0
+
+        textbutton _("Save") action ShowMenu('save')
+        textbutton _("History") action ShowMenu('history')
+        textbutton _("Prefs") action ShowMenu('preferences')
+        
+        #textbutton _("Back") action Rollback()
+        #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+        #textbutton _("Auto") action Preference("auto-forward", "toggle")
+        #textbutton _("Q.Save") action QuickSave()
+        #textbutton _("Q.Load") action QuickLoad()
+
+
+screen laptop_quick_menu():
+    frame:
+        xsize 3840 ysize 156
+        xpos 0 ypos 2004
+        background "images/game ui/taskbar_bg.png"
+        
+        # options of game
+        hbox:
+            style_prefix "quick"
+            xalign 0.5 yalign 1.0
+            spacing 76
+
+            image "images/game ui/hotdog_tab.png"
+            imagebutton idle "images/game ui/save_tab.png" action ShowMenu('save')
+            imagebutton idle "images/game ui/history_tab.png" action ShowMenu('history')
+            imagebutton idle "images/game ui/prefs_tab.png" action ShowMenu('preferences')
+
+        # rest of laptop UI
+        hbox:
+            style_prefix "quick"
+            xpos 2998 yalign 1.0
+            spacing 50
+
+            frame:
+                xsize 270 ysize 124
+                background "images/game ui/social_battery.png"
+                text str(game_manager.social_battery  ) + "%" xalign 0.5 yalign 0.5 bold True
+
+            image "images/game ui/divider.png"
+
+            text "Sep" yalign 0.5 bold True
+
+            frame:
+                xsize 270 ysize 124
+                background "images/game ui/calendar.png"
+                text "19"  xpos 13 ypos 13 bold True size 54
+
+
+#navigation bar of a website
 screen window_bar: 
     frame:
         xpos 0
         ypos 0
         xsize 3840    
-        ysize 66
+        ysize 119
+        background "images/game ui/browser_head.png"
+        text "https://www.hotdogstand.com/HallowedWinds/" xpos 1132 yalign 0.6 size 40 color "#878787"
 
 
-## This code ensures that the quick_menu screen is displayed in-game, whenever
-## the player has not explicitly hidden the interface.
-init python:
-    config.overlay_screens.append("quick_menu")
-
-
-################################################################################
-## In-game screens
-################################################################################
-
-
-## Say screen ##################################################################
-##
-## The say screen is used to display dialogue to the player. It takes two
-## parameters, who and what, which are the name of the speaking character and
-## the text to be displayed, respectively. (The who parameter can be None if no
-## name is given.)
-##
-## This screen must create a text displayable with id "what", as Ren'Py uses
-## this to manage text display. It can also create displayables with id "who"
-## and id "window" to apply style properties.
-##
-## https://www.renpy.org/doc/html/screen_special.html#say
-
-screen say(who, what):
-    zorder 4 # custom_renpy_ui_mechanics_order
-
-    style_prefix "say"
-
-    window:
-        id "window"
-
-        if who is not None:
-
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
-
-        text what id "what"
-
-
-    ## If there's a side image, display it above the text. Do not display on the
-    ## phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
-
-
-## Make the namebox available for styling through the Character object.
-init python:
-    config.character_id_prefixes.append('namebox')
-
-style window is default
-style say_label is default
-style say_dialogue is default
-style say_thought is say_dialogue
-
-style namebox is default
-style namebox_label is say_label
-
-
-style window:
-    xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
-
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
-
-style namebox:
-    xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
-
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
-
-style say_label:
-    properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
-    yalign 0.5
-
-style say_dialogue:
-    properties gui.text_properties("dialogue")
-
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-
-    adjust_spacing False

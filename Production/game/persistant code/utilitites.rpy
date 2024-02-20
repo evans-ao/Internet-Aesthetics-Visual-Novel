@@ -17,8 +17,10 @@ init python:
     default_order = 0
     forum_ui_order = 1
     game_ui_mechanics_order = 2
-    character_order = 3
-    custom_renpy_ui_mechanics_order = 4
+    story_overlay = 3    
+    character_order = 4
+    custom_renpy_ui_mechanics_order = 5   
+    
     default_renpy_order = (100,200)
 
 
