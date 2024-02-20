@@ -208,11 +208,11 @@ label example_text_msg:
         # show amelie_neutral zorder 3 at right onlayer screens
 
 
-        moment_37_nvl "Heya! Nice to see a new face around here! My name's Moment37, you can find me here (obv)"
-        moment_37_nvl "and you can also catch one of my streams! Welcome to the Hallowed Winds page!"
+        moment37_nvl "Heya! Nice to see a new face around here! My name's Moment37, you can find me here (obv)"
+        moment37_nvl "and you can also catch one of my streams! Welcome to the Hallowed Winds page!"
         amelie_nvl "Hey, my name's ThreateningDesperado (you can call me Desperado). Nice to meet you"
-        moment_37_nvl "Oh  shit, timer's started. you still need to explore the forum"  
-        moment_37_nvl "see ya round, when the developers add more content!"
+        moment37_nvl "Oh  shit, timer's started. you still need to explore the forum"  
+        moment37_nvl "see ya round, when the developers add more content!"
         amelie_nvl "bet!"
 
         # hide amelie_neutral layer "screens"

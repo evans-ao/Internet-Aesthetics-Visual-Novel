@@ -5,7 +5,7 @@ init python:
 
         jared_profile = ForumProfile("hotdog_man", "hotdog_man")
         legend_profile = ForumProfile("LEGENDFORCE12", "LEGENDFORCE12")
-        moment_37_profile= ForumProfile("Moment37", "Moment37")
+        moment37_profile= ForumProfile("Moment37", "Moment37")
         bingle_profile = ForumProfile("BingleBongle227", "BingleBongle227")
         teamtila_profile = ForumProfile("teamtila", "teamtila")
         hollowed_profile = ForumProfile("hollowed","hollowed")
@@ -23,7 +23,7 @@ init python:
 
         intro_reply_1 = make_reply(legend_profile)
         intro_reply_1.msg = "MY NAME IS LEGENDFORCE12. I AM THE HEAD MODERATOR OF THIS FORUM. AS FOR MY INTERESTS, THE ONLY ONE THAT MATTERS IS THAT I LIKE GAMING. THAT IS ALL, CARRY ON EVERYONE."
-        intro_reply_2 = make_reply(moment_37_profile)
+        intro_reply_2 = make_reply(moment37_profile)
         intro_reply_2.msg = "yo this is Moment37. i'm a mod here and a streamer on shiver, same name as here! lmk if you want a link"
         intro_reply_3 = make_reply(teamtila_profile)
         intro_reply_3.msg = "I'm teamtila! It's pretty clear whose team I am on. Tula's not bad, but Tila? Tila's great."
@@ -75,7 +75,7 @@ init python:
         thread_4.alignments = ["anger","shocked"]
         thread_4.preferances = ["guide","fan-fiction"]
         thread_4.msg = """ (IMG to be added with more polish) LOOK AT HIM!!!"""
-        cat_reply_1 = make_reply(moment_37_profile)
+        cat_reply_1 = make_reply(moment37_profile)
         cat_reply_1.msg = "super cute!"
         cat_reply_2 = make_reply(bingle_profile)
         cat_reply_2.msg = "I think my dog is cuter. (image of dog)"
@@ -303,7 +303,7 @@ label explore_day1:
 label day_1_ending_dm:
     $ visual_novel.stop_forum()
 
-    moment_37_nvl " heya, nice to see a new face around here! i'm Moment37. 
+    moment37_nvl " heya, nice to see a new face around here! i'm Moment37. 
     maybe you've seen my streams? dunno, but i am a mod here too. welcome 
     to the Hallowed Winds forum! anyway, lmk if you need any help!"
 

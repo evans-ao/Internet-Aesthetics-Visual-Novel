@@ -19,7 +19,7 @@ define hotdog_man_nvl = Character("hotdog_man",kind=nvl)
 
 # Hallowed Winds
 define moment37 = Character("Moment37")
-define moment_37_nvl = Character("Moment37",kind=nvl)
+define moment37_nvl = Character("Moment37",kind=nvl)
 
 
 
