@@ -131,7 +131,7 @@ label account_creation:
         amelie "I think MainArcher will fit well here. It's my go-to in gaming communities, after all."
 
     if username == "BlackStar":
-        amelie "It's been a while since I used BlackStar. I used to love that character..."
+        amelie "It's been a while since I used [amelie_profile.user_name]. I used to love that character..."
 
 
     #displaying on screen:

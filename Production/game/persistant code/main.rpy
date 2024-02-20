@@ -11,6 +11,6 @@ init python:
         # config.overlay_screens.append("window_bar")
     """
 
-    amelie_profile = ForumProfile("Amelie", "randomUserMakeName")
+    amelie_profile = ForumProfile("Amelie", "Type your username here")
 
     
