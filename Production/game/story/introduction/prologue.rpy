@@ -122,16 +122,16 @@ label account_creation:
     show screen temp_avatar_select
 
     if username == "ThreateningDesperado":
-        amelie "ThreateningDesperado is my current go-to amelie_profile.user_name; I'll stick with that. It just has a nice ring to it. "
+        amelie "[username] is my current go-to username; I'll stick with that. It just has a nice ring to it. "
 
     if username == "BlindAlpaca":
-        amelie "I don't even remember how I came up with BlindAlpaca, but it was my go-to for years. It'll be nice to use it again."
+        amelie "I don't even remember how I came up with [username], but it was my go-to for years. It'll be nice to use it again."
 
     if username == "MainArcher":
-        amelie "I think MainArcher will fit well here. It's my go-to in gaming communities, after all."
+        amelie "I think [username] will fit well here. It's my go-to in gaming communities, after all."
 
     if username == "BlackStar":
-        amelie "It's been a while since I used [amelie_profile.user_name]. I used to love that character..."
+        amelie "It's been a while since I used [username]. I used to love that character..."
 
 
     #displaying on screen:
