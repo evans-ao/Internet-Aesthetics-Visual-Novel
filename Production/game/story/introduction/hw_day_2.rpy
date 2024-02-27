@@ -7,6 +7,47 @@
 #The first competition gets announced.
 #Potential first message from our second route character (who may not end up being LEGENDFORCE12 since the personality of his writing style and emails is different from the route we need for the story to blossom)
 
+init python:
+    def make_day_2_forum():
+        thread_1 = make_thread(faren_love_profile)
+        thread_1.title = "Faren is HOT"
+        thread_1.social_cost = 20
+        thread_1.alignments = ["anger","shocked"]
+        thread_1.preferances = ["guide","fan-fiction"]
+        thread_1.msg = """ Why haven't I seen anyone talking about this? Faren appreciation, anyone?"""
+        love_reply_1 = make_reply(hollowed_profile)
+        love_reply_1.msg = "dude what are you on? Faren is as ugly as they get"
+        love_reply_2 = make_reply(teamtila_profile)
+        love_reply_2.msg = "Are we looking at the same character? EDIT: Wait, did you join just to make this post?"
+        love_reply_3 = make_reply(faren_love_profile)
+        love_reply_3.msg = "FAREN IS NOT UGLY. He may have a lot of scars, but they're proof he's survived! His grizzled stubble makes him look rugged! That long blond hair…so well kept! So elegant! He's just the right amount of muscular too. Even if his appearance isn't to your taste, you have to admit personality wise he's mmph! Nothing quite like a clever guy who could cut you down physically or verbally."
+        love_reply_4 = make_reply(teamtila_profile)
+        love_reply_4.msg = "My eyes have been opened and I hate it"
+        
+        thread_1.replies = [love_reply_1,love_reply_2,love_reply_3,love_reply_4]
+
+        thread_2= make_thread(teamtila_profile)
+        thread_2.title= "Which team are you?"
+        thread_2.social_cost= 30
+        thread_2.msg= """My username says it all. I am on team Tila. Whose side are you on in their argument?"""
+        team_reply_1=make_reply(wicker_profile)
+        team_reply_1.msg="I hate picking sides >n<"
+        team_reply_2=make_reply(faren_love_profile)
+        team_reply_2.msg="Faren sides with Tila, so I do too."
+        team_reply_3=make_reply(hollowed_profile)
+        team_reply_3.msg= "I hate both of them"
+        team_reply_4=make_reply(azure_winds_profile)
+        team_reply_4.msg= "I alternate sides each playthrough."
+
+        thread_2.replies= [team_reply_1, team_reply_2, team_reply_3, team_reply_4]
+
+
+
+
+
+
+
+
 #remove the following two lines after day 1 has had these variables implemented
     $ d1_t0reply=false
     $ d1_t1reply=false
@@ -367,47 +408,89 @@ label d2_dm_moment37:
 
 
 label d2_dm_legendforce12:
-    dmlf12_read=true
+    $ dmlf12_read=true
     legendforce12_nvl " I SAW THAT YOU’RE PARTICIPATING IN THE SPEEDRUN COMPETITION. "
-	if speedrun_c1=true:
-		legendforce12_nvl "IT’S GOOD TO BE EXCITED, BUT DON’T EXPECT TO WIN."
-	elif speedrun_c2=true:
-		legendforce12_nvl "YOU’RE NEW, SO DON’T GET OVERCONFIDENT."
+    if speedrun_c1=true:
+        legendforce12_nvl "IT’S GOOD TO BE EXCITED, BUT DON’T EXPECT TO WIN."
+    elif speedrun_c2=true:
+        legendforce12_nvl "YOU’RE NEW, SO DON’T GET OVERCONFIDENT."
 
-	legendforce12_nvl "THERE ARE A TON OF SKILLED PLAYERS BESIDES MYSELF HERE, SO IT’S NOT GOING TO BE EASY TO PLACE WELL. I HAVEN’T SEEN YOU ON THE LEADERBOARDS BEFORE AND ANY% IS HARD, SO YOU BETTER PRACTICE."
+    legendforce12_nvl "THERE ARE A TON OF SKILLED PLAYERS BESIDES MYSELF HERE, SO IT’S NOT GOING TO BE EASY TO PLACE WELL. I HAVEN’T SEEN YOU ON THE LEADERBOARDS BEFORE AND ANY% IS HARD, SO YOU BETTER PRACTICE."
 
-	amelie "It would be stupid of me not to practice. I need to do at least one practice run to make sure I have the timer and recording stuff set up right, and some of the skips are hard."
+    amelie "It would be stupid of me not to practice. I need to do at least one practice run to make sure I have the timer and recording stuff set up right, and some of the skips are hard."
 
-	amelie "I'm really not sure if he's encouraging me or discouraging me here."
+    amelie "I'm really not sure if he's encouraging me or discouraging me here."
 
-	menu:
-		"How should I respond?"
+    menu:
+        "How should I respond?"
 
         "Thanks for the heads up! I don't plan on losing, though.":
-            d2lf12_reply=true
-        amelie_nvl "Thanks for the heads up! I don't plan on losing, though."
-			legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
-			amelie "Haha, can't disagree with that!"
-			pass
-
-		"I'm not too worried, but that doesn't mean I won't be practicing!":
-			d2lf12_reply=true
-			amelie_nvl "I'm not too worried, but that doesn't mean I won't be practicing!"
-			legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
-			amelie "This is going to be so much fun."
-			pass
-
-		"Don't respond":
-			amelie "I'm not sure how to respond right now..."
-			pass
+            $ d2lf12_reply=true
+            amelie_nvl "Thanks for the heads up! I don't plan on losing, though."
+            legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
+            amelie "Haha, can't disagree with that!"
+            pass
+        
+        "I'm not too worried, but that doesn't mean I won't be practicing!":
+            $ d2lf12_reply=true
+            amelie_nvl "I'm not too worried, but that doesn't mean I won't be practicing!"
+            legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
+            amelie "This is going to be so much fun."
+            pass
+        
+        "Don't respond":
+            amelie "I'm not sure how to respond right now..."
+            pass
 
 label d2_threads:
 	
-	#two threads besides intro and rules: d2_t0 and d2_t1. 
-	#if statement for clicking thread IDK
-call d2_t0
-	#elif statement for clicking thread IDK
-call d2_t1
+#two threads besides intro and rules: d2_t0 and d2_t1. 
+#if statement for clicking thread IDK
+    call d2_t0
+#elif statement for clicking thread IDK
+    amelie "I...what? They think Faren is hot? The old, scarred Faren we see in the first game? What?"
+    call d2_t1
+
+
+
+
+
+
+label d2_t0:
+
+
+label d2_t1:
+
+
+
+    amelie "Uh..."
+
+    menu:
+        "Reply"
+        
+        "What.":
+            #no points
+            $ d2_t1reply=true
+            #amelie's reply:
+            amelie "What."
+            love_reply5=
+            thread_1.replies.append()
+            amelie "I just...what?"
+            pass
+
+        "I see it now! D:":
+            #+1 point
+            $ d2_t1reply=true
+            #amelie's reply
+            amelie "I see it now! D:"
+            amelie "I really wish I didn't see what FarenLove means, but I do."
+            pass
+
+        "Cancel":
+            #don't reply"
+            pass
+
+  
 
 
 
