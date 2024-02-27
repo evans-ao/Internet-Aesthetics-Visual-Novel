@@ -80,8 +80,8 @@ init python:
 
 
 #remove the following two lines after day 1 has had these variables implemented
-    $ d1_t0reply=false
-    $ d1_t1reply=false
+$ d1_t0reply=false
+$ d1_t1reply=false
 
 label d2_intro:
     python:
@@ -172,12 +172,12 @@ label d2_dms:
     if d2wicker_read==false and d2moment37_read==false:
         if d2lf12_read==true:
             amelie "Still have two messages left."
-			
+
             amelie "One's from wicker-scarecrow, and the other's from Moment37."
 
             menu:
                 "Which one should I read now?"
-				
+
                 "wicker-scarecrow's":
                     call d2_dm_wicker
                     pass
@@ -185,7 +185,7 @@ label d2_dms:
                 "Moment37's":
                     call d2_dm_moment37
                     pass
-				
+                
                 "Neither":
                     pass
 
@@ -200,7 +200,7 @@ label d2_dms:
 
             menu:
                 "Which one should I read now?"
-				
+
                 "wicker-scarecrow's":
                     call d2_dm_wicker
                     pass
@@ -208,7 +208,7 @@ label d2_dms:
                 "Moment37's":
                     call d2_dm_moment37
                     pass
-				
+
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
                     pass
@@ -216,39 +216,39 @@ label d2_dms:
                 "Never mind":
                     amelie "I'll read my DMs later."
                     pass
-	
+
     elif d2wicker_read==false and d2moment37_read==true:
         if d2lf12_read==true:
             amelie "Just have the message from wicker-scarecrow left."
-		
+
             menu:
                 "Should I read it now?"
-			
+
                 "Yes":
                     call d2_dm_wicker
                     pass
 
                 "No":
                     pass
-		
+
         else:
             amelie "Still have two messages left."
 
             amelie "One's from wicker-scarecrow, and the other's from LEGENDFORCE12."
             menu:
                 "Which one should I read now?"
-				
+
                 "wicker-scarecrow's":
                     call d2_dm_wicker
                     pass
-				
+                
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
                     pass
 
                 "Neither":
                     pass
-	
+
     elif d2wicker_read==true and d2moment37_read==true:
         if d2lf12_read==true:
             amelie "I read all my DMs already."
@@ -257,7 +257,7 @@ label d2_dms:
 
             menu:
                 "Should I read it now?"
-			
+
                 "Yes":
                     call d2_dm_legendforce12
                     pass
@@ -271,7 +271,7 @@ label d2_dms:
             amelie "Just have the message from Moment37 left."
             menu:
                 "Should I read it now?"
-			
+
                 "Yes":
                     call d2_dm_moment37
                     pass
@@ -281,23 +281,23 @@ label d2_dms:
 
         else:
             amelie "Still have two messages left."
-
-            amelie "One's from Moment37 and the other's from LEGENDFORCE12."	
+            
+            amelie "One's from Moment37 and the other's from LEGENDFORCE12."
 
             menu:
                 "Which one should I read now?"
-				
+
                 "Moment37's":
                     call d2_dm_moment37
                     pass
-				
+
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
                     pass
 
                 "Neither":
                     pass
-	
+
 
 label d2_dm_wicker:
     $ d2wicker_read=true
@@ -318,7 +318,7 @@ label d2_dm_wicker:
 
     menu:
         "How should I reply?"
-        
+
         "Hello! I've seen you on every thread so far. How are you always the first post? It's impressive.":
             $ d2wicker_reply==true
             amelie_nvl "Hello! I've seen you on every thread so far. How are you always the first post? It's impressive."
@@ -331,7 +331,7 @@ label d2_dm_wicker:
             amelie_nvl "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!"
             wicker_nvl "Feel free to contact me or any of the other mods if you need something! I know you can't initiate DMs as a normal user, but you can always reply to a moderator's message."
             pass
-		
+
 
         "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!":
             $ d2wicker_reply==true
@@ -362,28 +362,28 @@ label d2_dm_moment37:
         amelie "It looks like I made a bad impression yesterday. Maybe I should try to fix that?"
         menu:
             "How should I respond?"
-            
+
             "I hope you're ready to lose!":
                 $ d2moment37_reply=true
                 amelie "Nah, let's just run with it."
                 amelie_nvl "I hope you're ready to lose!"
                 moment37_nvl "to you? not happening lol"
                 pass
-			
+
             "That sounds like a declaration of war. Let's do this!":
                 $ d2moment37_reply=true
                 $ jerkish=false
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
                 pass
-            
+
             "I'm looking forward to it!":
                 $ d2moment37_reply=true
                 $ jerkish=false
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then"
                 pass
-            
+
             "Don't respond":
                 amelie "I'm not sure how to respond right now..."
                 pass
@@ -400,18 +400,18 @@ label d2_dm_moment37:
                 amelie_nvl "I did pick up some tricks. I guess we'll see if the student can beat the master?"
                 moment37_nvl "huh i guess my viewers are kind of my students. you're not winning tho lol."
                 pass
-            
+
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
                 $ d2moment37_reply==true
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
                 pass
-            
+
             "Don't respond":
                 amelie "I might respond...later."
                 pass
 
-		
+
 
     else:
         moment37_nvl "i hope you're good competition. this is all in good fun, of course, but you're going down."
@@ -419,44 +419,41 @@ label d2_dm_moment37:
         amelie "She's confident, but she has the skills to back it up. I'm no noob, though."
         menu:
             "How should I respond?"
-            
+
             "That sounds like a declaration of war. Let's do this!":
                 $ d2moment37_reply==true
                 $ jerkish=false
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
                 pass
-            
+
             "I'm looking forward to it!":
                 $ d2moment37_reply==true
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then lol"
                 pass
-            
+
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
                 $ fan==true
                 $ d2moment37_reply==true
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
                 pass
-            
+
             "Don't respond":
                 amelie "I'm not sure how to respond right now..."
                 pass
-	
-	
 
 
 label d2_dm_legendforce12:
     $ dmlf12_read=true
-    legendforce12_nvl " I SAW THAT YOU’RE PARTICIPATING IN THE SPEEDRUN COMPETITION. "
+    legendforce12_nvl " I SAW THAT YOU'RE PARTICIPATING IN THE SPEEDRUN COMPETITION. "
     if speedrun_c1=true:
-        legendforce12_nvl "IT’S GOOD TO BE EXCITED, BUT DON’T EXPECT TO WIN."
+        legendforce12_nvl "IT'S GOOD TO BE EXCITED, BUT DON'T EXPECT TO WIN."
     elif speedrun_c2=true:
-        legendforce12_nvl "YOU’RE NEW, SO DON’T GET OVERCONFIDENT."
+        legendforce12_nvl "YOU'RE NEW, SO DON'T GET OVERCONFIDENT."
 
-    legendforce12_nvl "THERE ARE A TON OF SKILLED PLAYERS BESIDES MYSELF HERE, SO IT’S NOT GOING TO BE EASY TO PLACE WELL. I HAVEN’T SEEN YOU ON THE LEADERBOARDS BEFORE AND ANY% IS HARD, SO YOU BETTER PRACTICE."
-
+    legendforce12_nvl "THERE ARE A TON OF SKILLED PLAYERS BESIDES MYSELF HERE, SO IT'S NOT GOING TO BE EASY TO PLACE WELL. I HAVEN'T SEEN YOU ON THE LEADERBOARDS BEFORE AND ANY% IS HARD, SO YOU BETTER PRACTICE."
     amelie "It would be stupid of me not to practice. I need to do at least one practice run to make sure I have the timer and recording stuff set up right, and some of the skips are hard."
 
     amelie "I'm really not sure if he's encouraging me or discouraging me here."
@@ -470,54 +467,49 @@ label d2_dm_legendforce12:
             legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
             amelie "Haha, can't disagree with that!"
             pass
-        
+
         "I'm not too worried, but that doesn't mean I won't be practicing!":
             $ d2lf12_reply=true
             amelie_nvl "I'm not too worried, but that doesn't mean I won't be practicing!"
             legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
             amelie "This is going to be so much fun."
             pass
-        
+
         "Don't respond":
             amelie "I'm not sure how to respond right now..."
             pass
 
 label d2_threads:
-	
+
 #two threads besides intro and rules: d2_t0 and d2_t1. 
 #if statement for clicking thread IDK
-    call d2_t0
+    #call d2_t0
 #elif statement for clicking thread IDK
-    amelie "I...what? They think Faren is hot? The old, scarred Faren we see in the first game? What?"
-    call d2_t1
-
-
-
-
-
+    #amelie "I...what? They think Faren is hot? The old, scarred Faren we see in the first game? What?"
+    #call d2_t1
 
 label d2_t0:
 
-
 label d2_t1:
-    $ if d2_t0read != true:
-        $ d2_t0reply= false
-    $ d2_t0read=true
-
+    python:
+        if d2_t0read != true:
+            d2_t0reply= false
+        d2_t0read=true
 
 
     amelie "Uh..."
 
     menu:
         "Reply"
-        
+
         "What.":
             #no points
             $ d2_t1reply=true
             #amelie's reply:
             amelie "What."
-            love_reply5=
-            thread_1.replies.append()
+            $ love_reply5=make_reply(amelie_profile)
+            $ love_reply5.msg="What."
+            $ thread_1.replies.append(love_reply5)
             amelie "I just...what?"
             pass
 
@@ -533,8 +525,3 @@ label d2_t1:
             #don't reply"
             $ d2_t1mark=true
             pass
-
-  
-
-
-
