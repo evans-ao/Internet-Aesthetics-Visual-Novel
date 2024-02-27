@@ -41,6 +41,37 @@ init python:
 
         thread_2.replies= [team_reply_1, team_reply_2, team_reply_3, team_reply_4]
 
+        thread_3=make_thread(jared_profile)
+        thread_3.title="Hallowed Winds Speedrun Competition!"
+        thread_3.msg="""Everyone, it's that time of year again! That's right, we're having another speedrun competition for Hallowed Winds! It looks like it's been a while since any scores have been posted to the off-site leaderboards, so it's time to shake things up!
+Rules are pretty simple: whoever can get the fastest score for Any% Hallowed Winds (the original) submitted during the competition this week wins! As long as the speedrun site considers it legitimate it counts!
+Have fun! """
+        comp1_reply_1=make_reply(wicker_profile)
+        comp1_reply_1.msg="I hope everyone does well! It would be nice if everyone on the leaderboard was a Hot Dog Standee! :-D "
+        comp1_reply_2=make_reply(hollowed_profile)
+        comp1_reply_2.msg="is there a prize for this?"
+        comp1r2_reply_1=make_reply(bingle_profile)
+        comp1r2_reply_1.msg="Bragging rights not good enough for you?"
+        comp1r2_reply_2=make_reply(hollowed_profile)
+        comp1r2_reply_2.msg="I never said that"
+        comp1_reply_2.replies=[comp1r2_reply_1, comp1r2_reply_2]
+        comp1_reply_3=make_reply(moment37_profile)
+        comp1_reply_3.msg="just some clarification on getting a speedrun score submitted: \n you have to record your gameplay footage. if you're on PC just use capture studio for it. \n you have to play in a single sitting and footage must be continuous throughout that time \n no editing things out or splicing things together! \n your score must be submitted before the end of the competition even if it isn't verified until after the competition ends. capture studio has a built-in timer while recording, it's a good idea to use it. \n hope to see your score! "
+        comp1_reply_4=make_reply(legend_profile)
+        comp1_reply_4.msg="MOMENT37 DIDN'T MENTION THAT SCORES SUBMITTED BEFORE THE COMPETITION BEGINS DO NOT COUNT EVEN IF THEY GET VERIFIED WHILE THE COMPETITION IS HAPPENING."
+        comp1_reply_5=make_reply(azure_winds_profile)
+        comp1_reply_5.msg="This is so exciting! I can't wait!"
+        comp1_reply_6=make_reply(teamtila_profile)
+        comp1_reply_6.msg="I'm gonna be busy. It'll be fun to see how everyone else does."
+
+        thread_3.replies=[comp1_reply_1, comp1_reply_2, comp1_reply_3, comp1_reply_4, comp1_reply_5, comp1_reply_6]
+
+
+        day_2 = [thread_3, thread_1,thread_2]
+        forum.todays_threads = day_2
+        forum.story_thread  = thread_3
+
+        game_manager.social_battery = 100
 
 
 
@@ -460,6 +491,9 @@ label d2_t0:
 
 
 label d2_t1:
+    $ if d2_t0read != true:
+        $ d2_t0reply= false
+    $ d2_t0read=true
 
 
 
@@ -488,6 +522,7 @@ label d2_t1:
 
         "Cancel":
             #don't reply"
+            $ d2_t1mark=true
             pass
 
   
