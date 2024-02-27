@@ -66,6 +66,8 @@ init python:
 
     faren_love_profile = ForumProfile("I love Faren", "FarenLove")
     faren_love_profile.user_avatar = "images/characters/avatars/hw_avatars/faren_love_avatar.png"
-    
+
+    wicker_profile= ForumProfile ("wicker", "wicker-scarecrow")
+    #wicker_profile.user_avatar=""
 # Under the Guise of Darfkness 
 # Biscuit Brigade: Rap Group
