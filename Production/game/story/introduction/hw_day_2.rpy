@@ -44,8 +44,8 @@ init python:
         thread_3=make_thread(jared_profile)
         thread_3.title="Hallowed Winds Speedrun Competition!"
         thread_3.msg="""Everyone, it's that time of year again! That's right, we're having another speedrun competition for Hallowed Winds! It looks like it's been a while since any scores have been posted to the off-site leaderboards, so it's time to shake things up!
-Rules are pretty simple: whoever can get the fastest score for Any% Hallowed Winds (the original) submitted during the competition this week wins! As long as the speedrun site considers it legitimate it counts!
-Have fun! """
+        \n Rules are pretty simple: whoever can get the fastest score for Any% Hallowed Winds (the original) submitted during the competition this week wins! As long as the speedrun site considers it legitimate it counts!
+\n Have fun! """
         comp1_reply_1=make_reply(wicker_profile)
         comp1_reply_1.msg="I hope everyone does well! It would be nice if everyone on the leaderboard was a Hot Dog Standee! :-D "
         comp1_reply_2=make_reply(hollowed_profile)
@@ -84,11 +84,17 @@ Have fun! """
     $ d1_t1reply=false
 
 label d2_intro:
-    $ speedrun_c1=false
-    $ speedrun_c2=false
-    $ d2wicker_read=false
-    $ d2moment37_read=false
-    $ d2lf12_read=false
+    python:
+        speedrun_c1=false
+        speedrun_c2=false
+        d2wicker_read=false
+        d2moment37_read=false
+        d2lf12_read=false
+        make_day_2_forum()
+        forum.load_home()
+        forum.load_forum_vestiges()
+        forum.is_dm_accesible = True
+        visual_novel.enable_forum()
 
     amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but I've been looking forward to this all day."
 
@@ -104,6 +110,9 @@ label d2_intro:
 
 #on the speedrunning thread
 label d2_speedrun_thread:
+    python:
+        visual_novel.stop_forum()
+        stillMakingReply = True 
     amelie "I've been interested enough in speedrunning Hallowed Winds to practice some of the skips in the past, but not enough to actually set up recording and timing a playthrough of the game."
 
     amelie "It always felt like I needed one last push to actually do a speedrun."
