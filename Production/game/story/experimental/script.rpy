@@ -113,7 +113,7 @@ init python:
 label start:
     python: 
         game_manager.show_ui()
-    jump prologue
+    jump d2_intro
 
 
 

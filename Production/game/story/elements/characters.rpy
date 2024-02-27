@@ -27,6 +27,9 @@ init python:
 define moment37 = Character("Moment37")
 define moment37_nvl = Character("Moment37",kind=nvl)
 
+define legendforce12=Character("LEGENDFORCE12")
+define legendforce12_nvl =Character("LEGENDFORCE12", kind=nvl)
+
 define wicker = Character("wicker-scarecrow")
 define wicker_nvl = Character("wicker-scarecrow",kind=nvl)
 
