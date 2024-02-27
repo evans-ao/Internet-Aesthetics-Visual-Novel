@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/story/introduction/hw_day_2.rpy", line 373: expected statement.
-    elif jerkish==True:
-                ^
-
-File "game/story/introduction/hw_day_2.rpy", line 405: expected statement.
-    elif fan=True:
-            ^
-
-File "game/story/introduction/hw_day_2.rpy", line 429: expected statement.
-    else:
-        ^
+File "game/story/introduction/hw_day_2.rpy", line 103: invalid syntax
+    $ script_day()
+     ^
 
 Ren'Py Version: Ren'Py 8.1.3.23091805
-Tue Feb 27 14:51:39 2024
+Tue Feb 27 18:03:50 2024

@@ -44,8 +44,7 @@ init python:
         thread_3=make_thread(jared_profile)
         thread_3.title="Hallowed Winds Speedrun Competition!"
         thread_3.msg="""Everyone, it's that time of year again! That's right, we're having another speedrun competition for Hallowed Winds! It looks like it's been a while since any scores have been posted to the off-site leaderboards, so it's time to shake things up!
-        \n Rules are pretty simple: whoever can get the fastest score for Any% Hallowed Winds (the original) submitted during the competition this week wins! As long as the speedrun site considers it legitimate it counts!
-\n Have fun! """
+        Rules are pretty simple: whoever can get the fastest score for Any% Hallowed Winds (the original) submitted during the competition this week wins! As long as the speedrun site considers it legitimate it counts! Have fun! """
         comp1_reply_1=make_reply(wicker_profile)
         comp1_reply_1.msg="I hope everyone does well! It would be nice if everyone on the leaderboard was a Hot Dog Standee! :-D "
         comp1_reply_2=make_reply(hollowed_profile)
@@ -102,9 +101,11 @@ label d2_intro:
         make_day_2_forum()
         forum.load_home()
         forum.load_forum_vestiges()
+        game_manager.show_laptop_ui()
         forum.is_dm_accesible = True
         visual_novel.enable_forum()
     
+    scene hw_bg
     show amelie neutral zorder 3 at left  onlayer screens
 
     amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but I've been looking forward to this all day."
@@ -153,14 +154,20 @@ label d2_speedrun_thread:
             #-1 point
             $ speedrun_c1=True
             #posted as reply:
-            amelie "Count me in! This will be so much fun!"
+            python:
+                comp1_reply_7=make_reply(amelie_profile)
+                comp1_reply_7.msg="Count me in! This will be so much fun!"
+                forum.story_thread.replies.append(comp1_reply_7)
             pass
 
         "How exciting! I can't wait to win!":
             #+1 point
             $ speedrun_c2=True
             #posted as reply:
-            amelie "How exciting! I can't wait to win!"
+            python:    
+                comp1_reply_7=make_reply(amelie_profile)
+                comp1_reply_7.msg="How exciting! I can't wait to win!"
+                forum.story_thread.replies.append(comp1_reply_7)
             pass
 
     if speedrun_c1==True:
@@ -311,6 +318,9 @@ label d2_dms:
 
                 "Neither":
                     pass
+
+
+
 
 
 label d2_dm_wicker:
@@ -482,7 +492,9 @@ label d2_dm_legendforce12:
     python:
         if d2lf12_read==False:
             d2lf12_reply=False
+        
         d2lf12_read==True
+
     legendforce12_nvl " I SAW THAT YOU'RE PARTICIPATING IN THE SPEEDRUN COMPETITION. "
     if speedrun_c1==True:
         legendforce12_nvl "IT'S GOOD TO BE EXCITED, BUT DON'T EXPECT TO WIN."
@@ -498,7 +510,7 @@ label d2_dm_legendforce12:
         "How should I respond?"
 
         "Thanks for the heads up! I don't plan on losing, though.":
-            $ d2lf12_reply=True
+            $ d2lf12_reply==True
             amelie_nvl "Thanks for the heads up! I don't plan on losing, though."
             legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
             amelie "Haha, can't disagree with that!"
@@ -506,7 +518,7 @@ label d2_dm_legendforce12:
             pass
 
         "I'm not too worried, but that doesn't mean I won't be practicing!":
-            $ d2lf12_reply=True
+            $ d2lf12_reply==True
             amelie_nvl "I'm not too worried, but that doesn't mean I won't be practicing!"
             legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
             amelie "This is going to be so much fun."
