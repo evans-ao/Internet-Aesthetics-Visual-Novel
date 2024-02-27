@@ -9,15 +9,14 @@ screen PhoneDialogue(dialogue, items=None):
     # Messenger screen
     frame:
         background None
-        xpos 962 ypos 150 
+        xpos 962 ypos 225 
 
-        xsize 2498
-        ysize 1876
+        xsize 2498 ysize 1876
         # Messenger screen
         frame:
-            ypos 0
             ysize 1300
             viewport:
+                ypos 80
                 mousewheel True
                 yinitial 1.0
                 vbox:
@@ -41,85 +40,82 @@ screen nvl_phonetext(dialogue,items):
         ypos 80
         
         $ prior_texter_who = None 
-        $ new_pos = 86
-        for id_d, texter in enumerate(dialogue):
-            # If it's the narrator talking
-            if texter.who == None: 
-                null height 30
-                $ new_pos = 500
-                text texter.what:
-                        xalign 0.5
-                        ypos new_pos
-                        xsize 650
-                        text_align 0.5
-                        italic True
-                        size 40
-                        slow_cps False
-                        id texter.what_id
-                        if texter.current and len(items)==0:
-                            at message_narrator
-                null height 30
-                
-            else:
-                if texter.who == MC_Name:
-                    $ message_frame = "images/Phone Assets/phone_send_frame.png"
-                else:
-                    $ message_frame = "images/Phone Assets/phone_received_frame.png"
-
-                hbox:
-                    ypos new_pos
-                    spacing 10
-                    if texter.who == MC_Name:
-                        box_reverse True
-                        xalign 1.0
-                    
-                    #If this is a new block of messages from a texter show icon 
-                    if prior_texter_who != texter.who:
-                        if texter.who == MC_Name:
-                            $ message_icon = "images/Phone Assets/phone_send_icon.png"
-                        else:
-                            $ message_icon = "images/Phone Assets/phone_received_icon.png"
-
-                        add message_icon:
-                            if texter.current  and len(items)==0:
-                                at message_appear_icon()
-                    else:
-                        null width 107
-
-                    vbox:
-                        yalign 1.0
-                        if texter.who != MC_Name and prior_texter_who != texter.who:
-                            text texter.who:
-                                size 30
-
-                        # physical frame of image
-                        frame:
-                            padding (20,20)
-                            background Frame(message_frame, 23,23,23,23)
-                            # xsize 750
+        vbox:
+            spacing 20
+            for id_d, texter in enumerate(dialogue):
+                # If it's the narrator talking
+                if texter.who == None: 
+                    null height 30
+                    text texter.what:
+                            xalign 0.5 xsize 650
+                            text_align 0.5 italic True
+                            size 40
+                            slow_cps False
+                            id texter.what_id
                             if texter.current and len(items)==0:
-                                if texter.who == MC_Name:
-                                    at message_appear(1)
-                                else:
-                                    at message_appear(-1)
-                            text texter.what:
-                                pos (0,0)
-                                # xsize 750
-                                slow_cps False
-                                size 45
+                                at message_narrator
+                    null height 30
+                    
+                else:
+                    if texter.who == MC_Name:
+                        $ message_frame = "images/Phone Assets/phone_send_frame.png"
+                    else:
+                        $ message_frame = "images/Phone Assets/phone_received_frame.png"
 
-                                if texter.who == MC_Name :
-                                    color "#ffffff"
-                                    text_align 1.0
-                                    xanchor 1.0
-                                    xpos 1.0
-                                else:
-                                    color "#000"
+                    hbox:
+                        spacing 10
+                        if texter.who == MC_Name:
+                            box_reverse True
+                            xalign 1.0
+                        
+                        #If this is a new block of messages from a texter show icon 
+                        if prior_texter_who != texter.who:
+                            if texter.who == MC_Name:
+                                $ message_icon = "images/Phone Assets/phone_send_icon.png"
+                            else:
+                                $ message_icon = "images/Phone Assets/phone_received_icon.png"
 
-                                    
-                                id texter.what_id
-                    $ new_pos += 250        
-            $ prior_texter_who = texter.who
+                            add message_icon:
+                                if texter.current  and len(items)==0:
+                                    at message_appear_icon()
+                        else:
+                            null width 110
+
+                        vbox:
+                            #yalign 1.0
+                            spacing 15
+                            if texter.who != MC_Name and prior_texter_who != texter.who:
+                                text texter.who:
+                                    size 48 color "#ffffff" bold True
+
+                            # physical frame of image
+                            frame:
+                                
+                                padding (50,50)
+                                background Frame(message_frame, 23,23,23,23)
+                                xsize 1400
+                                if texter.current and len(items)==0:
+                                    if texter.who == MC_Name:
+                                        at message_appear(1)
+                                    else:
+                                        at message_appear(-1)
+                                
+                                text texter.what:
+                                    pos (0,0)
+                                    slow_cps False
+                                    size 45
+
+                                    if texter.who == MC_Name :
+                                        color "#ffffff"
+                                        text_align 1.0
+                                        xanchor 1.0
+                                        xpos 1.0
+                                    else:
+                                        color "#000"
+
+                                        
+                                    id texter.what_id
+                $ prior_texter_who = texter.who
            
                     
 

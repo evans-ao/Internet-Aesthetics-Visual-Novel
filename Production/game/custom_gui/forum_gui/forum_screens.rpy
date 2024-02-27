@@ -1,7 +1,7 @@
 init offset = 1
 
 
-screen show_social_cost(thread_info):
+screen show_social_cost(battery_content):
     zorder 2 # game_ui_mechanics_order
     $ x_mouse, y_mouse = renpy.get_mouse_pos()
 
@@ -12,7 +12,8 @@ screen show_social_cost(thread_info):
         background "images/game ui/pop_up_social_battery.png"
 
         python:
-            current_social_cost = str(thread_info.social_cost) if not thread_info.has_payed_cost else "payed"
+            current_social_cost = str(battery_content.social_cost) if not battery_content.has_paid_cost else "paid"
+        
         text current_social_cost + "%":
             size 50 color "fff"
             xalign 0.4 yalign 0.5 
@@ -23,7 +24,7 @@ screen show_social_cost(thread_info):
 screen home_page():
     # Home Screen UI that loads the current day's thread
     viewport:
-        xpos 962 ypos 120 
+        xpos 962 ypos 168 
         xsize 2833 ysize 1885
         style_prefix "home"
         scrollbars "vertical"
@@ -42,6 +43,7 @@ screen home_page():
 
                 for thread_info in forum.todays_threads:
                     use threads_display(thread_info)
+                    
 
                 image "images/forum ui/hw/image_footer.png" xalign 0.5
 
@@ -49,11 +51,11 @@ screen home_page():
 
 style home_vscrollbar:
     base_bar None
-    thumb "images/forum ui/Figma UI Import/dev thumb.png"
+    thumb "images/forum ui/universal/arrow_scroll.png"
     thumb_offset 0
     top_gutter 75
     bottom_gutter 75
-    xmaximum 125
+    xmaximum 200
     ymaximum 1947
 
 
@@ -109,31 +111,46 @@ screen side_menu:
         no_btn = "images/forum ui/hw/dm_btn.png"
         selected_btn = no_btn
 
+        avatar_img = amelie_profile.user_avatar
+        has_avatar = not(str() == avatar_img)
+
         if forum.is_dm_accesible:
             selected_btn = yes_btn
         else: 
             selected_btn = no_btn
 
     frame:
-        xpos 0
-        ypos 358
-        xsize 801
-        ysize 1557
+        xpos 0 ypos 358
+        xsize 801 ysize 1557
         background "images/forum ui/hw/side_menu_bg.png"
+
+        frame:
+            xpos 55 ypos 480
+            xsize 735 ysize 100
+            background None
+            text amelie_profile.user_name:
+                size 50 color "#ffffff"
+                xalign 0.5 yalign 0.5
+
+        if has_avatar:
+            frame:
+                xsize 430 ysize 430
+                background Frame(avatar_img, 0,0,0,0)
+                xpos 205  ypos -10
+
+        
 
         imagebutton: 
             idle "images/forum ui/hw/home_btn_full_rect.png"
             action Function(forum.load_home)
             sensitive visual_novel.has_active_forum
-            xpos 250
-            ypos 678
+            xpos 250 ypos 678
 
         imagebutton: 
             idle selected_btn
             action Function(forum.load_current_dms)
             sensitive visual_novel.has_active_forum
-            xpos 55
-            ypos 1267
+            xpos 55 ypos 1267
 
 
 
@@ -173,16 +190,19 @@ screen top_menu:
 
 
 screen threads_display(thread_info):
+    python:
+        avatar_img = thread_info.user_profile.user_avatar
+        has_avatar = not(str() == avatar_img)
+
     zorder 1 # forum_ui_order
     # generate the mini thread UI displayed on the home page and past days
     frame:
-        xsize 2498
-        ysize 624
+        xsize 2498 ysize 624
         background "images/forum ui/hw/normal_thread_bg.png"
 
         text thread_info.title:
             xpos 440 ypos 22  
-            color "#828282" size 40
+            color "#828282" size 40 bold True
 
 
         # user and thread information
@@ -192,19 +212,28 @@ screen threads_display(thread_info):
             background None
 
             text thread_info.type:
-                xalign 0.5 ypos 30  
+                xalign 0.5 ypos 20  
                 color "#828282" size 40
+
+            if has_avatar:
+                frame:
+                    xsize 300 ysize 300
+                    xpos 40 ypos 80
+                    background Frame(avatar_img, 0,0,0,0)
+
 
             text thread_info.get_OP():
                 xalign 0.5 ypos 400  
                 color "#828282" size 40
         
+        #framed user short message
+        frame:
+            xpos 440 ypos 125 
+            xsize 1350 ysize 292
+            background None
 
-        text thread_info.msg: 
-            color "#828282" size 40
-            xpos 440 ypos 156 
-            xsize 1350
-
+            text thread_info.msg: 
+                color "#828282" size 48
 
         # button to see full thread
         imagebutton: 
@@ -215,6 +244,45 @@ screen threads_display(thread_info):
             hovered Show("show_social_cost",None,thread_info)
             unhovered Function(conditional_hide,"show_social_cost")
 
+        # reaction buttons
+        frame: 
+            xsize 560 ysize 624
+            xpos 1912
+            background None
+
+            vbox:
+                yalign 0.15 xalign 0.5
+                spacing 20
+                text "Top Reactions": 
+                    xalign 0.5  color "#ffffff" size 48 
+
+                vbox:
+                    xalign 0.5 spacing 60
+                    for reactable_emoji in thread_info.all_react_emojis:
+                        use emoji_reaction_btn(reactable_emoji)
+
+
+screen emoji_reaction_btn(reactable_emoji):
+
+    python:
+        emoji_img = forum.request_emoji(reactable_emoji)
+
+        # if not reactable_emoji.has_paid_cost:
+            # switch between selected emojis
+        #   pass
+
+    hbox:
+        spacing 42 xalign 0.5
+        imagebutton: 
+            idle emoji_img
+            action Function(forum.send_reaction,reactable_emoji)
+            sensitive visual_novel.has_active_forum
+            hovered Show("show_social_cost",None,reactable_emoji)
+            unhovered Function(conditional_hide,"show_social_cost")
+
+        text str(reactable_emoji.num_people_reacted): 
+            xalign 0.5  color "#ffffff" size 64 
+
 
 screen display_full_thread (thread_info):
     # takes a thread and generate the UI of
@@ -224,7 +292,7 @@ screen display_full_thread (thread_info):
     if check_thread:
 
         viewport:
-            xpos 962 ypos 120 
+            xpos 962 ypos 168 
             xsize 2833 ysize 1885
             style_prefix "thread"
             scrollbars "vertical"
@@ -247,7 +315,7 @@ screen display_full_thread (thread_info):
 
 style thread_vscrollbar:
     base_bar None
-    thumb "images/forum ui/Figma UI Import/dev thumb.png"
+    thumb "images/forum ui/universal/arrow_scroll.png"
     thumb_offset 0
     top_gutter 75
     bottom_gutter 75

@@ -36,7 +36,18 @@ init python:
 
         thread_1.replies = [intro_reply_1 ,intro_reply_2 ,intro_reply_3 ,intro_reply_4 , intro_reply_5 , intro_reply_6]
 
+        test_emoji_1 = ReactableEmojis("large smile", 10)
+        test_emoji_1.reaction_intent = "Excited"
         
+        test_emoji_2 = ReactableEmojis("hotdog", 4)
+        test_emoji_2.reaction_intent = "HOT"
+
+        test_emoji_3 = ReactableEmojis("no face", 2)
+        test_emoji_3.reaction_intent = "Distant"
+
+        thread_1.all_react_emojis = [test_emoji_1,test_emoji_2,test_emoji_3]
+
+
         thread_2 = make_thread(bingle_profile)   
         thread_2.title = "New Hallowed Winds game confirmed on Warbler!!"        
         thread_2.social_cost = 15

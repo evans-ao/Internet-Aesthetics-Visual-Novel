@@ -80,13 +80,66 @@ style say_dialogue:
 
 screen choice(items):
     frame:
-        xalign 0.5
-        yalign 0.5
-        vbox:
-            spacing 10
-            text "this is a tempoary menu lol"
-            for i in items:
-                textbutton i.caption action i.action
+        xsize 1817 ysize 1136
+        xalign 0.5 yalign 0.3
+        background None
+
+
+        # tranparent bg
+        frame:
+            xpos 80  
+            xsize 1737  ysize 1109
+            background Frame("images/visual novel ui/choice menus/choice_bg.png",23,23,23,23)
+
+            # window header & options
+            vbox:
+                xalign 0.5 ypos 311
+                frame:    
+                    xsize 1464 ysize 134
+                    background "images/visual novel ui/choice menus/header_block.png"
+
+                    text "Choose Below to Close this Window": 
+                        size 48  xalign 0.5 yalign 0.5
+                        color "#ffffff"
+
+                # option window
+                frame:
+                    xsize 1464 ysize 517
+                    background Frame("images/visual novel ui/choice menus/choice_windows.png", 23,23,23,23)
+                    
+                    frame: 
+                        xalign 0.5 yalign 0.5
+                        xsize 1200
+                        background None
+                        vbox:
+                            xalign 0.5 yalign 0.5
+                            spacing 30
+                            for choice in items:
+                                hbox:
+                                    xalign 0.5 spacing 80
+
+                                    image "images/visual novel ui/choice menus/option_bullet.png" yalign 0.5                                
+                                    textbutton choice.caption: 
+                                        action choice.action
+                                        text_size 48  xalign 0.5
+                                        text_color "#000000"
+                                    image "images/visual novel ui/choice menus/option_bullet.png" yalign 0.5
+
+            image "images/visual novel ui/choice menus/slanted_question.png":
+                xalign 0.97 yalign 0.95
+
+
+        # top section
+        frame:
+            xsize 1702 ysize 409
+            background "images/visual novel ui/choice menus/large_thought.png"
+
+            text "NEW THOUGHTS AND DECISIONS": 
+                size 48  xpos 150 ypos 80
+                color "#ffffff"
+
+            image "images/visual novel ui/choice menus/no_thoughts.png":
+                xpos 1408 yalign 0.3
 
 
 #    Default styling for choice menus in renpy

@@ -164,8 +164,15 @@ screen create_account():
             xsize 2325 ysize 209
             background "images/forum ui/login/hw/large_btn_bg.png"
 
-            imagebutton idle "images/forum ui/login/hw/large_btn.png" xpos 1202 yalign 0.5 action Jump("hw_day_1")
-            textbutton "Click To Continue" xpos 1071 yalign 0.5 text_color "#fff" action Jump("hw_day_1")
+            imagebutton idle "images/forum ui/login/hw/large_btn.png":
+                xpos 1202 yalign 0.5 
+                action Jump("hw_day_1")
+                sensitive visual_novel.has_active_forum
+
+            textbutton "Click To Continue": 
+                xpos 1071 yalign 0.5 text_color "#fff" 
+                action Jump("hw_day_1")
+                sensitive visual_novel.has_active_forum
 
 
 screen temp_pop_up(display_msg,x_size,y_size,x_align,y_pos):
@@ -221,9 +228,7 @@ screen temp_avatar_select():
                 action Function(avatar_select, black_star_img)
                 sensitive visual_novel.has_active_forum
                 xalign 0.8 yalign 0.8
-
         
-
 
 screen info_bar(text_info,text_value): 
     frame: 
@@ -270,7 +275,7 @@ screen screen_info():
 
 style login_vscrollbar:
     base_bar None
-    thumb "images/forum ui/login/hw/scrollbar.png"
+    thumb "images/forum ui/universal/arrow_scroll.png"
     thumb_offset 0
     top_gutter 10
     bottom_gutter 10

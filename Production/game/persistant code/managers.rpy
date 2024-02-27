@@ -27,6 +27,7 @@ init python:
             self.init_game_cofigs()
             self.amelie_profile = ForumProfile("Amelie", "ThreateningDesperado")
             self.context = "visual novel"
+            self.can_end_day = False
 
 
         def init_game_cofigs(self):
@@ -90,6 +91,7 @@ init python:
             self.name = "Visual Novel Manager"
             self.has_active_forum = True
             self.has_continue_flag = False
+            self.next_day = str()
 
 
         def hard_stop_story(self):
@@ -183,11 +185,39 @@ init python:
             # adding a transition switching from one screen
             pass
 
-        
+
+        def load_next_day(self):
+            if game_manager.can_end_day:
+                if visual_novel.next_day != str():
+                    renpy.jump(visual_novel.next_day)
+
+
         def load_home(self,has_buffer=False,buffer_timer=0.2):
             # bring up the home page with optional buffering
             self._clear_forum_stack()
+            #TODO
+            make_day_1_forum()
             renpy.show_screen("home_page")
+
+
+        def request_emoji(self,reactable_emoji):
+
+            if reactable_emoji.emoji_name in emoji_dict:
+                return emoji_dict[reactable_emoji.emoji_name]
+
+            return emoji_dict[hotdog]
+
+
+        def send_reaction(self,reactable_emoji):
+
+            if not reactable_emoji.has_paid_cost:
+                if game_manager.can_use_battery(reactable_emoji.social_cost):
+
+                    game_manager.drain_social_battery(reactable_emoji.social_cost)
+                    reactable_emoji.has_paid_cost = True
+                    amelie_profile.alignments.append(reactable_emoji.reaction_intent)
+            else:
+                visual_novel.not_enough_battery()
 
 
         def load_forum_vestiges(self):
@@ -218,10 +248,10 @@ init python:
             is_accessible = True
             social_cost = thread_info.social_cost
 
-            if not thread_info.has_payed_cost:
+            if not thread_info.has_paid_cost:
                 if game_manager.can_use_battery(social_cost):
                     game_manager.drain_social_battery(social_cost)
-                    thread_info.has_payed_cost = True
+                    thread_info.has_paid_cost = True
                     game_manager.amelie_profile.update_forum_perception(thread_info)
 
                 else:

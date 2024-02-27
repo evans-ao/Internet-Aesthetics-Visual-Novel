@@ -25,7 +25,7 @@ init python:
         def __init__(self, character_name, user_name, is_mod=False):
             # add a reply to the existing thread
             self.character_name = character_name
-            self.user_avatar = None
+            self.user_avatar = str()
             self.user_name = user_name
             self.activity = 0
             self.is_moderator = is_mod
@@ -52,6 +52,15 @@ init python:
             print(self.user_name)
             print("Alignments: " + str(self.alignments))
             print("Preferences: " + str(self.preferances))
+
+
+    class ReactableEmojis():
+        def __init__(self, emoji_name, num_reactions):
+            self.emoji_name = emoji_name
+            self.reaction_intent = str()
+            self.num_people_reacted = num_reactions
+            self.social_cost = 5
+            self.has_paid_cost = False
 
 
     class RespondableUserContent():
@@ -100,12 +109,13 @@ init python:
 
             self.type = "Text"
             self.social_cost = 0
-            self.has_payed_cost = False
+            self.has_paid_cost = False
             self.has_played_story = False
             self.preferances = list()
             self.alignments = list()
             self.is_story = False
             self.story_label_tag = str()
+            self.all_react_emojis = list() # of ReactableEmojis
 
 
         def get_social_cost(self):
