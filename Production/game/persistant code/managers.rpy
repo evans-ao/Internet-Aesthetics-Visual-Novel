@@ -68,6 +68,12 @@ init python:
             # remove an amount from social battery
             self.social_battery -= drain_amount
 
+            if self.social_battery <= 20:
+                game_manager.can_end_day = True
+
+            if self.can_end_day:
+                renpy.show_screen(window_bar)
+
 
         def can_use_battery(self, drain_amount):
             # check if the battery has enough to do an action
@@ -196,7 +202,7 @@ init python:
             # bring up the home page with optional buffering
             self._clear_forum_stack()
             #TODO
-            make_day_1_forum()
+            # make_day_1_forum()
             renpy.show_screen("home_page")
 
 

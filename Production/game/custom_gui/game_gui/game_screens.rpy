@@ -231,10 +231,47 @@ screen window_bar:
             imagebutton: 
                 xpos 3020 yalign 0.5
                 idle "images/game ui/large_close_btn.png"
-                action Function(forum.load_next_day)
+                action Function(renpy.show_screen,"end_day")
                 sensitive visual_novel.has_active_forum
                 #hovered Show("show_social_cost",None,reactable_emoji)
                 #unhovered Function(conditional_hide,"show_social_cost")
+
+
+screen end_day:
+
+    frame:
+        xsize 2200 ysize 608
+        xpos 1000 yalign 0.5
+        background "images/game ui/end_day_window.png"
+
+        text "Your Social Battery left: " + str(game_manager.social_battery) +"%": 
+            xalign 0.5 ypos 55 size 50 color "#CBCBCB" bold True
+
+        hbox:
+            ypos 287 xalign 0.5
+            spacing 123
+
+            frame:
+                xsize 620 ysize 160
+                background None
+                text "Wanna leave the forum for the day?:": 
+                    yalign 0.5 size 50 color "#828282" bold True
+
+            imagebutton:
+                ypos -50
+                idle "images/game ui/box_empty_btn.png"
+                action Hide("end_day") #Function(forum.load_next_day)
+                sensitive visual_novel.has_active_forum
+
+            text "--or--": 
+                ypos 50 size 50 color "#828282" bold True
+            
+            imagebutton: 
+                ypos -50
+                idle "images/game ui/box_full_btn.png"
+                action Function(forum.load_next_day)
+                sensitive visual_novel.has_active_forum
+
 
 
         

@@ -2,18 +2,6 @@
 init python:
     def make_day_1_forum():
         #making 4 normal threads for testing & 4 fake profiles
-
-        jared_profile = ForumProfile("hotdog_man", "hotdog_man")
-        legend_profile = ForumProfile("LEGENDFORCE12", "LEGENDFORCE12")
-        moment37_profile= ForumProfile("Moment37", "Moment37")
-        bingle_profile = ForumProfile("BingleBongle227", "BingleBongle227")
-        teamtila_profile = ForumProfile("teamtila", "teamtila")
-        hollowed_profile = ForumProfile("hollowed","hollowed")
-        azure_winds_profile = ForumProfile("azure_winds", "azure_winds")
-        bingle_profile = ForumProfile("BingleBongle227", "BingleBongle227")
-        faren_love_profile = ForumProfile("I love Faren", "FarenLove")
-        
-
         thread_1 = make_thread(jared_profile)   
         thread_1.title = "Introductions"
         thread_1.social_cost = 40
@@ -103,6 +91,7 @@ init python:
         day_1 = [thread_1,thread_2, thread_3, thread_4]
         forum.todays_threads = day_1
         forum.story_thread  = thread_1
+        forum.events_thread = thread_3
 
         game_manager.social_battery = 100
 

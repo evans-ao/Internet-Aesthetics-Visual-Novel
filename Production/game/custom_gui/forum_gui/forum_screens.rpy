@@ -138,13 +138,21 @@ screen side_menu:
                 background Frame(avatar_img, 0,0,0,0)
                 xpos 205  ypos -10
 
-        
-
         imagebutton: 
             idle "images/forum ui/hw/home_btn_full_rect.png"
             action Function(forum.load_home)
             sensitive visual_novel.has_active_forum
             xpos 250 ypos 678
+
+        
+        imagebutton: 
+            idle "images/forum ui/hw/events_btn_full_rect.png"
+            action Function(forum.load_events)
+            sensitive visual_novel.has_active_forum
+            hovered Show("show_social_cost",None,forum.events_thread)
+            unhovered Function(conditional_hide,"show_social_cost")
+            xpos 300 ypos 825
+
 
         imagebutton: 
             idle selected_btn
@@ -211,9 +219,9 @@ screen threads_display(thread_info):
             xsize 430 ysize 500
             background None
 
-            text thread_info.type:
-                xalign 0.5 ypos 20  
-                color "#828282" size 40
+            #text thread_info.type:
+            #    xalign 0.5 ypos 20  
+            #    color "#828282" size 40
 
             if has_avatar:
                 frame:
@@ -319,12 +327,17 @@ style thread_vscrollbar:
     thumb_offset 0
     top_gutter 75
     bottom_gutter 75
-    xmaximum 125
+    xmaximum 200
     ymaximum 1947
 
 
 screen full_normal_thread(thread_info):
+    python:
+        avatar_img = thread_info.user_profile.user_avatar
+        has_avatar = not(str() == avatar_img)
+    
     frame:
+    
         ypos 250
         xsize 2568
         ysize 1319
@@ -341,14 +354,21 @@ screen full_normal_thread(thread_info):
             xsize 1980
 
         # user and thread information
+
+        if has_avatar:
+            frame:
+                xsize 300 ysize 300
+                xpos 152 ypos 125
+                background Frame(avatar_img, 0,0,0,0)
+
         frame:  
             xpos 77 ypos 0
             xsize 430 ysize 500
             background None
 
-            text thread_info.type:
-                xalign 0.5 ypos 60  
-                color "#828282" size 40
+            #text thread_info.type:
+            #    xalign 0.5 ypos 60  
+            #    color "#828282" size 40
 
             text thread_info.get_OP():
                 xalign 0.5 ypos 450  
@@ -374,12 +394,28 @@ screen display_all_replies(thread_info):
             python:
                 fromated_indent = indent_value if indent_value < 1 else 1
                 indent_pos = (fromated_indent +1) * indent_size
-                reply_bg = all_reply_bgs[fromated_indent]
+                reply_bg = all_reply_bgs[0] # formated_indentat the moment
 
             frame:
                 xpos indent_pos
                 xsize 2150 ysize 650
                 background reply_bg
+
+                python:
+                    avatar_img = reply.user_profile.user_avatar
+                    has_avatar = not(str() == avatar_img)
+                
+
+
+                if has_avatar:
+                    frame:
+                        xsize 225 ysize 225
+                        xpos 50 yalign 0.5
+                        background Frame(avatar_img, 0,0,0,0)
+
+                text reply.user_profile.user_name: 
+                    color "#828282" size 40 bold True
+                    xpos 500 ypos 50 
 
                 text reply.msg: 
                     color "#828282" size 40

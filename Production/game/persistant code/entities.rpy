@@ -69,7 +69,6 @@ init python:
         """    
         def __init__(self, user_profile=None, short_msg="", msg="", title=""):
             self.user_profile = user_profile
-            # self.user_avatar = user_profile.user_avatar
             self.msg = msg
             self.short_msg = short_msg
             self.replies = list()
