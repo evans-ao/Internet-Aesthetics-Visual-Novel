@@ -104,6 +104,8 @@ label d2_intro:
         forum.load_forum_vestiges()
         forum.is_dm_accesible = True
         visual_novel.enable_forum()
+    
+    show amelie neutral zorder 3 at left  onlayer screens
 
     amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but I've been looking forward to this all day."
 
