@@ -12,20 +12,15 @@ label prologue:
     show amelie neutral zorder 4 at left  onlayer screens
     # show screen framed_bg
     
-    amelie "Six months ago, I thought I'd be graduating with all my friends today."
-    amelie "Instead, I'm here. Alone."
-    amelie "I know I needed to take this break."
-    amelie "I know that things would be so much worse if I hadn't left."
-    amelie "It's just hard to be away from my friends."
+    amelie "Six months ago, I thought I'd be graduating with all my friends today. Instead, I'm here. Alone."
+    amelie "I know I needed to take this break. I know that things would be so much worse if I hadn't left. It's just hard to be away from my friends."
     amelie "If I can even call them that. It's not like they've even tried to keep in touch." 
-    amelie "Even if they did, it's not like I would have anything to tell them about. Every day's the same thing, over and over again."
-    amelie "I'm so bored."
-    amelie "I'm so tired of being alone." 
-    amelie "Sitting here wallowing won't change anything, though. I need to do something about this."
+    amelie "Even if they did, it's not like I would have anything to tell them about. Every day's the same thing, over and over again. I'm so bored."
+    amelie "I'm so tired of being alone. Sitting here wallowing won't change anything, though. I need to do something about this." 
     amelie "Last time I was like this I joined a forum online. I think it helped a little. Maybe I should do that again?"
     amelie "…yeah, I should. If I can't be around my friends, why not make new ones?"
-    amelie "But what if the same thing happens again? I don't want to be let down again."
-    amelie "Well, never ventured, never gained. I might as well try it."
+    amelie "But what if the same thing happens again? I don't want to be let down again. ...Well, nothing ventured, nothing gained. I might as well try it."
+
 
     hide amelie neutral zorder 4 onlayer screens
 
