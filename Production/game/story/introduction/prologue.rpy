@@ -60,7 +60,7 @@ label prologue_signup:
     $ visual_novel.stop_forum()
 
     amelie "I forgot to reject cookies…at least this is convenient."
-    amelie "Under the Guise of Darkness, Hallowed Winds, or Biscuit Brigade. The ultimate decision."
+    amelie "Under the Guise of Darkness, Hallowed Winds, or Biscuit Brigade... the ultimate decision."
     amelie "I loved watching Under the Guise of Darkness when I was younger, but I fell behind on it during college. Some of the stuff on there might be anime spoilers for me."
     amelie "At the same time, I would love an excuse to catch up on the series."
     amelie "The Hallowed Winds series of games is amazing, but the community can be a bit intense. With how that factored into this gap year, it might be a good idea to avoid it."
@@ -110,8 +110,8 @@ label account_creation:
         "MainArcher":
             $ amelie_profile.user_name = "MainArcher"
 
-        "BlackStar":
-            $ amelie_profile.user_name = "BlackStar"
+        "DarkStar":
+            $ amelie_profile.user_name = "DarkStar"
 
 
     $ username = amelie_profile.user_name
@@ -127,8 +127,8 @@ label account_creation:
     if username == "MainArcher":
         amelie "I think [username] will fit well here. It's my go-to in gaming communities, after all."
 
-    if username == "BlackStar":
-        amelie "It's been a while since I used [username]. I used to love that character..."
+    if username == "DarkStar":
+        amelie "It's been a while since I used [username]. I used to love the character BlackStar..."
 
 
     #displaying on screen:
