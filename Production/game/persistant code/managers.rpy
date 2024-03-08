@@ -221,7 +221,7 @@ init python:
 
                     game_manager.drain_social_battery(reactable_emoji.social_cost)
                     reactable_emoji.has_paid_cost = True
-                    amelie_profile.alignments.append(reactable_emoji.reaction_intent)
+                    amelie_profile.emojis.append(reactable_emoji.reaction_intent)
             else:
                 visual_novel.not_enough_battery()
 
@@ -249,7 +249,7 @@ init python:
             checks if a social interation has already used the battery
             if not see if a social interaction can be done and proceed
 
-            This is also where alignments for Amelie are updated live
+            This is also where emojis for Amelie are updated live
             """
             is_accessible = True
             social_cost = thread_info.social_cost

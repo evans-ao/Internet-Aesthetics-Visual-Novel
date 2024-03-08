@@ -7,24 +7,28 @@
 #The first competition gets announced.
 #Potential first message from our second route character (who may not end up being LEGENDFORCE12 since the personality of his writing style and emails is different from the route we need for the story to blossom)
 
+#Working on fixing this up to work with new variable plans...
+
 init python:
     def make_day_2_forum():
         thread_1 = make_thread(faren_love_profile)
         thread_1.title = "Faren is HOT"
         thread_1.social_cost = 20
-        thread_1.alignments = ["anger","shocked"]
-        thread_1.preferances = ["guide","fan-fiction"]
+        thread_1.emojis = ["anger","shocked"]
+        thread_1.impressions = ["guide","fan-fiction"]
         thread_1.msg = """ Why haven't I seen anyone talking about this? Faren appreciation, anyone?"""
-        love_reply_1 = make_reply(hollowed_profile)
-        love_reply_1.msg = "dude what are you on? Faren is as ugly as they get"
-        love_reply_2 = make_reply(teamtila_profile)
-        love_reply_2.msg = "Are we looking at the same character? EDIT: Wait, did you join just to make this post?"
-        love_reply_3 = make_reply(faren_love_profile)
-        love_reply_3.msg = "FAREN IS NOT UGLY. He may have a lot of scars, but they're proof he's survived! His grizzled stubble makes him look rugged! That long blond hair…so well kept! So elegant! He's just the right amount of muscular too. Even if his appearance isn't to your taste, you have to admit personality wise he's mmph! Nothing quite like a clever guy who could cut you down physically or verbally."
-        love_reply_4 = make_reply(teamtila_profile)
-        love_reply_4.msg = "My eyes have been opened and I hate it"
+        love_reply_1 = make_reply(wicker_profile)
+        love_reply_1.msg = "It's definitely something to talk about! (^_^)''"
+        love_reply_2 = make_reply(hollowed_profile)
+        love_reply_2.msg = "dude what are you on? Faren is as ugly as they get"
+        love_reply_3 = make_reply(teamtila_profile)
+        love_reply_3.msg = "Are we looking at the same character? EDIT: Wait, did you join just to make this post?"
+        love_reply_4 = make_reply(faren_love_profile)
+        love_reply_4.msg = "FAREN IS NOT UGLY. He may have a lot of scars, but they're proof he's survived! His grizzled stubble makes him look rugged! That long blond hair…so well kept! So elegant! He's just the right amount of muscular too. Even if his appearance isn't to your taste, you have to admit personality wise he's mmph! Nothing quite like a clever guy who could cut you down physically or verbally."
+        love_reply_5 = make_reply(teamtila_profile)
+        love_reply_5.msg = "My eyes have been opened and I hate it"
         
-        thread_1.replies = [love_reply_1,love_reply_2,love_reply_3,love_reply_4]
+        thread_1.replies = [love_reply_1,love_reply_2,love_reply_3,love_reply_4, love_reply_5]
 
         thread_2= make_thread(teamtila_profile)
         thread_2.title= "Which team are you?"
@@ -105,7 +109,20 @@ label d2_intro:
         forum.is_dm_accesible = True
         visual_novel.enable_forum()
     
+    show screen story_overlay
     scene hw_bg
+    
+    python: 
+        renpy.show_screen("chapter_overlay","Day 2")
+        game_manager.show_laptop_ui()
+        renpy.pause()
+
+    hide screen chapter_overlay           
+    show screen forum_signup
+
+    hide screen story_overlay    
+    $ game_manager.switch_game_context("laptop")
+
     show amelie neutral zorder 3 at left  onlayer screens
 
     amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but I've been looking forward to this all day."
@@ -125,6 +142,7 @@ label d2_intro:
 #on the speedrunning thread
 label d2_speedrun_thread:
     python:
+        forum.load_full_thread(forum.story_thread)
         visual_novel.stop_forum()
         stillMakingReply = True 
     amelie "I've been interested enough in speedrunning Hallowed Winds to practice some of the skips in the past, but not enough to actually set up recording and timing a playthrough of the game."
@@ -558,9 +576,9 @@ label d2_t1:
             $ d2_t1reply=True
             #amelie's reply:
             amelie "What."
-            $ love_reply5=make_reply(amelie_profile)
-            $ love_reply5.msg="What."
-            $ thread_1.replies.append(love_reply5)
+            $ love_reply_6=make_reply(amelie_profile)
+            $ love_reply_6.msg="What."
+            $ thread_1.replies.append(love_reply_6)
             amelie "I just...what?"
             pass
 
@@ -569,6 +587,9 @@ label d2_t1:
             $ d2_t1reply=True
             #amelie's reply
             amelie "I see it now! D:"
+            $ love_reply_6=make_reply(amelie_profile)
+            $ love_reply_6.msg="I see it now! D:"
+            $ thread_1.replies.append(love_reply_6)
             amelie "I really wish I didn't see what FarenLove means, but I do."
             pass
 

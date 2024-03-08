@@ -13,8 +13,8 @@ init python:
         thread_1 = make_thread(jared_profile)   
         thread_1.title = "Introductions"
         thread_1.social_cost = 50
-        thread_1.alignments = ["happy","relived"]
-        thread_1.preferances = ["speed running"]
+        thread_1.emojis = ["happy","relived"]
+        thread_1.impressions = ["speed running"]
         thread_1.msg = """Hey everyone! This thread is here by popular demand, so feel free to introduce yourselves!"""
 
         intro_reply_1 = make_reply(legend_profile)
@@ -45,8 +45,8 @@ init python:
         thread_2 = make_thread(bingle_profile)   
         thread_2.title = "New Hallowed Winds game confirmed on Warbler!!"        
         thread_2.social_cost = 15
-        thread_2.alignments = ["self-concious","stressed", "worry"]
-        thread_2.preferances = ["drama","scorn"]
+        thread_2.emojis = ["self-concious","stressed", "worry"]
+        thread_2.impressions = ["drama","scorn"]
         thread_2.msg =  """Title says it all. Hallowdev did an AMA on Warbler and confirmed a new game is in the works. Hope everyone's having a nice day. I'll see you all with more news or once the game drops."""
         new_game_reply_1 = make_reply(legend_profile)
         new_game_reply_1.msg = "THIS SOUNDS LIKE IT'LL SUCK. IT'S TAKING A NEW DIRECTION IS JUST CODE FOR I WANT YOUR MONEY FOR A WORSE GAME. HALLOWDEV DOESN'T CARE ABOUT US ANYMORE."
@@ -70,8 +70,8 @@ init python:
         thread_4 = make_thread(azure_winds_profile)   
         thread_4.title = "Off-Topic: Look at my cat"
         thread_4.social_cost = 40
-        thread_4.alignments = ["anger","shocked"]
-        thread_4.preferances = ["guide","fan-fiction"]
+        thread_4.emojis = ["anger","shocked"]
+        thread_4.impressions = ["guide","fan-fiction"]
         thread_4.msg = """ (IMG to be added with more polish) LOOK AT HIM!!!"""
         cat_reply_1 = make_reply(moment37_profile)
         cat_reply_1.msg = "super cute!"
@@ -118,7 +118,7 @@ label hw_day_1:
         forum.load_forum_vestiges()
 
         forum.is_dm_accesible = True
-        forum.current_dms_screen = "hw_hotdogman_dm_day_1"
+        forum.current_dms_screen = "day1_hdm"
 
         visual_novel.enable_forum()
 
@@ -132,15 +132,26 @@ label hw_day_1:
 
 label day1_explore_forum:
 
-
     python:
         if has_2nd_message:
             forum.is_dm_accesible = True
             forum.current_dms_screen = "day1_mdm"
             forum.load_forum_vestiges()
 
+    if amelie_profile.is_read == list():
+        amelie "I have a message already? Maybe I should read it."
+
+#for now, to force the player into the introduction thread...
+    
+    elif not has_2nd_message:
+        amelie "Okay, now to check out introductions..."
+
+        jump day_1_intro_thread
+
     if has_2nd_message:
-        amelie "Oh I got another message"
+        amelie "Oh, another message? That was fast."
+
+
 
     $ visual_novel.stop_until_forum_precondition()
     amelie "You shouldn't see this"
@@ -161,8 +172,8 @@ label day1_hdm:
         if amelie_profile.user_name == "MainArcher":
             username = "MainArchet"
 
-        if amelie_profile.user_name == "BlackStar":
-            username = "BlackStart"
+        if amelie_profile.user_name == "DarkStar":
+            username = "DarkStart"
 
     hotdog_man_nvl "Welcome to the Hallowed Winds section of the Hot Dog 
     Stand! We're happy to see you here, [username] Feel free 
@@ -171,7 +182,7 @@ label day1_hdm:
     the better! "
 
     hotdog_man_nvl " Enjoy the forums, fellow Hallowed Winds fan!"
-
+    $ amelie_profile.is_read.append("day1_hdm")
 
     $ forum.load_home()
     $ visual_novel.enable_forum()
@@ -183,7 +194,7 @@ label day1_hdm:
     amelie "No, it's spelled correctly there. Did they hand-type this message?"
     amelie "That's kind of weird..."
 
-    $ has_2nd_message = True
+
 
     hide amelie neutral onlayer screens
 
@@ -192,7 +203,7 @@ label day1_hdm:
 
 
 label day1_mdm:
-    $ d1dm_read = True
+    $ amelie_profile.is_read.append("D1_DM_M37")
     $ has_2nd_message = False
 
     show amelie neutral zorder 3 at left  onlayer screens
@@ -209,16 +220,21 @@ label day1_mdm:
         "How should I respond?"
 
         "Hello! I'm a fan of your streams, so it's nice to see you here. I'm really excited to be here.":
+            $ amelie_profile.impressions.append("fan")
+            $ amelie_profile.replies_made.append("D1_DM_M37")
             amelie_nvl "Hello! I'm a fan of your streams, so it's nice to see you here. I'm really excited to be here."
             moment37_nvl "oh, a fan! nice. i hope we don't disappoint you lol. i'll see you around!"            #+1 point
 
 
         "Hey, thanks! I'll let you know if I need anything.":
             #+1 point
+            $ amelie_profile.replies_made.append("D1_DM_M37")
             amelie_nvl "Hey, thanks! I'll let you know if I need anything."
             moment37_nvl "haha, you got it. see you around!"
         
         "Thanks, but I think I've got this.":
+            $ amelie_profile.impressions.append("jerkish")
+            $ amelie_profile.replies_made.append("D1_DM_M37")
             amelie_nvl "Thanks, but I think I've got this."
             moment37_nvl "offer still stands, see you around!"
 
@@ -230,7 +246,9 @@ label day1_mdm:
 
 
 label day_1_intro_thread:
+    
     python:
+        forum.load_full_thread(forum.story_thread)
         has_2nd_message = True
         visual_novel.stop_forum()
         stillMakingReply = True 
@@ -254,10 +272,12 @@ label day_1_intro_thread:
             nickname_1 = "Archer"
             nickname_2 = "Main"
 
-        if amelie_profile.user_name == "BlackStar":
-            nickname_1 = "Star"
-            nickname_2 = "Dark"
+        if amelie_profile.user_name == "DarkStar":
+            nickname_1 = "Dark"
+            nickname_2 = "Star"
+            
     
+
     show amelie neutral zorder 3 at left  onlayer screens
     amelie "I shouldn't overthink it, but this is the first impression people 
     will get of me, so I gotta make it good."
@@ -315,6 +335,8 @@ label day_1_intro_thread:
                 $ amelie_intro_reply = str()
 
     amelie "I should check out the rest of the threads..."
+
+    
     
     python: 
         print(str(forum.story_thread))
@@ -331,5 +353,5 @@ label day_1_intro_thread:
 
     jump day1_explore_forum 
 
-    label end_forum_day:
-        return
+label end_forum_day:
+    jump d2_intro

@@ -20,8 +20,8 @@ label prologue:
     amelie "Even if they did, it's not like I would have anything to tell them about. {cps=*0.5}Every day's the same thing, over and over again. I'm so bored{/cps}."
     amelie "{color=#cf5300ff}I'm so tired of being alone.{/color} Sitting here wallowing won't change anything, though. {color=#00deb5ff} I need to {i}do something{/i} about this.{/color}" 
     amelie "Last time I was like this I joined a forum online. I think it helped a little. Maybe I should do that again?"
-    amelie "{cps=*0.5}…yeah, I should.{/cps}{color=#00deb5ff}If I can't be around my friends, why not make new ones?{/color}"
-    amelie "{color=#cf5300ff}{cps=*2}But what if the same thing happens again? I don't want to be let down again.{/cps}{/color} {cps=*0.25}...{/cps}{cps=*0.75}Well, nothing ventured, nothing gained. I might as well try it.{/cps}"
+    amelie "{cps=*0.5}…yeah, I should.{/cps}{color=#00deb5ff} If I can't be around my friends, why not make new ones?{/color}"
+    amelie "{color=#cf5300ff}{cps=*2}But what if the same thing happens again? I don't want to be let down again.{/cps}{/color}{cps=*0.25}...{/cps}{cps=*0.75} Well, nothing ventured, nothing gained. I might as well try it.{/cps}"
 
 
     hide amelie neutral zorder 4 onlayer screens
@@ -48,6 +48,8 @@ label prologue_signup:
     show amelie neutral zorder 4 at left  onlayer screens
 
  
+    $ visual_novel.stop_forum()
+
     amelie "I've browsed some of the forums on The Hot Dog Stand. That seems like a good starting place."
 
     #"Welcome to The Hot Dog Stand!" create account button on screen here, this is a center text thing, possibly just an image
@@ -57,8 +59,6 @@ label prologue_signup:
     #Hallowed Winds
     #Biscuit Brigade
    
-    $ visual_novel.stop_forum()
-
     amelie "I forgot to reject cookies…at least this is convenient."
     amelie "Under the Guise of Darkness, Hallowed Winds, or Biscuit Brigade... the ultimate decision."
     amelie "I loved watching Under the Guise of Darkness when I was younger, but I fell behind on it during college. Some of the stuff on there might be anime spoilers for me."

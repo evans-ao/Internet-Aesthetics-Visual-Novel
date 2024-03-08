@@ -36,8 +36,8 @@ init python:
         thread_1 = make_thread(user_1)   
         thread_1.title = "Vizual Killah"
         thread_1.social_cost = 2
-        thread_1.alignments = ["happy","relived"]
-        thread_1.preferances = ["speed running"]
+        thread_1.emojis = ["happy","relived"]
+        thread_1.impressions = ["speed running"]
         thread_1.msg = """
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -49,8 +49,8 @@ init python:
         thread_2 = make_thread(user_2)   
         thread_2.title = "Mad Hunter"        
         thread_2.social_cost = 8
-        thread_2.alignments = ["self-concious","stressed", "worry"]
-        thread_2.preferances = ["drama","scorn"]
+        thread_2.emojis = ["self-concious","stressed", "worry"]
+        thread_2.impressions = ["drama","scorn"]
         thread_2.msg =  """
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -71,8 +71,8 @@ init python:
         thread_4 = make_thread(user_3)   
         thread_4.title = "Amazing Commander"
         thread_4.social_cost = 4
-        thread_4.alignments = ["anger","shocked"]
-        thread_4.preferances = ["guide","fan-fiction"]
+        thread_4.emojis = ["anger","shocked"]
+        thread_4.impressions = ["guide","fan-fiction"]
         thread_4.msg = """ 
         Ornare quam viverra orci sagittis eu volutpat. Eu consequat
             ac felis donec et odio pellentesque diam volutpat. Integer malesuada nunc 

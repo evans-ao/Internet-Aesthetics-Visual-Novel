@@ -29,8 +29,9 @@ init python:
             self.user_name = user_name
             self.activity = 0
             self.is_moderator = is_mod
-            self.preferances = list()
-            self.alignments = list()
+            self.impressions = list()
+            self.emojis = list()
+            self.is_read = list()
             self.friends = set()
             self.threads_made = list()
             self.replies_made = list()
@@ -43,15 +44,15 @@ init python:
 
         def update_forum_perception(self, reaction):
             """
-            adds preferences and alignments form reactions
+            adds preferences and emojis form reactions
             on the forum to a user profile
             reactions count as expanding threads, clicking on polls, emojs, and more
             """
-            self.alignments.extend(reaction.alignments)
-            self.preferances.extend(reaction.preferances)
+            self.emojis.extend(reaction.emojis)
+            self.impressions.extend(reaction.impressions)
             print(self.user_name)
-            print("Alignments: " + str(self.alignments))
-            print("Preferences: " + str(self.preferances))
+            print("emojis: " + str(self.emojis))
+            print("Preferences: " + str(self.impressions))
 
 
     class ReactableEmojis():
@@ -110,8 +111,8 @@ init python:
             self.social_cost = 0
             self.has_paid_cost = False
             self.has_played_story = False
-            self.preferances = list()
-            self.alignments = list()
+            self.impressions = list()
+            self.emojis = list()
             self.is_story = False
             self.story_label_tag = str()
             self.all_react_emojis = list() # of ReactableEmojis
