@@ -134,27 +134,17 @@ label account_creation:
     #displaying on screen:
     #Pick an avatar!
 
-    #there should be 4 images here--one of Amelie's default face, 3 others. Perhaps a bow and arrow, a black star, and an alpaca wearing sunglasses? And maybe like a cowboy hat or something to represent the ThreateningDesperado amelie_profile.user_name, dunno.
+    #there should be 4 images here--one of Amelie's default face, 3 others. 
+    #Perhaps a bow and arrow, a black star, 
+    #and an alpaca wearing sunglasses? And maybe like a cowboy hat or something to represent the ThreateningDesperado amelie_profile.user_name, dunno.
 
-    
 
     #should we have a title/logo page here?
-    
+    hide amelie neutral onlayer screens
+
     python:
         renpy.show_screen("create_account")
         visual_novel.enable_forum()
         visual_novel.stop_until_forum_precondition()
     
-    jump new_in_hw_forum
-
-
-label new_in_hw_forum:
-    #after the player has clicked an avatar, they should get a screen to display with their chosen amelie_profile.user_name on it, saying something like:
-    #Welcome, [insert amelie_profile.user_name here], to the Hallowed Winds forum!
-    #and with a button below that says "Begin Exploring"
-    #clicking that will redirect to the forum home screen
-    #we definitely should have a pause here and have a little notification thing pop up for the private messages
-    
-    $ visual_novel.stop_until_forum_precondition()
-
-    return
+    jump hw_day_1

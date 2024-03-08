@@ -37,9 +37,18 @@ screen home_page():
 
             # generate threads
             vbox:
-                spacing 150            
+                spacing 150 
                 
                 image "images/forum ui/hw/hw_logo.png" xalign 0.5
+
+                if forum.home_page_notice != None:
+                    frame:
+                        xalign 0.5 xsize 2833
+
+                        text forum.home_page_notice:
+                            xalign 0.5 yalign 0.5 xsize 2700
+                            color "#ffffff" size 40
+
 
                 for thread_info in forum.todays_threads:
                     use threads_display(thread_info)
@@ -144,14 +153,14 @@ screen side_menu:
             sensitive visual_novel.has_active_forum
             xpos 250 ypos 678
 
-        
-        imagebutton: 
-            idle "images/forum ui/hw/events_btn_full_rect.png"
-            action Function(forum.load_events)
-            sensitive visual_novel.has_active_forum
-            hovered Show("show_social_cost",None,forum.events_thread)
-            unhovered Function(conditional_hide,"show_social_cost")
-            xpos 300 ypos 825
+        if forum.events_thread != None:
+            imagebutton: 
+                idle "images/forum ui/hw/events_btn_full_rect.png"
+                action Function(forum.load_events)
+                sensitive visual_novel.has_active_forum
+                hovered Show("show_social_cost",None,forum.events_thread)
+                unhovered Function(conditional_hide,"show_social_cost")
+                xpos 300 ypos 825
 
 
         imagebutton: 

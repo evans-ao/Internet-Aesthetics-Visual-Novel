@@ -30,7 +30,7 @@ init python:
         test_emoji_2 = ReactableEmojis("hotdog", 4)
         test_emoji_2.reaction_intent = "HOT"
 
-        test_emoji_3 = ReactableEmojis("no face", 2)
+        test_emoji_3 = ReactableEmojis("heart", 2)
         test_emoji_3.reaction_intent = "Distant"
 
         thread_1.all_react_emojis = [test_emoji_1,test_emoji_2,test_emoji_3]
@@ -140,7 +140,7 @@ label chapter_1_login:
     return
 
 
-label hw_day_1:
+label old_hw_day_1:
     scene hw_bg
 
     python:
@@ -167,7 +167,7 @@ label hw_day_1:
     return
 
 
-label hw_hotdogman_dm_day_1:
+label old_hw_hotdogman_dm_day_1:
     $ visual_novel.stop_forum()
 
     hotdog_man_nvl "Welcome to the Hallowed Winds section of the Hot Dog 

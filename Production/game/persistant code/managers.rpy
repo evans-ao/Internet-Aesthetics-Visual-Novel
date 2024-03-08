@@ -25,7 +25,6 @@ init python:
             self.day = 0
             self.social_battery = 100
             self.init_game_cofigs()
-            self.amelie_profile = ForumProfile("Amelie", "ThreateningDesperado")
             self.context = "visual novel"
             self.can_end_day = False
 
@@ -68,11 +67,11 @@ init python:
             # remove an amount from social battery
             self.social_battery -= drain_amount
 
-            if self.social_battery <= 20:
+            if self.social_battery <= 40:
                 game_manager.can_end_day = True
 
             if self.can_end_day:
-                renpy.show_screen(window_bar)
+                renpy.show_screen("window_bar")
 
 
         def can_use_battery(self, drain_amount):
@@ -163,6 +162,7 @@ init python:
             self.all_forum_profiles = dict()
             self.current_dms_screen = None
             self.is_dm_accesible = False
+            self.home_page_notice = str()
 
 
         def _clear_forum_stack(self):
@@ -211,7 +211,7 @@ init python:
             if reactable_emoji.emoji_name in emoji_dict:
                 return emoji_dict[reactable_emoji.emoji_name]
 
-            return emoji_dict[hotdog]
+            return emoji_dict["hotdog"]
 
 
         def send_reaction(self,reactable_emoji):
@@ -258,7 +258,7 @@ init python:
                 if game_manager.can_use_battery(social_cost):
                     game_manager.drain_social_battery(social_cost)
                     thread_info.has_paid_cost = True
-                    game_manager.amelie_profile.update_forum_perception(thread_info)
+                    amelie_profile.update_forum_perception(thread_info)
 
                 else:
                     is_accessible = False
