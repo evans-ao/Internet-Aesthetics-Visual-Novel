@@ -18,7 +18,7 @@ init python:
 
     # antagonist
     jared_profile = ForumProfile("hotdog_man", "hotdog_man",True)
-    jared_profile.user_avatar = "images/characters/avatars/hw_avatars/azure_avatar.png"
+    jared_profile.user_avatar = "images/characters/avatars/hw_avatars/jared_avatar.png"
 
 
 
@@ -38,16 +38,18 @@ define azure_winds_nvl = Character("azure_winds",kind=nvl)
 
 init python:
     # main characters of HW forum
+    wicker_profile= ForumProfile ("wicker", "wicker-scarecrow")
+    wicker_profile.user_avatar="images/characters/avatars/hw_avatars/wicker_avatar.png"
 
-    azure_winds_profile = ForumProfile("azure_winds", "azure_winds",True)
-    azure_winds_profile.user_avatar = "images/characters/avatars/hw_avatars/azure_avatar.png"
+    legend_profile = ForumProfile("LEGENDFORCE12", "LEGENDFORCE12")
+    legend_profile.user_avatar = "images/characters/avatars/hw_avatars/legend_avatar.png"
+
     moment37_profile= ForumProfile("Moment37", "Moment37",True)
     moment37_profile.user_avatar = "images/characters/avatars/hw_avatars/moment37_avatar.png"
 
 
     # characters only in the forum and nowhere else
-    legend_profile = ForumProfile("LEGENDFORCE12", "LEGENDFORCE12")
-    legend_profile.user_avatar = "images/characters/avatars/hw_avatars/legend_avatar.png"
+
 
     bingle_profile = ForumProfile("BingleBongle227", "BingleBongle227")
     bingle_profile.user_avatar = "images/characters/avatars/hw_avatars/bingle_avatar.png"
@@ -70,7 +72,10 @@ init python:
     faren_love_profile = ForumProfile("I love Faren", "FarenLove")
     faren_love_profile.user_avatar = "images/characters/avatars/hw_avatars/faren_love_avatar.png"
 
-    wicker_profile= ForumProfile ("wicker", "wicker-scarecrow")
+    
+
+    azure_winds_profile = ForumProfile("azure_winds", "azure_winds",True)
+    azure_winds_profile.user_avatar = "images/characters/avatars/hw_avatars/azure_avatar.png"
     #wicker_profile.user_avatar=""
 # Under the Guise of Darfkness 
 # Biscuit Brigade: Rap Group
