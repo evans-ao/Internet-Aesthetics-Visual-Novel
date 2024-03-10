@@ -64,7 +64,7 @@ screen forum_signup():
                     xpos 82 ypos 132
                     background "images/forum ui/login/large_window.png"
 
-                    text "You might like our coommunities for:":
+                    text "You might like our communities for:":
                         color "#ffffff" size 54
                         xalign 0.5 ypos 30
 
@@ -93,7 +93,7 @@ screen forum_signup():
                         sensitive visual_novel.has_active_forum
                         xalign 0.5 ypos 550
 
-                    $ login_temp_msg = "Only Hallowed Winds is avilable now"
+                    $ login_temp_msg = "Only Hallowed Winds is available now"
                     use temp_pop_up(login_temp_msg,1100,150, 0.5, 700)
 
 
