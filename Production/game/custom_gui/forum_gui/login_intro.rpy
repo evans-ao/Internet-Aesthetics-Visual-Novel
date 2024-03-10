@@ -74,9 +74,11 @@ screen forum_signup():
                         sensitive visual_novel.has_active_forum
                         xpos 91 ypos 204
 
-                    text "Biscuit Brigade: UK Rap":
-                        color "#000000" size 54
-                        xpos 700 ypos 300
+                    imagebutton:
+                        #biscuit brigade logo
+                        idle "images/forum ui/login/logo_bb.png"
+                        sensitive visual_novel.has_active_forum
+                        xpos 900 ypos 204
 
                     hbox:
                         xalign 0.5 ypos 493
@@ -85,9 +87,11 @@ screen forum_signup():
                         text "or" color "#000000" size 54 yalign 0.5
                         image "images/forum ui/login/small_divider.png" yalign 0.5
 
-                    text "UTGOD: Under the Guise Of Darkness:":
-                        color "#000000" size 54
-                        xalign 0.5 ypos 598
+                    imagebutton:
+                        #utgod logo
+                        idle "images/forum ui/login/utgod_logo.png"
+                        sensitive visual_novel.has_active_forum
+                        xalign 0.5 ypos 550
 
                     $ login_temp_msg = "Only Hallowed Winds is avilable now"
                     use temp_pop_up(login_temp_msg,1100,150, 0.5, 700)
