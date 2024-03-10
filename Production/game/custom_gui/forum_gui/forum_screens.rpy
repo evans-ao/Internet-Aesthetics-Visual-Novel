@@ -305,7 +305,6 @@ screen display_full_thread (thread_info):
     # takes a thread and generate the UI of
     # a full page with its replies and interactions
     $ check_thread = thread_info is not None
-    $ print(thread_info)
     if check_thread:
 
         viewport:

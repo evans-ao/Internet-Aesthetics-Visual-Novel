@@ -5,8 +5,8 @@ init python:
         thread_1 = make_thread(jared_profile)   
         thread_1.title = "Introductions"
         thread_1.social_cost = 40
-        thread_1.alignments = ["happy","relived"]
-        thread_1.preferances = ["speed running"]
+        thread_1.emojis = ["happy","relived"]
+        thread_1.impressions = ["speed running"]
         thread_1.msg = """Hey everyone! This thread is here by popular demand, so feel free to introduce yourselves!"""
 
         intro_reply_1 = make_reply(legend_profile)
@@ -39,8 +39,8 @@ init python:
         thread_2 = make_thread(bingle_profile)   
         thread_2.title = "New Hallowed Winds game confirmed on Warbler!!"        
         thread_2.social_cost = 15
-        thread_2.alignments = ["self-concious","stressed", "worry"]
-        thread_2.preferances = ["drama","scorn"]
+        thread_2.emojis = ["self-concious","stressed", "worry"]
+        thread_2.impressions = ["drama","scorn"]
         thread_2.msg =  """Title says it all. Hallowdev did an AMA on Warbler and confirmed a new game is in the works. Hope everyone's having a nice day. I'll see you all with more news or once the game drops."""
         new_game_reply_1 = make_reply(legend_profile)
         new_game_reply_1.msg = "THIS SOUNDS LIKE IT'LL SUCK. IT'S TAKING A NEW DIRECTION IS JUST CODE FOR I WANT YOUR MONEY FOR A WORSE GAME. HALLOWDEV DOESN'T CARE ABOUT US ANYMORE."
@@ -54,8 +54,8 @@ init python:
         thread_3 = make_thread(faren_love_profile)
         thread_3.title = "Faren is HOT"
         thread_3.social_cost = 30
-        thread_3.alignments = ["anger","shocked"]
-        thread_3.preferances = ["guide","fan-fiction"]
+        thread_3.emojis = ["anger","shocked"]
+        thread_3.impressions = ["guide","fan-fiction"]
         thread_3.msg = """ Why haven't I seen anyone talking about this? Faren appreciation, anyone?"""
         love_reply_1 = make_reply(hollowed_profile)
         love_reply_1.msg = "dude what are you on? Faren is as ugly as they get"
@@ -71,8 +71,8 @@ init python:
         thread_4 = make_thread(azure_winds_profile)   
         thread_4.title = "Off-Topic: Look at my cat"
         thread_4.social_cost = 10
-        thread_4.alignments = ["anger","shocked"]
-        thread_4.preferances = ["guide","fan-fiction"]
+        thread_4.emojis = ["anger","shocked"]
+        thread_4.impressions = ["guide","fan-fiction"]
         thread_4.msg = """ (IMG to be added with more polish) LOOK AT HIM!!!"""
         cat_reply_1 = make_reply(moment37_profile)
         cat_reply_1.msg = "super cute!"
