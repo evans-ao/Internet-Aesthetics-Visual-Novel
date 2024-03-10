@@ -131,6 +131,9 @@ label hw_day_1:
 
 
 label day1_explore_forum:
+    #this needs to be fixed, currently breaks after replying and reading M37's dm
+    #breaks by pulling up HDM's DM again, then displaying forum, then looping back to display the DMs
+    #really not sure what's happening there, sorry. -CJ
 
     python:
         if has_2nd_message:
@@ -138,12 +141,13 @@ label day1_explore_forum:
             forum.current_dms_screen = "day1_mdm"
             forum.load_forum_vestiges()
 
-    if amelie_profile.is_read == list():
-        amelie "I have a message already? Maybe I should read it."
+
+    if "day1_hdm" not in amelie_profile.is_read:
+        amelie "Wait, I have a message already? Maybe I should read it."
 
 #for now, to force the player into the introduction thread...
-    
-    elif not has_2nd_message:
+
+    if "d1_intro_reply" not in amelie_profile.replies_made:
         amelie "Okay, now to check out introductions..."
 
         jump day_1_intro_thread
@@ -151,12 +155,6 @@ label day1_explore_forum:
     if has_2nd_message:
         amelie "Oh, another message? That was fast."
 
-
-
-    $ visual_novel.stop_until_forum_precondition()
-    amelie "You shouldn't see this"
-
-    return
 
 
 label day1_hdm:
@@ -290,13 +288,13 @@ label day_1_intro_thread:
             amelie "I'm [username], but you can call me "
 
             "[nickname_1]":
-                $ amelie_intro_reply += nickname_1 
+                $ amelie_intro_reply += nickname_1 + "."
             
             "[nickname_2]":
-                $ amelie_intro_reply += nickname_2 
+                $ amelie_intro_reply += nickname_2 + "."
             
             "[nickname_3]":
-                $ amelie_intro_reply += nickname_3 
+                $ amelie_intro_reply += nickname_3 + "."
 
         # second sentence
         $ amelie_intro_reply += " I'm here because "
@@ -314,7 +312,7 @@ label day_1_intro_thread:
             amelie " Hm, what else…"
      
             "I can't wait to start posting!":
-                $ amelie_intro_reply += " I can't wait to start posting!." 
+                $ amelie_intro_reply += " I can't wait to start posting!" 
             
             "I look forward to facing you on the leaderboards!":
                 $ amelie_intro_reply += " I look forward to facing you on the leaderboards!" 
@@ -347,7 +345,8 @@ label day_1_intro_thread:
 
         forum.load_full_thread(forum.story_thread)
         visual_novel.enable_forum()
-
+        amelie_profile.is_read.append("d1_intro")
+        amelie_profile.replies_made.append("d1_intro_reply")
 
     hide amelie neutral onlayer screens
 

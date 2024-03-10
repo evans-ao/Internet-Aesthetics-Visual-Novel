@@ -1,102 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('images/hw/hw_logo.png') at 0x0000000005536370>:
-  File "game/story/introduction/prologue.rpy", line 78, in script
-    $ visual_novel.stop_until_forum_precondition()
-  File "game/story/introduction/prologue.rpy", line 78, in <module>
-    $ visual_novel.stop_until_forum_precondition()
-  File "game/persistant code/managers.rpy", line 138, in stop_until_forum_precondition
-    renpy.pause()
-OSError: Couldn't find file 'images/hw/hw_logo.png'.
+While running game code:
+  File "game/story/introduction/hw_day_1.rpy", line 253, in script
+    python:
+  File "game/story/introduction/hw_day_1.rpy", line 254, in <module>
+    forum.load_full_thread(forum.story_thread)
+  File "game/persistant code/managers.rpy", line 271, in load_full_thread
+    if self.has_battery_interaction(thread_info):
+  File "game/persistant code/managers.rpy", line 255, in has_battery_interaction
+    social_cost = thread_info.social_cost
+AttributeError: 'int' object has no attribute 'social_cost'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/introduction/prologue.rpy", line 78, in script
-    $ visual_novel.stop_until_forum_precondition()
+  File "game/story/introduction/hw_day_1.rpy", line 253, in script
+    python:
   File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\ast.py", line 1138, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\python.py", line 1122, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/story/introduction/prologue.rpy", line 78, in <module>
-    $ visual_novel.stop_until_forum_precondition()
-  File "game/persistant code/managers.rpy", line 138, in stop_until_forum_precondition
-    renpy.pause()
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\core.py", line 3582, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\core.py", line 4175, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\core.py", line 2782, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\screen.py", line 731, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 1064, in render
-    surf = render(d, rw, height - y, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 888, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\behavior.py", line 948, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\layout.py", line 1338, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\im.py", line 676, in render
-    return cache.get(self, render=True)
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\im.py", line 330, in get
-    surf = image.load()
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\im.py", line 803, in load
-    raise e
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\display\im.py", line 757, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "C:\Users\carol\Downloads\renpy-8.1.3-sdk\renpy\loader.py", line 833, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/hw/hw_logo.png'.
+  File "game/story/introduction/hw_day_1.rpy", line 254, in <module>
+    forum.load_full_thread(forum.story_thread)
+  File "game/persistant code/managers.rpy", line 271, in load_full_thread
+    if self.has_battery_interaction(thread_info):
+  File "game/persistant code/managers.rpy", line 255, in has_battery_interaction
+    social_cost = thread_info.social_cost
+AttributeError: 'int' object has no attribute 'social_cost'
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.1.3.23091805
 Production 1.0
-Sat Mar  9 19:11:02 2024
+Sat Mar  9 20:07:34 2024
