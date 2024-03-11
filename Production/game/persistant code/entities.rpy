@@ -31,7 +31,7 @@ init python:
             self.is_moderator = is_mod
             self.impressions = list()
             self.emojis = list()
-            self.is_read = list()
+            self.is_read = []
             self.friends = set()
             self.threads_made = list()
             self.replies_made = list()
