@@ -15,13 +15,13 @@ label prologue:
     #control text speed: {cps=20}Fixed Speed{/cps} {cps=*2}Double Speed{/cps}
 
     amelie "Six months ago, I thought I'd be graduating with all my friends today. Instead, I'm here.{cps=*0.25} Alone. {/cps}"
-    amelie "{cps=*2}I know I needed to take this break. I know that things would be so much worse if I hadn't left.{/cps} It's just hard to be away from my friends."
+    amelie "{cps=*2}I know I needed to take this break. Things would be so much worse if I hadn't left.{/cps} It's just hard to be away from my friends."
     amelie "{color=#cf5300ff}If I can even call them that. It's not like they've even tried to keep in touch.{/color}" 
-    amelie "Even if they did, it's not like I would have anything to tell them about. {cps=*0.5}Every day's the same thing, over and over again. I'm so bored{/cps}."
+    amelie "It's not like I would have anything to tell them about, anyway. {cps=*0.5}Every day's the same thing, over and over again. I'm so bored{/cps}."
     amelie "{color=#cf5300ff}I'm so tired of being alone.{/color} Sitting here wallowing won't change anything, though. {color=#00deb5ff} I need to {i}do something{/i} about this.{/color}" 
     amelie "Last time I was like this I joined a forum online. I think it helped a little. Maybe I should do that again?"
     amelie "{cps=*0.5}…yeah, I should.{/cps}{color=#00deb5ff} If I can't be around my friends, why not make new ones?{/color}"
-    amelie "{color=#cf5300ff}{cps=*2}But what if the same thing happens again? I don't want to be let down again.{/cps}{/color}{cps=*0.25}...{/cps}{cps=*0.75} Well, nothing ventured, nothing gained. I might as well try it.{/cps}"
+    amelie "{color=#cf5300ff}{cps=*2}But what if the same thing happens again? I don't want to be let down again.{/cps}{/color}{cps=*0.25} ...{/cps}{cps=*0.75}Well, nothing ventured, nothing gained. I might as well try it.{/cps}"
 
 
     hide amelie neutral zorder 4 onlayer screens
