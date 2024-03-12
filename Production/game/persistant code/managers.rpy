@@ -154,6 +154,7 @@ init python:
 
 
         def __init__(self):
+            self.fandom = str()
             self.story_thread = 0
             self.todays_threads = list()
             self.events_thread = None
@@ -202,7 +203,7 @@ init python:
             # bring up the home page with optional buffering
             self._clear_forum_stack()
             #TODO
-            # make_day_1_forum()
+            make_hw_day_1_forum()            
             renpy.show_screen("home_page")
 
 

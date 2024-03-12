@@ -6,42 +6,47 @@ define MC_Name = "Amelie" ##The name of the main character, used to place them o
 
 screen PhoneDialogue(dialogue, items=None):
     style_prefix "phoneFrame"
-    # Messenger screen
+    # Direct messages Screen
     frame:
         background None
-        xpos 962 ypos 225 
+        xpos 920 ypos 225 
+        xsize 2769 ysize 1782
 
-        xsize 2498 ysize 1876
+        # DM Banner
+        frame:
+            xalign 0.8 ypos 20
+            xsize 1999 ysize 163
+            background "images/Phone Assets/dm_banner.png"
+
+            text "Direct Messages": 
+                bold True color "#000000"
+                xalign 0.35 yalign 0.5 size 64
+
         # Messenger screen
         frame:
-            ysize 1300
-            viewport:
-                ypos 80
-                mousewheel True
-                yinitial 1.0
-                vbox:
-                    xalign 0.5
-                    null height 20
-                    use nvl_phonetext(dialogue,items)
-                    null height 100
-        frame:
-            ypos 1350
-            ysize 450
+            ypos 173 xalign 0.5 
+            xsize 1999 ysize 984
+            background "images/Phone Assets/msg_bg.png"
 
-            background Solid("#bcd4fa")
-            text "Future emoji's and text-menu":
-                xalign 0.5
-                yalign 0.5
+            use nvl_phonetext(dialogue,items)
+            image "images/Phone Assets/msg_heirloom_bg.png" xalign 0.5 ypos -200
+
+        frame:
+            xsize 2750 ysize 565
+            xalign 0.5 ypos 1200
+            background "images/Phone Assets/nvl_choices_bg.png"
+            
     
 # The actual messenger screen
 screen nvl_phonetext(dialogue,items):
-    style_prefix None
     viewport:
-        ypos 80
-        
+        style_prefix "login" mousewheel True
+        xalign 0.5 ypos 40 xsize 1865  ysize 920
         $ prior_texter_who = None 
+        
         vbox:
-            spacing 20
+            xalign 0.5 xsize 1865 spacing 20
+
             for id_d, texter in enumerate(dialogue):
                 # If it's the narrator talking
                 if texter.who == None: 
@@ -86,7 +91,7 @@ screen nvl_phonetext(dialogue,items):
                             spacing 15
                             if texter.who != MC_Name and prior_texter_who != texter.who:
                                 text texter.who:
-                                    size 48 color "#ffffff" bold True
+                                    size 48 color "#000000" bold True
 
                             # physical frame of image
                             frame:
@@ -106,12 +111,12 @@ screen nvl_phonetext(dialogue,items):
                                     size 45
 
                                     if texter.who == MC_Name :
-                                        color "#ffffff"
+                                        color "#000000"
                                         text_align 1.0
                                         xanchor 1.0
                                         xpos 1.0
                                     else:
-                                        color "#000"
+                                        color "#ffffff"
 
                                         
                                     id texter.what_id

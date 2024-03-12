@@ -7,21 +7,76 @@ screen say(who, what):
     zorder 5 # custom_renpy_ui_mechanics_order
 
     style_prefix "say"
-    $ has_content =  not (what == str())
+
+    python:
+
+        has_content =  not (what == str())
+        y_align = 1.0 if game_manager.context == "visual novel" else 0.93
+        is_on_forum = forum.fandom == "Hallowed Winds" and game_manager.context == "laptop"
 
     if has_content:
-        window:
-            id "window"
-            yalign 0.92
 
-            if who is not None:
+        if is_on_forum:
+            frame:
+                #id "window"
+                # xalign 0.5 yalign 0.5
+                xsize 2745.79 ysize 717
+                xpos 615 yalign y_align
+                background "images/visual novel ui/say boxes/irl_say_box.png"
+                
 
-                window:
-                    id "namebox"
-                    style "namebox"
-                    text who id "who"
+                if who is not None:
 
-            text what id "what"
+                    frame:
+                        xpos 90 ypos 45
+                        xsize 1171 ysize 157
+                        background None
+
+                        text who id "who":
+                            xalign 0.5 yalign 0.5
+                            color "#ffffff"
+
+            
+            frame:
+                xpos 320 ypos 258
+                xsize 2111.69 ysize 458.91 
+                background None
+
+                text what id "what": 
+                    xpos 50 ypos 50 
+                    color "#000000" size 50 
+                    xsize 1900
+        
+        else:
+            frame:
+                #id "window"
+                # xalign 0.5 yalign 0.5
+                xsize 2745.79 ysize 717
+                xpos 615 yalign y_align
+                background "images/visual novel ui/say boxes/irl_say_box.png"
+                
+
+                if who is not None:
+
+                    frame:
+                        xpos 90 ypos 45
+                        xsize 1171 ysize 157
+                        background None
+
+                        text who id "who":
+                            xalign 0.5 yalign 0.5
+                            color "#ffffff"
+
+                
+                frame:
+                    xpos 320 ypos 258
+                    xsize 2111.69 ysize 458.91 
+                    background None
+
+                    text what id "what": 
+                        xpos 50 ypos 50 
+                        color "#000000" size 50 
+                        xsize 1900
 
 
         ## If there's a side image, display it above the text. Do not display on the
@@ -88,23 +143,24 @@ screen choice(items):
         # tranparent bg
         frame:
             xpos 80  
-            xsize 1737  ysize 1109
+            xsize 1737
             background Frame("images/visual novel ui/choice menus/choice_bg.png",23,23,23,23)
 
             # window header & options
             vbox:
+                spacing 0
                 xalign 0.5 ypos 311
                 frame:    
                     xsize 1464 ysize 134
                     background "images/visual novel ui/choice menus/header_block.png"
 
-                    text "Choose Below to Close this Window": 
+                    text "Choice Menu": 
                         size 48  xalign 0.5 yalign 0.5
-                        color "#ffffff"
+                        color "#ffffff" bold True
 
                 # option window
                 frame:
-                    xsize 1464 ysize 517
+                    xsize 1457 ypos -20
                     background Frame("images/visual novel ui/choice menus/choice_windows.png", 23,23,23,23)
                     
                     frame: 
@@ -124,22 +180,18 @@ screen choice(items):
                                         text_size 48  xalign 0.5
                                         text_color "#000000"
                                     image "images/visual novel ui/choice menus/option_bullet.png" yalign 0.5
+                            
+                        padding (20,30)
 
             image "images/visual novel ui/choice menus/slanted_question.png":
                 xalign 0.97 yalign 0.95
 
 
+
         # top section
-        frame:
-            xsize 1702 ysize 409
-            background "images/visual novel ui/choice menus/large_thought.png"
-
-            text "NEW THOUGHTS AND DECISIONS": 
-                size 48  xpos 150 ypos 80
-                color "#ffffff"
-
-            image "images/visual novel ui/choice menus/no_thoughts.png":
-                xpos 1408 yalign 0.3
+        image "images/visual novel ui/choice menus/no_thoughts.png" xalign 0.9 yalign 0.1
+        image "images/visual novel ui/choice menus/mini_post.png" xalign 0.5 yalign 0.1
+        image "images/visual novel ui/choice menus/people.png"  xalign 0.2 yalign 0.1
 
 
 #    Default styling for choice menus in renpy

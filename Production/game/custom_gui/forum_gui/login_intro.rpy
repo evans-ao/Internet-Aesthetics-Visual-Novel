@@ -8,15 +8,15 @@ screen forum_signup():
         background None
 
         hbox:
-            spacing 143
+            spacing 60
             # welcome to area of logining into the forum
             frame:
                 xsize 1582 ysize 1673
                 background None
 
                 text "Welcome to The Hot Dog Stand":
-                    color "#000000" size 96
-                    xalign 0.5
+                    color "#ffffff" size 80
+                    bold True xalign 0.5
 
                 frame:
                     xsize 1418 ysize 374
@@ -28,30 +28,37 @@ screen forum_signup():
                         xalign 0.5 ypos 70
 
                     text "Your local hotdog stand: juicy forums filled with your fandoms and favorite condiments":
-                        color "#828282" size 48
-                        xalign 0.5 ypos 200
+                        color "#000000" size 48
+                        xalign 0.5 ypos 180
 
                 image "images/forum ui/login/large_divider.png":
                     xalign 0.5 ypos 129
 
                 image "images/forum ui/login/hg_logo.png":
-                    xalign 0.5 ypos 208
+                    xalign 0.5 ypos 280
                         
                 image "images/forum ui/login/large_divider.png":
                     xalign 0.5 ypos 951
 
-                text "Consumed & Ordered by Fans":
-                    color "#828282" size 48
-                    xalign 0.5 ypos 1021
+                # consumed & ordered by fans
+                frame:
+                    xsize 1460 ysize 99 ypos 1091
+                    background "images/forum ui/login/bar_bg.png"
+                    
+                    text "Consumed & Ordered by Fans":
+                        color "#ffffff" size 48
+                        xalign 0.5 yalign 0.5
 
                 hbox: 
                     ypos 1552 spacing 30
                     image "images/forum ui/login/circle_bg.png"
-                    text "sold fresh by hotdog_man" color "#000000" size 48 yalign 0.5 italic True
+                    text "Sold Fresh by hotdog_man": 
+                        color "#000000" bold True
+                        size 64 yalign 0.5 italic True
             
             # Community Prefences & Browser Choices
             frame:
-                xsize 1575 ysize 1490
+                xsize 1863 ysize 1693
                 background None
 
                 text "Based on Your Browser Choices...":
@@ -60,7 +67,7 @@ screen forum_signup():
 
                 # choose a community baased on player's selection
                 frame:
-                    xsize 1460 ysize 927
+                    xsize 1772 ysize 1092
                     xpos 82 ypos 132
                     background "images/forum ui/login/large_window.png"
 
@@ -68,48 +75,83 @@ screen forum_signup():
                         color "#ffffff" size 54
                         xalign 0.5 ypos 30
 
-                    imagebutton: 
-                        idle "images/forum ui/login/hw_logo.png"
-                        # action Function(forum.load_current_dms)
-                        sensitive visual_novel.has_active_forum
-                        xpos 91 ypos 204
-
-                    imagebutton:
-                        #biscuit brigade logo
-                        idle "images/forum ui/login/logo_bb.png"
-                        sensitive visual_novel.has_active_forum
-                        xpos 900 ypos 204
-
                     hbox:
-                        xalign 0.5 ypos 493
-                        spacing 20
-                        image "images/forum ui/login/small_divider.png" yalign 0.5
-                        text "or" color "#000000" size 54 yalign 0.5
-                        image "images/forum ui/login/small_divider.png" yalign 0.5
+                        spacing 10
+                        xalign 0.5 ypos 240
 
-                    imagebutton:
-                        #utgod logo
-                        idle "images/forum ui/login/utgod_logo.png"
-                        sensitive visual_novel.has_active_forum
-                        xalign 0.5 ypos 550
+                        # bb choice
+                        vbox: 
+                            xalign 0.5
+                            spacing 100
+                            image "images/forum ui/login/logo_bb.png"
 
-                    $ login_temp_msg = "Only Hallowed Winds is available now"
-                    use temp_pop_up(login_temp_msg,1100,150, 0.5, 700)
+                            text "UK Underground Rap &  Grime":
+                                color "#000000" size 40 
+                                xalign 0.5 ypos 30 xsize 390
+
+                            imagebutton:
+                                #biscuit brigade logo
+                                idle "images/forum ui/login/bb_btn.png"
+                                sensitive visual_novel.has_active_forum
+                                xalign 0.5 ypos 100
+
+                        image "images/forum ui/login/vertical_divider.png" yalign 0.7
+
+                        # hw logo choice
+                        vbox: 
+                            xalign 0.5
+                            spacing 100
+                            image "images/forum ui/login/hw_logo.png"
+
+                            text "Gaming & Speed Running":
+                                color "#000000" size 40 
+                                xalign 0.5 ypos 60 xsize 390
+
+                            imagebutton:
+                                #biscuit brigade logo
+                                idle "images/forum ui/login/hw_btn.png"
+                                sensitive visual_novel.has_active_forum
+                                xalign 0.5 ypos 130
+
+
+                        image "images/forum ui/login/vertical_divider.png" yalign 0.7
+
+                        # utgod logo
+                        vbox: 
+                            xalign 0.5
+                            spacing 100
+                            image "images/forum ui/login/utgod_logo.png"
+
+                            text "Anime & Manga":
+                                color "#000000" size 40 
+                                xalign 0.5 ypos 0 xsize 390
+
+                            imagebutton:
+                                #biscuit brigade logo
+                                idle "images/forum ui/login/utgod_btn.png"
+                                sensitive visual_novel.has_active_forum
+                                xalign 0.5 ypos 95
+
+
+
+
+
+                    # use temp_pop_up("Only Hallowed Winds is available now",1100,150, 0.5, 700)
 
 
                     frame: 
                         xsize 1460  ysize 99
-                        ypos 980
+                        xalign 0.5 ypos 1100
                         
-                        background "images/forum ui/login/block_bg.png"
+                        background "images/forum ui/login/bar_bg.png"
 
                         text "Choose a community & create an account":
-                            color "#646464" size 54
-                            xalign 0.5 ypos 10
+                            color "#ffffff" size 40
+                            xalign 0.5 yalign 0.5
 
-
+                    # create account btn
                     hbox:
-                        xalign 0.5 ypos 1132
+                        xalign 0.6 ypos 1300
                         spacing 65
                         image "images/forum ui/login/hotdog_.png" yalign 0.5
 
@@ -123,7 +165,7 @@ screen forum_signup():
                                 xalign 0.5
 
                             text "Create An Account":
-                                color "#ffffff" size 54
+                                color "#000000" size 54
                                 xalign 0.5 yalign 0.5 bold True
 
                         image "images/forum ui/login/news_paper.png" yalign 0.5
@@ -133,10 +175,8 @@ screen forum_signup():
 
 screen create_account():
     frame: 
-        xpos 1450
-        ypos 250 
-        xsize 2328
-        ysize 1534
+        xpos 1450 ypos 250 
+        xsize 2328 ysize 1534
         background "images/forum ui/login/hw/large_pop-up_bg.png"
 
         image "images/forum ui/login/hw/Logo Area.png":
@@ -152,6 +192,9 @@ screen create_account():
 
             vbox:
                 spacing 112
+                use special_info_bar("Username",amelie_profile.user_name)
+                use special_info_bar("Password","************")
+                use special_info_bar("Confirm Password","************")
                 use info_bar("Name","Amelie")
                 use info_bar("Age","20")
                 use info_bar("Birthdate","June 21")
@@ -159,9 +202,7 @@ screen create_account():
                 use info_bar("Favorite Flower","Foxglove")
                 use info_bar("Best Hotdog Add-On","Homemade Chili")
                 use info_bar("Fun Fact","I like running")
-                use special_info_bar("Username",amelie_profile.user_name)
-                use special_info_bar("Password","************")
-                use special_info_bar("Confirm Password","************")
+
 
         frame:            
             xpos -10 ypos 1325

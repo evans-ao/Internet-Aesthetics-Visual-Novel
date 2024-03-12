@@ -176,7 +176,6 @@ label d2_speedrun_thread:
                 comp1_reply_7=make_reply(amelie_profile)
                 comp1_reply_7.msg="Count me in! This will be so much fun!"
                 forum.story_thread.replies.append(comp1_reply_7)
-            pass
 
         "How exciting! I can't wait to win!":
             #+1 point
@@ -186,7 +185,6 @@ label d2_speedrun_thread:
                 comp1_reply_7=make_reply(amelie_profile)
                 comp1_reply_7.msg="How exciting! I can't wait to win!"
                 forum.story_thread.replies.append(comp1_reply_7)
-            pass
 
     if speedrun_c1==True:
         amelie "That seems friendly enough. It doesn't really show that I'm in it to win it, but maybe that's better."
@@ -219,11 +217,9 @@ label d2_dms:
 
                 "wicker-scarecrow's":
                     call d2_dm_wicker
-                    pass
 
                 "Moment37's":
                     call d2_dm_moment37
-                    pass
                 
                 "Neither":
                     pass
@@ -242,19 +238,15 @@ label d2_dms:
 
                 "wicker-scarecrow's":
                     call d2_dm_wicker
-                    pass
 
                 "Moment37's":
                     call d2_dm_moment37
-                    pass
 
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
-                    pass
 
                 "Never mind":
                     amelie "I'll read my DMs later."
-                    pass
 
     elif d2wicker_read==False and d2moment37_read==True:
         if d2lf12_read==True:
@@ -265,7 +257,6 @@ label d2_dms:
 
                 "Yes":
                     call d2_dm_wicker
-                    pass
 
                 "No":
                     pass
@@ -279,11 +270,9 @@ label d2_dms:
 
                 "wicker-scarecrow's":
                     call d2_dm_wicker
-                    pass
                 
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
-                    pass
 
                 "Neither":
                     pass
@@ -299,7 +288,6 @@ label d2_dms:
 
                 "Yes":
                     call d2_dm_legendforce12
-                    pass
 
                 "No":
                     pass
@@ -313,7 +301,6 @@ label d2_dms:
 
                 "Yes":
                     call d2_dm_moment37
-                    pass
 
                 "No":
                     pass
@@ -328,11 +315,9 @@ label d2_dms:
 
                 "Moment37's":
                     call d2_dm_moment37
-                    pass
 
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
-                    pass
 
                 "Neither":
                     pass
@@ -370,14 +355,12 @@ label d2_dm_wicker:
             wicker_nvl "I really like the forums here, so I do my best to be active! It seems like I might be a bit too fast though... (^ ^)'' "
             jump d2_dms
 #don't worry, that's two single apostrophes in a row so it won't mess with RenPy
-            pass
 
         "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!":
             $ d2wicker_reply=True
             amelie_nvl "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!"
             wicker_nvl "Feel free to contact me or any of the other mods if you need something! I know you can't initiate DMs as a normal user, but you can always reply to a moderator's message."
             jump d2_dms
-            pass
 
 
         "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!":
@@ -385,12 +368,10 @@ label d2_dm_wicker:
             amelie_nvl "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!"
             wicker_nvl "I hope to see you around too! I've been told I'm hard to miss here...(^ ^)'' "
             jump d2_dms
-            pass
 
         "Don't respond":
             amelie "I'm not sure what to say, so I guess I'll hold off for now."
             jump d2_dms
-            pass
 
 
 
@@ -415,7 +396,6 @@ label d2_dm_moment37:
                 amelie_nvl "I hope you're ready to lose!"
                 moment37_nvl "to you? not happening lol"
                 jump d2_dms
-                pass
 
             "That sounds like a declaration of war. Let's do this!":
                 $ d2moment37_reply=True
@@ -423,7 +403,6 @@ label d2_dm_moment37:
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
                 jump d2_dms
-                pass
 
             "I'm looking forward to it!":
                 $ d2moment37_reply=True
@@ -431,12 +410,11 @@ label d2_dm_moment37:
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then"
                 jump d2_dms
-                pass
 
             "Don't respond":
                 amelie "I'm not sure how to respond right now..."
                 jump d2_dms
-                pass
+
     elif fan==True:
         moment37_nvl "hey [amelie_profile.user_name]! here's a sneak peek at what i'mma say on stream tonight."
         moment37_nvl "i'm going to rock this speedrun competition."
@@ -450,19 +428,16 @@ label d2_dm_moment37:
                 amelie_nvl "I did pick up some tricks. I guess we'll see if the student can beat the master?"
                 moment37_nvl "huh i guess my viewers are kind of my students. you're not winning tho lol."
                 jump d2_dms
-                pass
 
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
                 $ d2moment37_reply==True
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
                 jump d2_dms
-                pass
 
             "Don't respond":
                 amelie "I might respond...later."
                 jump d2_dms
-                pass
 
 
     else:
@@ -480,14 +455,12 @@ label d2_dm_moment37:
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
                 jump d2_dms
-                pass
 
             "I'm looking forward to it!":
                 $ d2moment37_reply==True
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then lol"
                 jump d2_dms
-                pass
 
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
                 $ fan==True
@@ -495,12 +468,10 @@ label d2_dm_moment37:
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
                 jump d2_dms
-                pass
 
             "Don't respond":
                 amelie "I'm not sure how to respond right now..."
                 jump d2_dms
-                pass
 
    
         
@@ -533,7 +504,6 @@ label d2_dm_legendforce12:
             legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
             amelie "Haha, can't disagree with that!"
             jump d2_dms
-            pass
 
         "I'm not too worried, but that doesn't mean I won't be practicing!":
             $ d2lf12_reply==True
@@ -541,12 +511,10 @@ label d2_dm_legendforce12:
             legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
             amelie "This is going to be so much fun."
             jump d2_dms
-            pass
 
         "Don't respond":
             amelie "I'm not sure how to respond right now..."
             jump d2_dms
-            pass
 
 label d2_threads:
 
@@ -580,7 +548,6 @@ label d2_t1:
             $ love_reply_6.msg="What."
             $ thread_1.replies.append(love_reply_6)
             amelie "I just...what?"
-            pass
 
         "I see it now! D:":
             #+1 point
@@ -591,9 +558,7 @@ label d2_t1:
             $ love_reply_6.msg="I see it now! D:"
             $ thread_1.replies.append(love_reply_6)
             amelie "I really wish I didn't see what FarenLove means, but I do."
-            pass
 
         "Cancel":
             #don't reply"
             $ d2_t1mark=True
-            pass

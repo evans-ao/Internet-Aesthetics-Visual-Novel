@@ -42,12 +42,7 @@ screen home_page():
                 image "images/forum ui/hw/hw_logo.png" xalign 0.5
 
                 if forum.home_page_notice != None:
-                    frame:
-                        xalign 0.5 xsize 2833
-
-                        text forum.home_page_notice:
-                            xalign 0.5 yalign 0.5 xsize 2700
-                            color "#ffffff" size 40
+                    use forum_notice("Welcome Everyone", forum.home_page_notice)
 
 
                 for thread_info in forum.todays_threads:
@@ -66,6 +61,35 @@ style home_vscrollbar:
     bottom_gutter 75
     xmaximum 200
     ymaximum 1947
+
+screen forum_notice(title, msg):
+    frame:
+        xsize 2509
+        background None
+
+        vbox:
+            xalign 0.5
+            frame:    
+                xsize 2509 ysize 145
+                background "images/forum ui/hw/notice_header.png"
+
+                text title: 
+                    size 64  xalign 0.5 yalign 0.5 color "#ffffff" bold True
+
+            # option window
+            frame:
+                background Frame("images/forum ui/hw/notice_body.png", 23,23,23,23)
+                xalign 0.5 yalign 0.2 xsize 2509
+
+                vbox:
+                    xalign 0.5 yalign 0.2
+                    
+                    text msg:
+                        size 48 color "#000000" xalign 0.5
+                        
+                padding (100,100)
+
+
 
 
 screen events_page():
@@ -129,30 +153,30 @@ screen side_menu:
             selected_btn = no_btn
 
     frame:
-        xpos 0 ypos 358
-        xsize 801 ysize 1557
+        xpos 0 ypos 167
+        xsize 785 ysize 1837
         background "images/forum ui/hw/side_menu_bg.png"
 
         frame:
-            xpos 55 ypos 480
-            xsize 735 ysize 100
+            xpos 0 ypos 520 xsize 735 ysize 100
             background None
-            text amelie_profile.user_name:
-                size 50 color "#ffffff"
-                xalign 0.5 yalign 0.5
+            text amelie_profile.user_name size 50 color "#000000" xalign 0.5 yalign 0.5
 
+        # avatar img
         if has_avatar:
             frame:
-                xsize 430 ysize 430
+                xsize 445 ysize 445 xpos 170  ypos 40
                 background Frame(avatar_img, 0,0,0,0)
-                xpos 205  ypos -10
+                
 
+        # home btn
         imagebutton: 
             idle "images/forum ui/hw/home_btn_full_rect.png"
             action Function(forum.load_home)
             sensitive visual_novel.has_active_forum
-            xpos 250 ypos 678
+            xpos 200 ypos 765
 
+        # events thread btn
         if forum.events_thread != None:
             imagebutton: 
                 idle "images/forum ui/hw/events_btn_full_rect.png"
@@ -218,8 +242,7 @@ screen threads_display(thread_info):
         background "images/forum ui/hw/normal_thread_bg.png"
 
         text thread_info.title:
-            xpos 440 ypos 22  
-            color "#828282" size 40 bold True
+            xpos 440 ypos 30  color "#000000" size 40 bold True
 
 
         # user and thread information
@@ -228,20 +251,15 @@ screen threads_display(thread_info):
             xsize 430 ysize 500
             background None
 
-            #text thread_info.type:
-            #    xalign 0.5 ypos 20  
-            #    color "#828282" size 40
-
             if has_avatar:
                 frame:
-                    xsize 300 ysize 300
-                    xpos 40 ypos 80
+                    xsize 305 ysize 305 xpos 54 ypos 93
                     background Frame(avatar_img, 0,0,0,0)
 
 
             text thread_info.get_OP():
                 xalign 0.5 ypos 400  
-                color "#828282" size 40
+                color "#000000" size 40
         
         #framed user short message
         frame:
@@ -249,12 +267,11 @@ screen threads_display(thread_info):
             xsize 1350 ysize 292
             background None
 
-            text thread_info.msg: 
-                color "#828282" size 48
+            text thread_info.msg color "#000000" size 50
 
         # button to see full thread
         imagebutton: 
-            xpos 1496 ypos 390
+            xpos 1550 ypos 340
             idle "images/forum ui/hw/view_thread_btn.png"
             action Function(forum.load_full_thread,thread_info)
             sensitive visual_novel.has_active_forum
@@ -271,7 +288,7 @@ screen threads_display(thread_info):
                 yalign 0.15 xalign 0.5
                 spacing 20
                 text "Top Reactions": 
-                    xalign 0.5  color "#ffffff" size 48 
+                    xalign 0.5  bold True color "#ffffff" size 48 
 
                 vbox:
                     xalign 0.5 spacing 60
@@ -284,9 +301,6 @@ screen emoji_reaction_btn(reactable_emoji):
     python:
         emoji_img = forum.request_emoji(reactable_emoji)
 
-        # if not reactable_emoji.has_paid_cost:
-            # switch between selected emojis
-        #   pass
 
     hbox:
         spacing 42 xalign 0.5
@@ -346,27 +360,25 @@ screen full_normal_thread(thread_info):
     
     frame:
     
-        ypos 250
-        xsize 2568
+        ypos 250 xsize 2568
         ysize 1319
         background "images/forum ui/hw/full_normal_thread_bg.png"
 
         text thread_info.title:
-            xpos 530 ypos 22  
-            color "#828282" size 40
+            xpos 530 ypos 30  
+            color "#000000" size 50
             xsize 1980
 
         text thread_info.msg: 
-            color "#828282" size 40
+            color "#000000" size 50
             xpos 530 ypos 156 
             xsize 1980
 
         # user and thread information
-
         if has_avatar:
             frame:
-                xsize 300 ysize 300
-                xpos 152 ypos 125
+                xsize 305 ysize 305
+                xpos 150 ypos 95
                 background Frame(avatar_img, 0,0,0,0)
 
         frame:  
@@ -374,13 +386,9 @@ screen full_normal_thread(thread_info):
             xsize 430 ysize 500
             background None
 
-            #text thread_info.type:
-            #    xalign 0.5 ypos 60  
-            #    color "#828282" size 40
-
             text thread_info.get_OP():
                 xalign 0.5 ypos 450  
-                color "#828282" size 40
+                color "#000000" size 40
         
 
 screen display_all_replies(thread_info):
@@ -417,18 +425,14 @@ screen display_all_replies(thread_info):
 
                 if has_avatar:
                     frame:
-                        xsize 225 ysize 225
-                        xpos 50 yalign 0.5
+                        xsize 180 ysize 180 xpos 70 ypos 370
                         background Frame(avatar_img, 0,0,0,0)
 
                 text reply.user_profile.user_name: 
-                    color "#828282" size 40 bold True
-                    xpos 500 ypos 50 
+                    color "#000000" size 48 bold True xpos 410 ypos 310 
 
                 text reply.msg: 
-                    color "#828282" size 40
-                    xpos 410 ypos 190 
-                    xsize 1700
+                    color "#000000" size 48 xpos 410 ypos 375 xsize 1700
 
 
             

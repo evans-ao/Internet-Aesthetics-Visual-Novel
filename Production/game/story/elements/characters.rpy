@@ -14,7 +14,9 @@ define hotdog_man_nvl = Character("hotdog_man",kind=nvl)
 # Across all forums
 init python:
     # protagonist
-    amelie_profile = ForumProfile("Amelie", str())
+    amelie_profile = ForumProfile("Amelie", "Check")
+    # TODO
+    amelie_profile.user_avatar = "images/characters/avatars/hw_avatars/legend_avatar.png"
 
     # antagonist
     jared_profile = ForumProfile("hotdog_man", "hotdog_man",True)

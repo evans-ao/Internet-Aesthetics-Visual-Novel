@@ -1,22 +1,21 @@
-Sun Mar 10 20:22:39 2024
+Tue Mar 12 06:53:08 2024
 Windows-10-10.0.22631
 Ren'Py 8.1.3.23091805
  
 
-Bootstrap to the start of init.init. took 0.03s
+Bootstrap to the start of init.init. took 0.04s
 Early init. took 0.00s
-Loader init. took 0.07s
-Loading error handling. took 0.03s
-Loading script. took 0.35s
-Loading save slot metadata. took 0.04s
+Loader init. took 0.05s
+Loading error handling. took 0.04s
+Loading script. took 0.28s
+Loading save slot metadata. took 0.05s
 Loading persistent. took 0.00s
 intit main()
-Running init code. took 0.09s
+Running init code. took 0.06s
 Loading analysis data. took 0.02s
 Analyze and compile ATL. took 0.00s
-Reloading save slot metadata. took 0.05s
+Reloading save slot metadata. took 0.03s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\carol\\AppData\\Roaming/RenPy/backups\\Production':
 Dump and make backups. took 0.06s
 Cleaning cache. took 0.00s
 Making clean stores. took 0.00s
@@ -24,46 +23,3643 @@ Initial gc. took 0.02s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object. took 0.22s
+Creating interface object. took 0.27s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.04s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.02s
-Prepare screens took 0.07s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start. took 0.08s
+Interface start. took 0.07s
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
+primary display bounds: (0, 0, 2560, 1440)
 swap interval: 1 frames
 Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3060 Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 546.01'
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
 Display Info: None
-Screen sizes: virtual=(3840, 2160) physical=(1920, 991) drawable=(1920, 991)
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
 Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
 Stoped Forum
 Enabled Forum
 Stoped Forum
 Enabled Forum
 Enabled Forum
-Stoped Forum
-Enabled Forum
-ThreateningDesperado
-emojis: ['Distant', 'happy', 'relived']
+BlindAlpaca
+emojis: ['happy', 'relived']
 Preferences: ['speed running']
 Story factor False
 Stoped Forum
-<store.Thread object at 0x0000000005483af0>
-[<store.Thread object at 0x0000000005483af0>, <store.Thread object at 0x000000000587f0d0>, <store.Thread object at 0x000000000558a640>]
+Alpacas!!!!!!!!!!!!
+<store.Thread object at 0x00000000058c05b0>
+[<store.Thread object at 0x00000000058c05b0>, <store.Thread object at 0x00000000058be880>, <store.Thread object at 0x00000000058bee20>]
 Enabled Forum
+Resetting cache.
+Bootstrap to the start of init.init. took 171.24s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.04s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.07s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.06s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 189.80s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 211.30s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 263.07s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.30s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 345.21s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.06s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 374.28s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.03s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.04s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 510.82s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 533.87s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 643.23s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.18s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.11s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 707.19s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 752.96s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 771.44s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 791.40s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Enabled Forum
+Check
+emojis: ['happy', 'relived']
+Preferences: ['speed running']
+Story factor False
 Stoped Forum
+<store.Thread object at 0x00000000085e5040>
+[<store.Thread object at 0x00000000085e5040>, <store.Thread object at 0x0000000004fa8670>, <store.Thread object at 0x0000000004fa8af0>]
 Enabled Forum
+Resetting cache.
+Bootstrap to the start of init.init. took 1195.10s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.08s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.08s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.10s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1249.97s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1285.20s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1293.09s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1304.00s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1317.91s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1422.76s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1438.22s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1496.07s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Enabled Forum
+Check
+emojis: ['happy', 'relived']
+Preferences: ['speed running']
+Story factor False
 Stoped Forum
+<store.Thread object at 0x00000000049efc70>
+[<store.Thread object at 0x00000000049efc70>, <store.Thread object at 0x0000000004528670>, <store.Thread object at 0x0000000004528a00>]
 Enabled Forum
+Resetting cache.
+Bootstrap to the start of init.init. took 1557.24s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.07s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.07s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1587.85s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1656.27s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1715.58s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1749.21s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1767.67s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1775.52s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1784.91s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1800.33s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1843.02s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.11s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1858.48s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.03s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.29s
+Cleaning stores took 0.00s
+Init translation took 0.07s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1866.34s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1896.89s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/custom_gui/forum_gui/messaging_screens.rpy", line 41: 'padding' is not a keyword argument or valid child of the viewport statement.
+    padding(20,20)
+           ^
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.32s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1903.11s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.05s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1912.51s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1930.94s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.22s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 1982.73s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2028.42s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.28s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2036.27s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2044.14s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2058.09s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2084.15s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.18s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2114.76s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2555.58s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/custom_gui/forum_gui/messaging_screens.rpy", line 17: 'yaling' is not a keyword argument or valid child of the frame statement.
+    xalign 0.5 yaling 0.5
+                     ^
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.36s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2569.32s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.18s
+Loading save slot metadata. took 0.02s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.30s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2604.44s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2781.90s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2800.38s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2815.81s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2831.23s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.07s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2837.60s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2847.01s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2879.11s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2889.99s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2931.16s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.03s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2939.03s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2945.40s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 2992.62s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3266.96s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.25s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3321.80s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3332.69s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.22s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3337.53s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3363.56s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.15s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.09s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3374.50s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.27s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Screen sizes: virtual=(3840, 2160) physical=(2560, 1440) drawable=(2560, 1440)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 3671.54s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+
+File "game/custom_gui/forum_gui/messaging_screens.rpy", line 17: 'f' is not a keyword argument or valid child of the frame statement.
+    xalign 0.8 ypos 10f
+                       ^
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Interface start. took 0.40s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3698.88s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.05s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.31s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3735.49s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.03s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.31s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3752.44s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.29s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 3761.82s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.07s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1155, 650) drawable=(1155, 650)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Screen sizes: virtual=(3840, 2160) physical=(2560, 1351) drawable=(2560, 1351)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(2560, 1440) drawable=(2560, 1440)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(2560, 1351) drawable=(2560, 1351)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(2542, 1393) drawable=(2542, 1393)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(1902, 1393) drawable=(1902, 1393)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(3840, 2160) physical=(1256, 780) drawable=(1256, 780)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 3854.95s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.04s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.07s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.09s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1255, 706) drawable=(1255, 706)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 4030.87s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.22s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1253, 705) drawable=(1253, 705)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Screen sizes: virtual=(3840, 2160) physical=(1255, 706) drawable=(1255, 706)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init. took 4053.91s
+Early init. took 0.00s
+Loader init. took 0.04s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1253, 705) drawable=(1253, 705)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 4061.79s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.03s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.26s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1252, 705) drawable=(1252, 705)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 4066.59s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.16s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.03s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.23s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1251, 704) drawable=(1251, 704)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Resetting cache.
+Bootstrap to the start of init.init. took 4072.96s
+Early init. took 0.00s
+Loader init. took 0.03s
+Loading error handling. took 0.02s
+Loading script. took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent. took 0.00s
+intit main()
+Running init code. took 0.03s
+Loading analysis data. took 0.02s
+Analyze and compile ATL. took 0.00s
+Reloading save slot metadata. took 0.02s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Evans Owusu\\AppData\\Roaming/RenPy/backups\\Production':
+Dump and make backups. took 0.06s
+Cleaning cache. took 0.00s
+Making clean stores. took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.250000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object. took 0.24s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start. took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 2560, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'NVIDIA Corporation'"
+Renderer: b'NVIDIA GeForce RTX 2070 SUPER/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 551.61'
+Display Info: None
+Screen sizes: virtual=(3840, 2160) physical=(1250, 703) drawable=(1250, 703)
+Maximum texture size: 4096x4096
+controller: '030000005e040000ff02000000007200' 'Controller (Xbox One For Windows)' 1
+Screen sizes: virtual=(3840, 2160) physical=(2560, 1351) drawable=(2560, 1351)
+Maximum texture size: 4096x4096

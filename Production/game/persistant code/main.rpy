@@ -5,7 +5,8 @@ init python:
     visual_novel = VisualNovelManager()
     forum = ForumNovlelManager()
     print("intit main()")
-    
+
+
     """
         $ config.overlay_screens.append("quick_menu")
         # config.overlay_screens.append("window_bar")

@@ -123,7 +123,7 @@ label hw_day_1:
         visual_novel.enable_forum()
 
     show amelie neutral zorder 3 at left  onlayer screens
-    $ renpy.pause()
+    $ renpy.pause(3)
     amelie "The rules seem normal. I should introduce myself now."
     hide amelie neutral onlayer screens
 
@@ -145,7 +145,7 @@ label day1_explore_forum:
     if "day1_hdm" not in amelie_profile.is_read:
         amelie "Wait, I have a message already? Maybe I should read it."
 
-#for now, to force the player into the introduction thread...
+    #for now, to force the player into the introduction thread...
 
     if "d1_intro_reply" not in amelie_profile.replies_made:
         amelie "Okay, now to check out introductions..."
@@ -154,6 +154,8 @@ label day1_explore_forum:
 
     if has_2nd_message:
         amelie "Oh, another message? That was fast."
+
+    $ visual_novel.stop_until_forum_precondition()
 
 
 
@@ -208,8 +210,31 @@ label day1_mdm:
 
     moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
     #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    "At least, I hope she's being sincere. If not, well..."
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
+    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
+    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
+    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
+    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
+    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
+    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    
+    
+    # TODO
     "Anyway, how should I respond to her?"
 
     #Not sure if the next line is too long for the current format of the decision boxes. I'd definitely like to be able to preview the whole message to the player though, so we might have to change the formatting a bit if it is too long?
