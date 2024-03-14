@@ -16,17 +16,14 @@ screen say(who, what):
 
     if has_content:
 
-        if is_on_forum:
+        # todo is on forum
+        if False:
             frame:
-                #id "window"
-                # xalign 0.5 yalign 0.5
                 xsize 2745.79 ysize 717
                 xpos 615 yalign y_align
                 background "images/visual novel ui/say boxes/irl_say_box.png"
                 
-
                 if who is not None:
-
                     frame:
                         xpos 90 ypos 45
                         xsize 1171 ysize 157
@@ -35,8 +32,7 @@ screen say(who, what):
                         text who id "who":
                             xalign 0.5 yalign 0.5
                             color "#ffffff"
-
-            
+ 
             frame:
                 xpos 320 ypos 258
                 xsize 2111.69 ysize 458.91 
@@ -55,7 +51,6 @@ screen say(who, what):
                 xpos 615 yalign y_align
                 background "images/visual novel ui/say boxes/irl_say_box.png"
                 
-
                 if who is not None:
 
                     frame:
@@ -67,7 +62,6 @@ screen say(who, what):
                             xalign 0.5 yalign 0.5
                             color "#ffffff"
 
-                
                 frame:
                     xpos 320 ypos 258
                     xsize 2111.69 ysize 458.91 
@@ -136,7 +130,7 @@ style say_dialogue:
 screen choice(items):
     frame:
         xsize 1817 ysize 1136
-        xalign 0.5 yalign 0.3
+        xalign 0.5 yalign 0.2
         background None
 
 
@@ -177,7 +171,7 @@ screen choice(items):
                                     image "images/visual novel ui/choice menus/option_bullet.png" yalign 0.5                                
                                     textbutton choice.caption: 
                                         action choice.action
-                                        text_size 48  xalign 0.5
+                                        text_size 40  xalign 0.5
                                         text_color "#000000"
                                     image "images/visual novel ui/choice menus/option_bullet.png" yalign 0.5
                             

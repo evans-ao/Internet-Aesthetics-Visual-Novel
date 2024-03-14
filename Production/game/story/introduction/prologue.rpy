@@ -9,6 +9,7 @@ label prologue:
     scene full_bedroom
 
     # $ game_manager.show_ui() 
+    $ game_manager.switch_game_context("visual novel")
     show amelie neutral zorder 4 at left  onlayer screens
     # show screen framed_bg
     
@@ -31,16 +32,14 @@ label prologue:
 
 label prologue_signup:
     # computer screen scene shift here
-    show screen story_overlay
+    show screen story_overlay 
     scene login_bg
 
-    python: 
-        renpy.show_screen("chapter_overlay","Sign-Up")
-        game_manager.show_laptop_ui()
-        renpy.pause()
+    show screen chapter_overlay("Sign...Up") with dissolve
+    $ renpy.pause(3)
+    $ game_manager.show_laptop_ui()
 
-
-    hide screen chapter_overlay           
+    hide screen chapter_overlay with dissolve           
     show screen forum_signup
 
     hide screen story_overlay    

@@ -179,5 +179,7 @@ init python:
         def __init__(self,user_profile):
             super().__init__(user_profile)
             self.type = "Picture"
+            self.img_1 = str()
+            self.img_2 = str()
 
 

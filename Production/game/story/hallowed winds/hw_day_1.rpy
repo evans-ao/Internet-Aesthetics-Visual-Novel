@@ -1,8 +1,5 @@
 init python:
 
-    has_2nd_message = False
-
-
     def make_hw_day_1_forum():
         forum.home_page_notice = "Hello, everyone! Welcome to the Hallowed Winds forum on The Hot Dog Stand! As you all know, Hallowed Winds is a fast-paced 2D action platformer with lots of characters and RPG elements. It may be a medieval fantasy, but we're all real here! So please, before you start posting, read these rules!\n Rule 1: Be Nice! There's no need to be mean, and throwing abuse or harassing other people will only get you permabanned. Don't be that guy.\n Rule 2: Let Threads Stay Dead! If it's been a day since the original post, let the thread die! The introductory thread is the only exception to this. Three strikes doing this and you're out!\n Rule 3: Obey the Law! No posting anything illegal here! If you link to illegal content in the forum, you'll be sent to the Ban Bin!\n Rule 4: Have Fun! We're all here because we love Hallowed Winds, and we wouldn't be here if the games weren't fun. So stick with the spirit of the game and Have Fun!\n That's all for now! If we need to update the rules, you'll get a message from moi!"
 
@@ -67,21 +64,23 @@ init python:
         thread_2.all_react_emojis = [emoji_11,emoji_12,emoji_13]
 
 
-        thread_4 = make_thread(azure_winds_profile)   
+        thread_4 = make_thread(azure_winds_profile, "Picture")   
         thread_4.title = "Off-Topic: Look at my cat"
         thread_4.social_cost = 40
         thread_4.emojis = ["anger","shocked"]
         thread_4.impressions = ["guide","fan-fiction"]
-        thread_4.msg = """ (IMG to be added with more polish) LOOK AT HIM!!!"""
+        thread_4.msg = """LOOK AT HIM!!!"""
         cat_reply_1 = make_reply(moment37_profile)
         cat_reply_1.msg = "super cute!"
         cat_reply_2 = make_reply(bingle_profile)
-        cat_reply_2.msg = "I think my dog is cuter. (image of dog)"
+        cat_reply_2.msg = "I think my dog is cuter. He's up above"
         cat_reply_3 = make_reply(legend_profile)
         cat_reply_3.msg = "THAT IS NOT A DOG THAT IS A CHICKEN"
         cat_reply_4 = make_reply(azure_winds_profile)
         cat_reply_4.msg = "My cat wins but your dog is cute too!."
         thread_4.replies = [cat_reply_1,cat_reply_2,cat_reply_3,cat_reply_4]
+        thread_4.img_1 = "images/forum ui/hw/fandom/nugget.png"
+        thread_4.img_2 = "images/forum ui/hw/fandom/chicken.png"
 
 
         emoji_21 = ReactableEmojis("smile eyes", 1)
@@ -97,9 +96,17 @@ init python:
         # setting up the configuration of the current day
         thread_1.is_story = True
         thread_1.story_label_tag = "day_1_intro_thread"
+
+        thread_2.is_story = True
+        thread_2.story_label_tag = "d1_t0"
+
+        thread_4.is_story = True
+        thread_4.story_label_tag = "d12_t0"
+
         day_1 = [thread_1,thread_2, thread_4]
         forum.todays_threads = day_1
-        forum.story_thread  = thread_1
+
+        forum.all_dms.add("day1_hdm")
 
         game_manager.social_battery = 100
 
@@ -122,10 +129,19 @@ label hw_day_1:
 
         visual_novel.enable_forum()
 
+
+    show screen hw_splash with moveintop
+    pause(5.0)
+    $ game_manager.show_laptop_ui()
+
+    hide screen hw_splash with moveouttop 
+    
+
+
+    $ renpy.pause(3)    
     show amelie neutral zorder 3 at left  onlayer screens
-    $ renpy.pause(3)
     amelie "The rules seem normal. I should introduce myself now."
-    hide amelie neutral onlayer screens
+    
 
     jump day1_explore_forum
 
@@ -135,28 +151,28 @@ label day1_explore_forum:
     #breaks by pulling up HDM's DM again, then displaying forum, then looping back to display the DMs
     #really not sure what's happening there, sorry. -CJ
 
-    python:
-        if has_2nd_message:
-            forum.is_dm_accesible = True
-            forum.current_dms_screen = "day1_mdm"
-            forum.load_forum_vestiges()
-
-
     if "day1_hdm" not in amelie_profile.is_read:
         amelie "Wait, I have a message already? Maybe I should read it."
-
     #for now, to force the player into the introduction thread...
 
     if "d1_intro_reply" not in amelie_profile.replies_made:
         amelie "Okay, now to check out introductions..."
 
-        jump day_1_intro_thread
+    hide amelie neutral onlayer screens
 
-    if has_2nd_message:
-        amelie "Oh, another message? That was fast."
+        # jump day_1_intro_thread
 
     $ visual_novel.stop_until_forum_precondition()
 
+label day1_continue_explore_forum:
+    #this needs to be fixed, currently breaks after replying and reading M37's dm
+    #breaks by pulling up HDM's DM again, then displaying forum, then looping back to display the DMs
+    #really not sure what's happening there, sorry. -CJ
+
+    hide amelie neutral onlayer screens
+        # jump day_1_intro_thread
+
+    $ visual_novel.stop_until_forum_precondition()
 
 
 label day1_hdm:
@@ -194,53 +210,25 @@ label day1_hdm:
     amelie "No, it's spelled correctly there. Did they hand-type this message?"
     amelie "That's kind of weird..."
 
-
-
-    hide amelie neutral onlayer screens
-
     jump day1_explore_forum 
 
 
 
 label day1_mdm:
     $ amelie_profile.is_read.append("D1_DM_M37")
-    $ has_2nd_message = False
 
     show amelie neutral zorder 3 at left  onlayer screens
 
     moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
     #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
-    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
-    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
-    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
-    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
-    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
-    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
-    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
-    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
-    moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
-    #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie_nvl "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie_nvl"At least, I hope she's being sincere. If not, well..."
+    amelie "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
+    amelie "At least, I hope she's being sincere. If not, well..."
     
-    
-    # TODO
-    "Anyway, how should I respond to her?"
 
     #Not sure if the next line is too long for the current format of the decision boxes. I'd definitely like to be able to preview the whole message to the player though, so we might have to change the formatting a bit if it is too long?
 
     menu:
-        "How should I respond?"
+        amelie "How should I respond?"
 
         "Hello! I'm a fan of your streams, so it's nice to see you here. I'm really excited to be here.":
             $ amelie_profile.impressions.append("fan")
@@ -264,15 +252,13 @@ label day1_mdm:
         "Don't respond":
             "I don't feel like responding"
 
-    hide amelie neutral onlayer screens
-    jump day1_explore_forum 
+    jump day1_continue_explore_forum 
 
 
 label day_1_intro_thread:
     
     python:
-        forum.load_full_thread(forum.story_thread)
-        has_2nd_message = True
+        current_thread = forum.todays_threads[0]
         visual_novel.stop_forum()
         stillMakingReply = True 
         amelie_intro_reply = str()
@@ -362,20 +348,105 @@ label day_1_intro_thread:
     
     
     python: 
-        print(str(forum.story_thread))
+        print(str(current_thread))
         print(str(forum.todays_threads))
         final_intro_reply = make_reply(amelie_profile)
         final_intro_reply.msg = amelie_intro_reply
-        forum.story_thread.replies.append(final_intro_reply)
+        current_thread.replies.append(final_intro_reply)
 
-        forum.load_full_thread(forum.story_thread)
+        #forum.load_full_thread(current_thread)
         visual_novel.enable_forum()
         amelie_profile.is_read.append("d1_intro")
         amelie_profile.replies_made.append("d1_intro_reply")
 
-    hide amelie neutral onlayer screens
+
+        forum.all_dms.add("day1_mdm")
 
     jump day1_explore_forum 
 
+
+#T0: New Hallowed Winds game confirmed on Warbler!! [story]
+label d1_t0:
+    #upon clicking to enter thread
+    show amelie neutral zorder 3 at left  onlayer screens
+    amelie "Oooh, I didn't hear about this! That's exciting!"
+    #scrolled to bottom, clicked reply
+
+    python:
+        new_reply = make_reply(amelie_profile)
+        current_thread = forum.todays_threads[1]
+        visual_novel.stop_forum()
+        new_msg = str()
+        has_denied_post = False
+
+    menu:
+        amelie "How should I reply"
+
+        "I hope it's a classic game!":
+            amelie "I hope it's a classic game!"
+            $ new_msg = "I hope it's a classic game!"
+
+        "I can't wait!":
+            amelie "I can't wait!"
+            $ new_msg = "I can't wait!"
+
+        "Cancel":
+            #cancels reply, exits menu, back to previous screen. User can theoretically re-enter the menu from the reply button again
+            $ has_denied_post = True
+
+    python: 
+        
+        if not has_denied_post:
+            new_reply.msg = new_msg
+
+            current_thread.replies.append(new_reply)
+
+            #forum.load_full_thread(current_thread)
+            visual_novel.enable_forum()
+            amelie_profile.is_read.append("d2_intro")
+            amelie_profile.replies_made.append("d2_intro_reply")
+
+    jump day1_explore_forum
+
+#T0: New Hallowed Winds game confirmed on Warbler!! [story]
+label d12_t0:
+    #upon clicking to enter thread
+    show amelie neutral zorder 3 at left  onlayer screens
+    #scrolled to bottom, clicked reply
+
+    python:
+        new_reply = make_reply(amelie_profile)
+        current_thread = forum.todays_threads[2]
+        visual_novel.stop_forum()
+        new_msg = str()
+        has_denied_post = False
+
+    menu:
+        amelie "How should I reply"
+
+        "Your cat's adorable!":
+            amelie "Your cat's adorable!"
+            $ new_msg = "Your cat's adorable!"
+
+        "I guess the dog (chicken) is cute, but the cat's cuter.":
+            amelie "I guess the dog (chicken) is cute, but the cat's cuter."
+            $ new_msg = "I guess the dog (chicken) is cute, but the cat's cuter."
+
+        "Always nice to see cat and dog photos":
+            amelie "Always nice to see cat and dog photos"
+            $ new_msg = "Always nice to see cat and dog photos"
+
+    python: 
+        new_reply.msg = new_msg
+        current_thread.replies.append(new_reply)
+
+        #forum.load_full_thread(current_thread)
+        visual_novel.enable_forum()
+        amelie_profile.is_read.append("d3_intro")
+        amelie_profile.replies_made.append("d3_intro_reply")
+
+    jump day1_explore_forum
+        
 label end_forum_day:
-    jump d2_intro
+    #jump d2_intro
+    return

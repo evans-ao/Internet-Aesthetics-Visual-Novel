@@ -6,6 +6,12 @@ init python:
     forum = ForumNovlelManager()
     print("intit main()")
 
+    persistent.gm = game_manager
+    persistent.vn = visual_novel
+    persistent.forum = forum
+
+    
+
 
     """
         $ config.overlay_screens.append("quick_menu")

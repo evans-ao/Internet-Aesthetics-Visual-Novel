@@ -145,6 +145,15 @@ init python:
             pass
 
 
+        def call_story_thread(self,thread_info): 
+
+            if thread_info.is_story: 
+                if not thread_info.has_played_story:                    
+                    print("Story factor " + str(thread_info.has_played_story))
+                    thread_info.has_played_story = True
+                    renpy.jump(thread_info.story_label_tag)
+
+
     class ForumNovlelManager(object):
         def __new__(cls):
             # create a singleton and have all intances be the same 
@@ -161,8 +170,7 @@ init python:
             self.hotdog_thread = None
             self.past_threads = list()
             self.all_forum_profiles = dict()
-            self.current_dms_screen = None
-            self.is_dm_accesible = False
+            self.all_dms = set()
             self.home_page_notice = str()
 
 
@@ -203,7 +211,7 @@ init python:
             # bring up the home page with optional buffering
             self._clear_forum_stack()
             #TODO
-            make_hw_day_1_forum()            
+            # make_hw_day_1_forum()            
             renpy.show_screen("home_page")
 
 
@@ -222,6 +230,7 @@ init python:
 
                     game_manager.drain_social_battery(reactable_emoji.social_cost)
                     reactable_emoji.has_paid_cost = True
+                    reactable_emoji.num_people_reacted +=1
                     amelie_profile.emojis.append(reactable_emoji.reaction_intent)
             else:
                 visual_novel.not_enough_battery()
@@ -275,12 +284,6 @@ init python:
             else:
                 visual_novel.not_enough_battery()
 
-            if thread_info.is_story: 
-                if not thread_info.has_played_story:                    
-                    print("Story factor " + str(thread_info.has_played_story))
-                    thread_info.has_played_story = True
-                    renpy.jump(thread_info.story_label_tag)
-
         
         def load_page(self, page_name,has_buffer=False,buffer_timer=0.2):
             # bring up any specific page with optional buffering
@@ -303,14 +306,19 @@ init python:
                 renpy.show_screen("folio_page",page_num)
 
 
-        def load_current_dms(self, isJump=False):
+        def load_dm(self, dm_label, isJump=True):
             # bring up the dms page and associated labels with optional buffering
 
-            if self.is_dm_accesible:
+            print("before length is" + str(len(self.all_dms)))
+
+            if dm_label in self.all_dms:
                 self._clear_forum_stack()
+                self.all_dms.remove(dm_label)
                 nvl_clear()
-                self.is_dm_accesible = False # ensure only one use per new dms
+
+                print("after length is" + str(len(self.all_dms)))
+
                 if isJump:
-                    renpy.jump(self.current_dms_screen)
+                    renpy.jump(dm_label)
                 else:
-                    renpy.call(self.current_dms_screen)
+                    renpy.call(dm_label)

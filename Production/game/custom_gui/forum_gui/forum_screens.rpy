@@ -20,7 +20,6 @@ screen show_social_cost(battery_content):
             bold True
 
 
-
 screen home_page():
     # Home Screen UI that loads the current day's thread
     viewport:
@@ -46,10 +45,16 @@ screen home_page():
 
 
                 for thread_info in forum.todays_threads:
-                    use threads_display(thread_info)
+                    if thread_info.type == "Text":
+                        use threads_display(thread_info)
+
+                    if thread_info.type == "Picture":
+                        use picture_threads_display(thread_info)
                     
 
-                image "images/forum ui/hw/image_footer.png" xalign 0.5
+                frame:
+                    xysize(1,200)
+                    background None
 
 
 
@@ -90,8 +95,6 @@ screen forum_notice(title, msg):
                 padding (100,100)
 
 
-
-
 screen events_page():
     # Event Screen UI that loads the forum's long-term event
     use display_full_thread(forum.events_thread)
@@ -123,7 +126,11 @@ screen folio_page(page_num=0):
             vbox:
                 spacing 250
                 for thread_info in forum.past_threads[page_num]:
-                    use threads_display(thread_info)
+                    if thread_info.type == "Text":
+                        use threads_display(thread_info)
+
+                    if thread_info.type == "Picture":
+                        use picture_threads_display(thread_info)
 
 
 style pagination_vscrollbar:
@@ -146,11 +153,6 @@ screen side_menu:
 
         avatar_img = amelie_profile.user_avatar
         has_avatar = not(str() == avatar_img)
-
-        if forum.is_dm_accesible:
-            selected_btn = yes_btn
-        else: 
-            selected_btn = no_btn
 
     frame:
         xpos 0 ypos 167
@@ -186,13 +188,28 @@ screen side_menu:
                 unhovered Function(conditional_hide,"show_social_cost")
                 xpos 300 ypos 825
 
+        use avilable_dms(1474)
 
-        imagebutton: 
-            idle selected_btn
-            action Function(forum.load_current_dms)
-            sensitive visual_novel.has_active_forum
-            xpos 55 ypos 1267
 
+screen avilable_dms(y_pos):
+    frame: 
+        xsize 785 ysize 362
+        xalign 0.5 ypos y_pos
+        background None
+
+        if len(forum.all_dms) > 0:
+            hbox:
+                xalign 0.5 yalign 0.5
+                spacing 20
+
+                for dm_label in forum.all_dms:
+                    imagebutton:
+                        idle  "images/forum ui/hw/dm_profile_btn.png"
+                        action Function(forum.load_dm,dm_label)
+                        sensitive visual_novel.has_active_forum
+        else:
+            text "No Messages!":
+                bold True size 64 color"#ffffff" xalign 0.5 yalign 0.5
 
 
 screen top_menu:
@@ -295,15 +312,96 @@ screen threads_display(thread_info):
                     for reactable_emoji in thread_info.all_react_emojis:
                         use emoji_reaction_btn(reactable_emoji)
 
+screen picture_threads_display(thread_info):
+    python:
+        avatar_img = thread_info.user_profile.user_avatar
+        has_avatar = not(str() == avatar_img)
+
+    zorder 1 # forum_ui_order
+    # generate the mini thread UI displayed on the home page and past days
+    frame:
+        xsize 2497 ysize 960
+        background "images/forum ui/hw/photo_thread_bg.png"
+
+        text thread_info.title:
+            xpos 440 ypos 30  color "#000000" size 40 bold True
+
+
+        # user and thread information
+        frame:  
+            xpos 0 ypos 0
+            xsize 430 ysize 500
+            background None
+
+            if has_avatar:
+                frame:
+                    xsize 305 ysize 305 xpos 54 ypos 93
+                    background Frame(avatar_img, 0,0,0,0)
+
+
+            text thread_info.get_OP():
+                xalign 0.5 ypos 400  
+                color "#000000" size 40
+        
+        #framed user short message
+        frame:
+            xpos 440 ypos 125 
+            xsize 1350 ysize 292
+            background None
+
+            text thread_info.msg color "#000000" size 50
+
+
+        # picture 
+        hbox:
+            spacing 50
+            xpos 147 ypos 526
+
+            frame:
+                xsize 375 ysize 375
+                background Frame(thread_info.img_1,23,23,23,23)
+
+            #frame:
+            #    xsize 375 ysize 375
+            #    background Frame(thread_info.img_2,23,23,23,23)
+
+        # button to see full thread
+        imagebutton: 
+            xpos 1550 ypos 340
+            idle "images/forum ui/hw/view_thread_btn.png"
+            action Function(forum.load_full_thread,thread_info)
+            sensitive visual_novel.has_active_forum
+            hovered Show("show_social_cost",None,thread_info)
+            unhovered Function(conditional_hide,"show_social_cost")
+
+        # reaction buttons
+        frame: 
+            xsize 800 ysize 300
+            xpos 1100 ypos 550
+            background None
+
+            vbox:
+                yalign 0.15 xalign 0.5
+                spacing 50
+                text "Top Reactions": 
+                    xalign 0.5  bold True color "#ffffff" size 48 
+
+                hbox:
+                    xalign 0.5 spacing 30
+                    for reactable_emoji in thread_info.all_react_emojis:
+                        use emoji_reaction_btn(reactable_emoji)
+
 
 screen emoji_reaction_btn(reactable_emoji):
 
     python:
-        emoji_img = forum.request_emoji(reactable_emoji)
-
+        emoji_img = forum.request_emoji(reactable_emoji) 
+        if reactable_emoji.has_paid_cost:  
+            emoji_img = "images/forum ui/universal/emojis-after-react/hotdog.png"
 
     hbox:
         spacing 42 xalign 0.5
+
         imagebutton: 
             idle emoji_img
             action Function(forum.send_reaction,reactable_emoji)
@@ -312,7 +410,7 @@ screen emoji_reaction_btn(reactable_emoji):
             unhovered Function(conditional_hide,"show_social_cost")
 
         text str(reactable_emoji.num_people_reacted): 
-            xalign 0.5  color "#ffffff" size 64 
+            xalign 0.5 bold True color "#ffffff" size 64 
 
 
 screen display_full_thread (thread_info):
@@ -333,12 +431,23 @@ screen display_full_thread (thread_info):
             vbox:                                            
                 use top_menu()
 
-                use full_normal_thread(thread_info)
+                if thread_info.type == "Text":
+                    use full_normal_thread(thread_info)
+
+                if thread_info.type == "Picture":
+                    use full_picture_thread(thread_info)
+                    frame xysize (1,350) background None
+
 
                 use display_all_replies(thread_info)
 
+                if thread_info.is_story:
+                    use reply_thread_story(thread_info)
+
                 image "images/forum ui/hw/image_footer.png" xalign 0.5
 
+                # padding
+                frame xysize (1,150) background None
     else:
         use home_page()
 
@@ -352,6 +461,18 @@ style thread_vscrollbar:
     xmaximum 200
     ymaximum 1947
 
+screen reply_thread_story(thread_info):
+    if not thread_info.has_played_story:                    
+        imagebutton: 
+            xalign 0.5
+            idle "images/forum ui/hw/thread_reply_btn.png"
+            action Function(visual_novel.call_story_thread,thread_info)
+            sensitive visual_novel.has_active_forum
+    else:
+        image "images/forum ui/hw/completed_thread_reply_btn.png":
+            xalign 0.5
+
+    
 
 screen full_normal_thread(thread_info):
     python:
@@ -390,6 +511,58 @@ screen full_normal_thread(thread_info):
                 xalign 0.5 ypos 450  
                 color "#000000" size 40
         
+screen full_picture_thread(thread_info):
+    python:
+        avatar_img = thread_info.user_profile.user_avatar
+        has_avatar = not(str() == avatar_img)
+    
+    frame:
+    
+        ypos 250 xsize 2522 ysize 1470
+        background "images/forum ui/hw/full_photo_thread_bg.png"
+
+        text thread_info.title:
+            xpos 480 ypos 30  
+            color "#000000" size 50
+            xsize 1980
+
+        text thread_info.msg: 
+            color "#000000" size 50
+            xpos 480 ypos 156 
+            xsize 1980
+
+        # user and thread information
+        if has_avatar:
+            frame:
+                xsize 305 ysize 305
+                xpos 100 ypos 95
+                background Frame(avatar_img, 0,0,0,0)
+
+        frame:  
+            xpos 77 ypos 0
+            xsize 430 ysize 500
+            background None
+
+            text thread_info.get_OP():
+                xalign 0.5 ypos 450  
+                color "#000000" size 40
+
+
+        hbox: 
+            xpos 289 ypos 780
+            spacing 50
+            
+            frame:
+                xsize 425 ysize 425
+                background Frame(thread_info.img_1,23,23,23,23)
+
+            frame:
+                xsize 425 ysize 425
+                background Frame(thread_info.img_2,23,23,23,23)
+
+            text "from user-reply":
+                xpos -450 ypos 100
+                bold True color "#000000" size 40
 
 screen display_all_replies(thread_info):
     # takes a thread and generate the UI of each reply
@@ -432,7 +605,7 @@ screen display_all_replies(thread_info):
                     color "#000000" size 48 bold True xpos 410 ypos 310 
 
                 text reply.msg: 
-                    color "#000000" size 48 xpos 410 ypos 375 xsize 1700
+                    color "#000000" size 42 xpos 410 ypos 375 xsize 1700
 
 
             

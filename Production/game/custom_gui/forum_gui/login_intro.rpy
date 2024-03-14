@@ -1,6 +1,14 @@
 init:
     image bg example =  "images/forum ui/login/hw/large_pop-up_bg.png"
 
+
+init python:
+    def has_picked_forum():
+        if forum.fandom == "Hallowed Winds":
+            renpy.jump("account_creation")
+        else:
+            renpy.show_screen("choice_required")
+
 screen forum_signup():
     frame: 
         xpos 220 ypos 226
@@ -90,8 +98,8 @@ screen forum_signup():
                                 xalign 0.5 ypos 30 xsize 390
 
                             imagebutton:
-                                #biscuit brigade logo
                                 idle "images/forum ui/login/bb_btn.png"
+                                action Show("choose_forum",None,"Biscuit Brigade")
                                 sensitive visual_novel.has_active_forum
                                 xalign 0.5 ypos 100
 
@@ -108,8 +116,8 @@ screen forum_signup():
                                 xalign 0.5 ypos 60 xsize 390
 
                             imagebutton:
-                                #biscuit brigade logo
                                 idle "images/forum ui/login/hw_btn.png"
+                                action Show("choose_forum", None, "Hallowed Winds")
                                 sensitive visual_novel.has_active_forum
                                 xalign 0.5 ypos 130
 
@@ -127,18 +135,13 @@ screen forum_signup():
                                 xalign 0.5 ypos 0 xsize 390
 
                             imagebutton:
-                                #biscuit brigade logo
                                 idle "images/forum ui/login/utgod_btn.png"
+                                action Show("choose_forum",None, "UtGod")
                                 sensitive visual_novel.has_active_forum
                                 xalign 0.5 ypos 95
 
 
-
-
-
                     # use temp_pop_up("Only Hallowed Winds is available now",1100,150, 0.5, 700)
-
-
                     frame: 
                         xsize 1460  ysize 99
                         xalign 0.5 ypos 1100
@@ -160,7 +163,7 @@ screen forum_signup():
                             background None
                             imagebutton: 
                                 idle "images/forum ui/login/btn_bg.png"
-                                action Jump("account_creation")
+                                action Function(has_picked_forum)
                                 sensitive visual_novel.has_active_forum
                                 xalign 0.5
 
@@ -172,6 +175,62 @@ screen forum_signup():
 
                 image "images/forum ui/login/big_notification.png"
 
+
+screen choose_forum(forum_choice):
+    python:
+        def make_forum_choice(forum_choice):
+            forum.fandom = forum_choice
+            conditional_hide("choose_forum")
+
+    frame:
+        xsize 2200 ysize 608
+        xpos 1000 yalign 0.5
+        background "images/game ui/end_day_window.png"
+
+        text "Do you want to choose: " + forum_choice: 
+            xalign 0.5 ypos 55 size 50 color "#ffffff" bold True
+
+        hbox:
+            ypos 287 xalign 0.5
+            spacing 123
+
+            text "Note: Only Hallowed Winds Is Avilable": 
+                ypos 50 size 50 color "#000000" bold True xsize 500
+
+            # No
+            imagebutton:
+                ypos -50
+                idle "images/game ui/box_empty_btn.png"
+                action Hide("choose_forum") #Function(forum.load_next_day)
+                sensitive visual_novel.has_active_forum
+            
+            # Yes
+            imagebutton:
+                ypos -50
+                idle "images/game ui/box_full_btn.png"
+                action Function(make_forum_choice, "Hallowed Winds")
+                sensitive visual_novel.has_active_forum
+
+screen choice_required():
+    frame:
+        xsize 2200 ysize 608
+        xpos 1000 yalign 0.5
+        background "images/game ui/end_day_window.png"
+
+        text "Please Choose a Fandom before continung": 
+            xalign 0.5 ypos 55 size 50 color "#ffffff" bold True
+
+        hbox:
+            ypos 287 xalign 0.5
+            spacing 123
+
+
+            # Yes
+            imagebutton:
+                ypos -50
+                idle "images/game ui/box_full_btn.png"
+                action Hide("choice_required")
+                sensitive visual_novel.has_active_forum
 
 screen create_account():
     frame: 
@@ -243,7 +302,7 @@ init python:
 screen temp_avatar_select():    
     frame:
         xsize 2001 ysize 1438
-        xalign 0.5 yalign 0.3
+        xalign 0.5 yalign 0.2
         background "images/forum ui/login/new_thought_header.png"
 
         frame:
@@ -273,7 +332,12 @@ screen temp_avatar_select():
                 action Function(avatar_select, black_star_img)
                 sensitive visual_novel.has_active_forum
                 xalign 0.8 yalign 0.8
-        
+
+
+screen hw_splash():
+    image "images/forum ui/login/welcome_hw_splash.png":
+        xalign 0.5 yalign 0.2
+
 
 screen info_bar(text_info,text_value): 
     frame: 
