@@ -35,6 +35,12 @@ init python:
             config.rollback_enabled = False
 
 
+        def print_gm(self, msg):
+            # just  function to debug and fill sections in progress
+            print(str(msg))
+            print("_____")
+
+
         def switch_game_context(self, context, has_show_display = False):
             self.context = context
 
@@ -52,22 +58,21 @@ init python:
             renpy.show_screen("quick_menu")
 
 
-        def print_gm(self, msg):
-            # just  function to debug and fill sections in progress
-            print(str(msg))
-            print("_____")
-
-
         def recharcge_social_battery(self, recharge_amount=10):
             # refill social batttery perfereably for another day
             self.social_battery = recharge_amount
+
+
+        def reset_game_state(self):
+            self.social_battery = 100
+            self.can_end_day = False
 
 
         def drain_social_battery(self, drain_amount=1):
             # remove an amount from social battery
             self.social_battery -= drain_amount
 
-            if self.social_battery <= 40:
+            if self.social_battery <= 20:
                 game_manager.can_end_day = True
 
             if self.can_end_day:
@@ -204,14 +209,14 @@ init python:
         def load_next_day(self):
             if game_manager.can_end_day:
                 if visual_novel.next_day != str():
+                    game_manager.reset_game_state()
                     renpy.jump(visual_novel.next_day)
+
 
 
         def load_home(self,has_buffer=False,buffer_timer=0.2):
             # bring up the home page with optional buffering
-            self._clear_forum_stack()
-            #TODO
-            # make_hw_day_1_forum()            
+            self._clear_forum_stack()       
             renpy.show_screen("home_page")
 
 

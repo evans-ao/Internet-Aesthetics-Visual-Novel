@@ -57,7 +57,6 @@ screen home_page():
                     background None
 
 
-
 style home_vscrollbar:
     base_bar None
     thumb "images/forum ui/universal/arrow_scroll.png"
@@ -66,6 +65,7 @@ style home_vscrollbar:
     bottom_gutter 75
     xmaximum 200
     ymaximum 1947
+
 
 screen forum_notice(title, msg):
     frame:
@@ -225,27 +225,6 @@ screen top_menu:
                 action Function(forum.load_home)
                 sensitive visual_novel.has_active_forum
 
-                        
-"""
-        textbutton "Hotdog Stand":
-            action Function(forum.load_hotdog_stand)
-            sensitive visual_novel.has_active_forum
-
-        textbutton "Events":
-            action Function(forum.load_events)
-            sensitive visual_novel.has_active_forum
-    hbox:
-        textbutton "Page 2":
-            action Function(forum.load_pagination)
-            sensitive visual_novel.has_active_forum
-        textbutton "Page 3":
-            action Function(forum.load_pagination,1)
-            sensitive visual_novel.has_active_forum
-        textbutton "Page 4":
-            action Function(forum.load_pagination,2)
-            sensitive visual_novel.has_active_forum
-"""
-
 
 screen threads_display(thread_info):
     python:
@@ -295,6 +274,18 @@ screen threads_display(thread_info):
             hovered Show("show_social_cost",None,thread_info)
             unhovered Function(conditional_hide,"show_social_cost")
 
+
+        # framed user short message
+        frame:
+            xpos 785 ypos 528 
+            xsize 1081 ysize 71
+            background None
+
+            text thread_info.get_reply_user_names():
+                color "#000000" xsize 1081
+                size 25 bold True
+
+
         # reaction buttons
         frame: 
             xsize 560 ysize 624
@@ -309,8 +300,12 @@ screen threads_display(thread_info):
 
                 vbox:
                     xalign 0.5 spacing 60
-                    for reactable_emoji in thread_info.all_react_emojis:
-                        use emoji_reaction_btn(reactable_emoji)
+
+                    $ short_emojis_num = 0.6 * len(thread_info.all_react_emojis)
+                    $ emojis_to_show = 3 if short_emojis_num < 3.0 else int(short_emojis_num)
+                    for emoji_index in range(0,emojis_to_show):
+                        use emoji_reaction_btn(thread_info.all_react_emojis[emoji_index])
+
 
 screen picture_threads_display(thread_info):
     python:
@@ -342,8 +337,9 @@ screen picture_threads_display(thread_info):
             text thread_info.get_OP():
                 xalign 0.5 ypos 400  
                 color "#000000" size 40
-        
-        #framed user short message
+
+
+        # framed user short message
         frame:
             xpos 440 ypos 125 
             xsize 1350 ysize 292
@@ -461,6 +457,7 @@ style thread_vscrollbar:
     xmaximum 200
     ymaximum 1947
 
+
 screen reply_thread_story(thread_info):
     if not thread_info.has_played_story:                    
         imagebutton: 
@@ -471,7 +468,6 @@ screen reply_thread_story(thread_info):
     else:
         image "images/forum ui/hw/completed_thread_reply_btn.png":
             xalign 0.5
-
     
 
 screen full_normal_thread(thread_info):
@@ -510,7 +506,22 @@ screen full_normal_thread(thread_info):
             text thread_info.get_OP():
                 xalign 0.5 ypos 450  
                 color "#000000" size 40
-        
+
+
+        # all displayable emojis
+        vbox:
+            yalign 0.65 xalign 0.75
+            spacing 20
+            #text "Top Reactions": 
+            #    xalign 0.5  bold True color "#ffffff" size 48 
+
+            hbox:
+                xalign 0.5 spacing 60
+
+                for reactable_emoji in thread_info.all_react_emojis:
+                    use emoji_reaction_btn(reactable_emoji)
+
+
 screen full_picture_thread(thread_info):
     python:
         avatar_img = thread_info.user_profile.user_avatar
@@ -548,6 +559,20 @@ screen full_picture_thread(thread_info):
                 color "#000000" size 40
 
 
+        # all displayable emojis
+        vbox:
+            yalign 0.75 xalign 0.85
+            spacing 20
+            #text "Top Reactions": 
+            #    xalign 0.5  bold True color "#ffffff" size 48 
+
+            hbox:
+                xalign 0.5 spacing 60
+
+                for reactable_emoji in thread_info.all_react_emojis:
+                    use emoji_reaction_btn(reactable_emoji)
+
+
         hbox: 
             xpos 289 ypos 780
             spacing 50
@@ -563,6 +588,7 @@ screen full_picture_thread(thread_info):
             text "from user-reply":
                 xpos -450 ypos 100
                 bold True color "#000000" size 40
+
 
 screen display_all_replies(thread_info):
     # takes a thread and generate the UI of each reply

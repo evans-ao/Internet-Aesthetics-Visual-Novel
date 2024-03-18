@@ -11,8 +11,6 @@ init python:
     persistent.forum = forum
 
     
-
-
     """
         $ config.overlay_screens.append("quick_menu")
         # config.overlay_screens.append("window_bar")

@@ -108,9 +108,6 @@ init python:
 
         forum.all_dms.add("day1_hdm")
 
-        game_manager.social_battery = 100
-
-
 
 label hw_day_1:
     scene hw_bg

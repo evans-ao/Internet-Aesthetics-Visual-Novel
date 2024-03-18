@@ -93,6 +93,19 @@ init python:
                     replies_dict.update(new_dict)
             return replies_dict
 
+        def get_reply_user_names(self):
+            replies_dict = self.get_reply_dict()
+
+            all_reply_profile = list(replies_dict.keys())
+            all_usernames = ""
+
+            for reply in all_reply_profile:
+                all_usernames += " " + reply.user_profile.user_name
+
+            return all_usernames
+                
+
+
         
         def get_OP(self):
             return self.user_profile.user_name
