@@ -14,20 +14,23 @@ init python:
         thread_1.impressions = ["speed running"]
         thread_1.msg = """Hey everyone! This thread is here by popular demand, so feel free to introduce yourselves!"""
 
-        intro_reply_1 = make_reply(legend_profile)
-        intro_reply_1.msg = "MY NAME IS LEGENDFORCE12. I AM THE HEAD MODERATOR OF THIS FORUM. AS FOR MY INTERESTS, THE ONLY ONE THAT MATTERS IS THAT I LIKE GAMING. THAT IS ALL, CARRY ON EVERYONE."
-        intro_reply_2 = make_reply(moment37_profile)
-        intro_reply_2.msg = "yo this is Moment37. i'm a mod here and a streamer on shiver, same name as here! lmk if you want a link"
-        intro_reply_3 = make_reply(teamtila_profile)
-        intro_reply_3.msg = "I'm teamtila! It's pretty clear whose team I am on. Tula's not bad, but Tila? Tila's great."
-        intro_reply_4 = make_reply(hollowed_profile)
-        intro_reply_4.msg = "I'm hollowed and now you know the biggest hollowed winds fan here"
-        intro_reply_5 = make_reply(azure_winds_profile)
-        intro_reply_5.msg = "Hey, I'm azure_winds. You can call me any variation of my username. I've loved Hallowed Winds for what feels like forever. I also love anime, manga, drawing, and cats."
-        intro_reply_6 = make_reply(faren_love_profile)
-        intro_reply_6.msg = "Hello! I love Faren!"
 
-        thread_1.replies = [intro_reply_1 ,intro_reply_2 ,intro_reply_3 ,intro_reply_4 , intro_reply_5 , intro_reply_6]
+        intro_reply_1 = make_reply(wicker_profile)
+        intro_reply_1.msg = "Hi, I'm wicker-scarecrow, one of the mods! I just love talking about Hallowed Winds with everyone. :-)"
+        intro_reply_2 = make_reply(legend_profile)
+        intro_reply_2.msg = "MY NAME IS LEGENDFORCE12. I AM A MODERATOR OF THIS FORUM. AS FOR MY INTERESTS, THE ONLY ONE THAT MATTERS IS THAT I LIKE GAMING. THAT IS ALL, CARRY ON EVERYONE."
+        intro_reply_3 = make_reply(moment37_profile)
+        intro_reply_3.msg = "yo this is Moment37. i'm a mod here and a streamer on shiver, same name as here! lmk if you want a link"
+        intro_reply_4 = make_reply(teamtila_profile)
+        intro_reply_4.msg = "I'm teamtila! It's pretty clear whose team I am on. Tula's not bad, but Tila? Tila's great."
+        intro_reply_5 = make_reply(hollowed_profile)
+        intro_reply_5.msg = "I'm hollowed and now you know the biggest hollowed winds fan here"
+        intro_reply_6 = make_reply(azure_winds_profile)
+        intro_reply_6.msg = "Hey, I'm azure_winds. You can call me any variation of my username. I've loved Hallowed Winds for what feels like forever. I also love anime, manga, drawing, and cats."
+        intro_reply_7 = make_reply(faren_love_profile)
+        intro_reply_7.msg = "Hello! I love Faren!"
+
+        thread_1.replies = [intro_reply_1 ,intro_reply_2 ,intro_reply_3 ,intro_reply_4 , intro_reply_5, intro_reply_6 , intro_reply_7]
 
         emoji_1 = ReactableEmojis("large smile", 8)
         emoji_1.reaction_intent = "Excited"
@@ -45,14 +48,16 @@ init python:
         thread_2.emojis = ["self-concious","stressed", "worry"]
         thread_2.impressions = ["drama","scorn"]
         thread_2.msg =  """Title says it all. Hallowdev did an AMA on Warbler and confirmed a new game is in the works. Hope everyone's having a nice day. I'll see you all with more news or once the game drops."""
-        new_game_reply_1 = make_reply(legend_profile)
-        new_game_reply_1.msg = "THIS SOUNDS LIKE IT'LL SUCK. IT'S TAKING A NEW DIRECTION IS JUST CODE FOR I WANT YOUR MONEY FOR A WORSE GAME. HALLOWDEV DOESN'T CARE ABOUT US ANYMORE."
-        new_game_reply_2 = make_reply(bingle_profile)
-        new_game_reply_2.msg = "Dude… why can't you just let us be excited for a chance to experience the game in a new light?"
-        new_game_reply_3 = make_reply(legend_profile)
-        new_game_reply_3.msg = "IN THAT SAME AMA HALLOWDEV ALSO SAID THE FRANCHISE WAS GETTING STALE. WE SHOULDN'T TRUST SOMEONE WHO DOESN'T UNDERSTAND WHAT MADE THE GAMES GOOD ANYMORE. HALLOWED WINDS IS JUMPING THE SHARK HERE AND HALLOWDEV IS THE REASON FOR IT."
+        new_game_reply_1 = make_reply(wicker_profile)
+        new_game_reply_1.msg = "Great, I can't wait to hear more about it! :-)"
+        new_game_reply_2 = make_reply(legend_profile)
+        new_game_reply_2.msg = "THIS SOUNDS LIKE IT'LL SUCK. IT'S TAKING A NEW DIRECTION IS JUST CODE FOR I WANT YOUR MONEY FOR A WORSE GAME. HALLOWDEV DOESN'T CARE ABOUT US ANYMORE."
+        new_game_reply_3 = make_reply(bingle_profile)
+        new_game_reply_3.msg = "Dude… why can't you just let us be excited for a chance to experience the game in a new light?"
+        new_game_reply_4 = make_reply(legend_profile)
+        new_game_reply_4.msg = "IN THAT SAME AMA HALLOWDEV ALSO SAID THE FRANCHISE WAS GETTING STALE. WE SHOULDN'T TRUST SOMEONE WHO DOESN'T UNDERSTAND WHAT MADE THE GAMES GOOD ANYMORE. HALLOWED WINDS IS JUMPING THE SHARK HERE AND HALLOWDEV IS THE REASON FOR IT."
         
-        thread_2.replies = [new_game_reply_1 ,new_game_reply_2 ,new_game_reply_3]
+        thread_2.replies = [new_game_reply_1 ,new_game_reply_2 ,new_game_reply_3, new_game_reply_4]
 
         emoji_11 = ReactableEmojis("exlamation", 2)
         emoji_11.reaction_intent = "Excited"
@@ -70,15 +75,17 @@ init python:
         thread_4.emojis = ["anger","shocked"]
         thread_4.impressions = ["guide","fan-fiction"]
         thread_4.msg = """LOOK AT HIM!!!"""
-        cat_reply_1 = make_reply(moment37_profile)
-        cat_reply_1.msg = "super cute!"
-        cat_reply_2 = make_reply(bingle_profile)
-        cat_reply_2.msg = "I think my dog is cuter. He's up above"
-        cat_reply_3 = make_reply(legend_profile)
-        cat_reply_3.msg = "THAT IS NOT A DOG THAT IS A CHICKEN"
-        cat_reply_4 = make_reply(azure_winds_profile)
-        cat_reply_4.msg = "My cat wins but your dog is cute too!."
-        thread_4.replies = [cat_reply_1,cat_reply_2,cat_reply_3,cat_reply_4]
+        cat_reply_1 = make_reply(wicker_profile)
+        cat_reply_1 = "I'm looking! (OuO)"
+        cat_reply_2 = make_reply(moment37_profile)
+        cat_reply_2.msg = "super cute!"
+        cat_reply_3 = make_reply(bingle_profile)
+        cat_reply_3.msg = "I think my dog is cuter. He's up above"
+        cat_reply_4 = make_reply(legend_profile)
+        cat_reply_4.msg = "THAT IS NOT A DOG THAT IS A CHICKEN"
+        cat_reply_5 = make_reply(azure_winds_profile)
+        cat_reply_5.msg = "My cat wins but your dog is cute too!."
+        thread_4.replies = [cat_reply_1,cat_reply_2,cat_reply_3,cat_reply_4, cat_reply_5]
         thread_4.img_1 = "images/forum ui/hw/fandom/nugget.png"
         thread_4.img_2 = "images/forum ui/hw/fandom/chicken.png"
 
@@ -101,7 +108,7 @@ init python:
         thread_2.story_label_tag = "d1_t0"
 
         thread_4.is_story = True
-        thread_4.story_label_tag = "d12_t0"
+        thread_4.story_label_tag = "d1_t1"
 
         day_1 = [thread_1,thread_2, thread_4]
         forum.todays_threads = day_1
@@ -185,8 +192,8 @@ label day1_hdm:
         if amelie_profile.user_name == "MainArcher":
             username = "MainArchet"
 
-        if amelie_profile.user_name == "DarkStar":
-            username = "DarkStart"
+        if amelie_profile.user_name == "MarbleSoup":
+            username = "MarbleSoip"
 
     hotdog_man_nvl "Welcome to the Hallowed Winds section of the Hot Dog 
     Stand! We're happy to see you here, [username] Feel free 
@@ -278,9 +285,9 @@ label day_1_intro_thread:
             nickname_1 = "Archer"
             nickname_2 = "Main"
 
-        if amelie_profile.user_name == "DarkStar":
-            nickname_1 = "Dark"
-            nickname_2 = "Star"
+        if amelie_profile.user_name == "MarbleSoup":
+            nickname_1 = "Marble"
+            nickname_2 = "Soup"
             
     
 
@@ -310,10 +317,10 @@ label day_1_intro_thread:
             amelie " I'm here because…"
 
             "I missed talking about Hallowed Winds with other fans.":
-                $ amelie_intro_reply += " I missed talking about Hallowed Winds with other fans." 
+                $ amelie_intro_reply += "I missed talking about Hallowed Winds with other fans." 
 
             "I want to be friends with other Hallowed Winds enthusiasts.":
-                $ amelie_intro_reply += " I want to be friends with other Hallowed Winds enthusiasts."
+                $ amelie_intro_reply += "I want to be friends with other Hallowed Winds enthusiasts."
         
         # third sentence
         menu:
@@ -337,7 +344,7 @@ label day_1_intro_thread:
                 amelie "Yeah, seems fine to post"
                 $ stillMakingReply = False
             "No": 
-                amelie "Let's try this again"
+                amelie "Let's try this again."
                 $ amelie_intro_reply = str()
 
     amelie "I should check out the rest of the threads..."
@@ -406,7 +413,7 @@ label d1_t0:
     jump day1_explore_forum
 
 #T0: New Hallowed Winds game confirmed on Warbler!! [story]
-label d12_t0:
+label d1_t1:
     #upon clicking to enter thread
     show amelie neutral zorder 3 at left  onlayer screens
     #scrolled to bottom, clicked reply

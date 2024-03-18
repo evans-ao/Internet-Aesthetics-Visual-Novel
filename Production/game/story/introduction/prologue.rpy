@@ -18,7 +18,7 @@ label prologue:
     amelie "Six months ago, I thought I'd be graduating with all my friends today. Instead, I'm here.{cps=*0.25} Alone. {/cps}"
     amelie "{cps=*2}I know I needed to take this break. Things would be so much worse if I hadn't left.{/cps} It's just hard to be away from my friends."
     amelie "{color=#cf5300ff}If I can even call them that. It's not like they've even tried to keep in touch.{/color}" 
-    amelie "It's not like I would have anything to tell them about, anyway. {cps=*0.5}Every day's the same thing, over and over again. I'm so bored{/cps}."
+    amelie "It's not like I would have anything to tell them about, anyway. Every day's the same thing, over and over again.{cps=*0.5} I'm so bored{/cps}."
     amelie "{color=#cf5300ff}I'm so tired of being alone.{/color} Sitting here wallowing won't change anything, though. {color=#00deb5ff} I need to {i}do something{/i} about this.{/color}" 
     amelie "Last time I was like this I joined a forum online. I think it helped a little. Maybe I should do that again?"
     amelie "{cps=*0.5}…yeah, I should.{/cps}{color=#00deb5ff} If I can't be around my friends, why not make new ones?{/color}"
@@ -60,12 +60,12 @@ label prologue_signup:
    
     amelie "I forgot to reject cookies…at least this is convenient."
     amelie "Under the Guise of Darkness, Hallowed Winds, or Biscuit Brigade... the ultimate decision."
-    amelie "I loved watching Under the Guise of Darkness when I was younger, but I fell behind on it during college. Some of the stuff on there might be anime spoilers for me."
-    amelie "At the same time, I would love an excuse to catch up on the series."
-    amelie "The Hallowed Winds series of games is amazing, but the community can be a bit intense. With how that factored into this gap year, it might be a good idea to avoid it."
-    amelie "At the same time, I made that club because I loved the games so much, and I really do want to be around other people who love them."
-    amelie "Biscuit Brigade's music is great. I just am not sure if I could spend a ton of time talking about it."
-    amelie "Then again, it's not like we'll only be talking about Biscuit Brigade, right?"
+    amelie "I loved watching Under the Guise of Darkness when I was younger, but I fell behind on it during college. {color=#cf5300ff}Some of the stuff on there might be anime spoilers for me.{/color}"
+    amelie "{color=#00deb5ff}At the same time, I would love an excuse to catch up on the series.{/color}"
+    amelie "The Hallowed Winds series of games is amazing, but the community can be a bit intense. {color=#cf5300ff}With how that factored into this gap year, it might be a good idea to avoid it.{/color}"
+    amelie "{color=#00deb5ff}But I did make that club because I loved the games so much, and I really do want to be around other people who love them.{/color}"
+    amelie "Biscuit Brigade's music is great. {color=#cf5300ff}I just am not sure if I could spend a ton of time talking about it.{/color}"
+    amelie "{color=#00deb5ff}Then again, it's not like we'll only be talking about Biscuit Brigade, right?{/color}"
     amelie "I can't juggle three different communities right now, or even two. So which one do I pick?"
 
     # at this point the options appear to be clickable. 
@@ -109,8 +109,8 @@ label account_creation:
         "MainArcher":
             $ amelie_profile.user_name = "MainArcher"
 
-        "DarkStar":
-            $ amelie_profile.user_name = "DarkStar"
+        "MarbleSoup":
+            $ amelie_profile.user_name = "MarbleSoup"
 
 
     $ username = amelie_profile.user_name
@@ -126,8 +126,8 @@ label account_creation:
     if username == "MainArcher":
         amelie "I think [username] will fit well here. It's my go-to in gaming communities, after all."
 
-    if username == "DarkStar":
-        amelie "It's been a while since I used [username]. I used to love the character BlackStar..."
+    if username == "MarbleSoup":
+        amelie "It's been a while since I used [username]. I thought it was hilarous when I was younger."
 
 
     #displaying on screen:
