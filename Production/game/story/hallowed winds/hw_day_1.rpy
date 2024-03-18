@@ -34,10 +34,12 @@ init python:
 
         emoji_1 = ReactableEmojis("large smile", 8)
         emoji_1.reaction_intent = "Excited"
+
         emoji_2 = ReactableEmojis("hotdog", 4)
-        emoji_2.reaction_intent = "HOT"
+        emoji_2.reaction_intent = "HOTDOG"
+
         emoji_3 = ReactableEmojis("heart eyes", 2)
-        emoji_3.reaction_intent = "Distant"
+        emoji_3.reaction_intent = "Excited"
 
         thread_1.all_react_emojis = [emoji_1,emoji_2,emoji_3]
 
@@ -59,14 +61,14 @@ init python:
         
         thread_2.replies = [new_game_reply_1 ,new_game_reply_2 ,new_game_reply_3, new_game_reply_4]
 
-        emoji_11 = ReactableEmojis("exlamation", 2)
-        emoji_11.reaction_intent = "Excited"
-        emoji_12 = ReactableEmojis("nervous laugh", 3)
-        emoji_12.reaction_intent = "HOT"
-        emoji_13 = ReactableEmojis("star eyes", 7)
-        emoji_13.reaction_intent = "Distant"
+        emoji_1_1 = ReactableEmojis("exclamation", 2)
+        emoji_1_1.reaction_intent = "Surprise"
+        emoji_2_1 = ReactableEmojis("nervous laugh", 3)
+        emoji_2_1.reaction_intent = "Unsure"
+        emoji_3_1 = ReactableEmojis("star eyes", 7)
+        emoji_3_1.reaction_intent = "Excited"
 
-        thread_2.all_react_emojis = [emoji_11,emoji_12,emoji_13]
+        thread_2.all_react_emojis = [emoji_1_1,emoji_2_1,emoji_3_1]
 
 
         thread_4 = make_thread(azure_winds_profile, "Picture")   
@@ -90,14 +92,14 @@ init python:
         thread_4.img_2 = "images/forum ui/hw/fandom/chicken.png"
 
 
-        emoji_21 = ReactableEmojis("smile eyes", 1)
-        emoji_21.reaction_intent = "Excited"
-        emoji_22 = ReactableEmojis("wow", 2)
-        emoji_22.reaction_intent = "HOT"
-        emoji_23 = ReactableEmojis("kiss", 4)
-        emoji_23.reaction_intent = "Distant"
+        emoji_1_2 = ReactableEmojis("smile eyes", 1)
+        emoji_1_2.reaction_intent = "Happy"
+        emoji_2_2 = ReactableEmojis("wow", 2)
+        emoji_2_2.reaction_intent = "Amazed"
+        emoji_3_2 = ReactableEmojis("kiss", 4)
+        emoji_3_2.reaction_intent = "LoveCat"
 
-        thread_4.all_react_emojis = [emoji_21,emoji_22,emoji_23]
+        thread_4.all_react_emojis = [emoji_1_2,emoji_2_2,emoji_3_2]
 
 
         # setting up the configuration of the current day
