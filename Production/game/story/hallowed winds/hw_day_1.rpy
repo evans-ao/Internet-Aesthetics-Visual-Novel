@@ -86,7 +86,7 @@ init python:
         cat_reply_4 = make_reply(legend_profile)
         cat_reply_4.msg = "THAT IS NOT A DOG THAT IS A CHICKEN"
         cat_reply_5 = make_reply(azure_winds_profile)
-        cat_reply_5.msg = "My cat wins but your dog is cute too!."
+        cat_reply_5.msg = "My cat wins but your dog is cute too!"
         thread_4.replies = [cat_reply_1,cat_reply_2,cat_reply_3,cat_reply_4, cat_reply_5]
         thread_4.img_1 = "images/forum ui/hw/fandom/nugget.png"
         thread_4.img_2 = "images/forum ui/hw/fandom/chicken.png"
@@ -213,7 +213,7 @@ label day1_hdm:
 
     amelie "Why would I join if I wasn't planning on posting...?"
     amelie "Wait, did I mess up my username? It's spelled wrong here."
-    amelie "No, it's spelled correctly there. Did they hand-type this message?"
+    amelie "No, it's spelled correctly under my avatar. Did they hand-type this message?"
     amelie "That's kind of weird..."
 
     jump day1_explore_forum 
@@ -237,7 +237,7 @@ label day1_mdm:
         amelie "How should I respond?"
 
         "Hello! I'm a fan of your streams, so it's nice to see you here. I'm really excited to be here.":
-            $ amelie_profile.impressions.append("fan")
+            $ moment37_profile.impressions.append("fan")
             $ amelie_profile.replies_made.append("D1_DM_M37")
             amelie_nvl "Hello! I'm a fan of your streams, so it's nice to see you here. I'm really excited to be here."
             moment37_nvl "oh, a fan! nice. i hope we don't disappoint you lol. i'll see you around!"            #+1 point
@@ -250,7 +250,7 @@ label day1_mdm:
             moment37_nvl "haha, you got it. see you around!"
         
         "Thanks, but I think I've got this.":
-            $ amelie_profile.impressions.append("jerkish")
+            $ moment37_profile.impressions.append("jerkish")
             $ amelie_profile.replies_made.append("D1_DM_M37")
             amelie_nvl "Thanks, but I think I've got this."
             moment37_nvl "offer still stands, see you around!"
@@ -386,14 +386,16 @@ label d1_t0:
         has_denied_post = False
 
     menu:
-        amelie "How should I reply"
+        amelie "How should I reply?"
 
         "I hope it's a classic game!":
             amelie "I hope it's a classic game!"
+            $ legend_profile.impressions.append("ClassicFan")
             $ new_msg = "I hope it's a classic game!"
 
         "I can't wait!":
             amelie "I can't wait!"
+            $ wicker_profile.impressions.append("Enthusiastic")
             $ new_msg = "I can't wait!"
 
         "Cancel":
@@ -409,8 +411,8 @@ label d1_t0:
 
             #forum.load_full_thread(current_thread)
             visual_novel.enable_forum()
-            amelie_profile.is_read.append("d2_intro")
-            amelie_profile.replies_made.append("d2_intro_reply")
+            amelie_profile.is_read.append("d1_t0")
+            amelie_profile.replies_made.append("d1_t0_reply")
 
     jump day1_explore_forum
 
@@ -428,7 +430,7 @@ label d1_t1:
         has_denied_post = False
 
     menu:
-        amelie "How should I reply"
+        amelie "How should I reply?"
 
         "Your cat's adorable!":
             amelie "Your cat's adorable!"
@@ -438,9 +440,9 @@ label d1_t1:
             amelie "I guess the dog (chicken) is cute, but the cat's cuter."
             $ new_msg = "I guess the dog (chicken) is cute, but the cat's cuter."
 
-        "Always nice to see cat and dog photos":
-            amelie "Always nice to see cat and dog photos"
-            $ new_msg = "Always nice to see cat and dog photos"
+        "Always nice to see cat and dog photos!":
+            amelie "Always nice to see cat and dog photos!"
+            $ new_msg = "Always nice to see cat and dog photos!"
 
     python: 
         new_reply.msg = new_msg
@@ -448,8 +450,8 @@ label d1_t1:
 
         #forum.load_full_thread(current_thread)
         visual_novel.enable_forum()
-        amelie_profile.is_read.append("d3_intro")
-        amelie_profile.replies_made.append("d3_intro_reply")
+        amelie_profile.is_read.append("d1_t1")
+        amelie_profile.replies_made.append("d1_t1_reply")
 
     jump day1_explore_forum
         
