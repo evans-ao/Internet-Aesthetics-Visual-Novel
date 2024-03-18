@@ -146,7 +146,11 @@ label hw_day_1:
 
     $ renpy.pause(3)    
     show amelie neutral zorder 3 at left  onlayer screens
-    amelie "The rules seem normal. I should introduce myself now."
+    amelie "The rules seem normal enough. I need to introduce myself now."
+    amelie "I should keep my energy levels in mind going forward, though. I could miss out on something good if I drain my social battery doing dumb stuff."
+    amelie "After all, {b}if I miss out on a thread today, I won't be able to reply to it tomorrow {/b}based on these rules. {b}I can't reply to DMs if I let them sit too long, either.{/b}"
+    amelie "{b}I'll always stop for the night if I run out of energy, but I don't need to drain myself every night if nothing interests me.{/b} It's just something to keep in mind!"
+
     
 
     jump day1_explore_forum
@@ -158,11 +162,11 @@ label day1_explore_forum:
     #really not sure what's happening there, sorry. -CJ
 
     if "day1_hdm" not in amelie_profile.is_read:
-        amelie "Wait, I have a message already? Maybe I should read it."
+        amelie "Wait, I have a message already? Maybe I should read it..."
     #for now, to force the player into the introduction thread...
 
-    if "d1_intro_reply" not in amelie_profile.replies_made:
-        amelie "Okay, now to check out introductions..."
+    if "day_1_intro_thread" not in amelie_profile.is_read:
+        amelie "Okay, now to check out introductions."
 
     hide amelie neutral onlayer screens
 
@@ -211,10 +215,8 @@ label day1_hdm:
 
     show amelie neutral zorder 3 at left  onlayer screens
 
-    amelie "Why would I join if I wasn't planning on posting...?"
-    amelie "Wait, did I mess up my username? It's spelled wrong here."
-    amelie "No, it's spelled correctly under my avatar. Did they hand-type this message?"
-    amelie "That's kind of weird..."
+    amelie "Why would I join if I wasn't planning on posting...? Wait, did I mess up my username? It's spelled wrong here."
+    amelie "No, it's spelled correctly under my avatar. Did they hand-type this message? ...That's kind of weird."
 
     jump day1_explore_forum 
 
@@ -256,7 +258,7 @@ label day1_mdm:
             moment37_nvl "offer still stands, see you around!"
 
         "Don't respond":
-            "I don't feel like responding"
+            "I don't feel like responding."
 
     jump day1_continue_explore_forum 
 
@@ -268,6 +270,7 @@ label day_1_intro_thread:
         visual_novel.stop_forum()
         stillMakingReply = True 
         amelie_intro_reply = str()
+        amelie_profile.is_read.append("day_1_intro_thread")
 
         username = amelie_profile.user_name
         nickname_1 = str()
@@ -288,8 +291,8 @@ label day_1_intro_thread:
             nickname_2 = "Main"
 
         if amelie_profile.user_name == "MarbleSoup":
-            nickname_1 = "Marble"
-            nickname_2 = "Soup"
+            nickname_1 = "Soup"
+            nickname_2 = "Marbles"
             
     
 

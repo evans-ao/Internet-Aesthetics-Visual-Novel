@@ -87,21 +87,17 @@ init python:
 
 label d2_intro:
     python:
-        #eliminate between these lines when day 1 transition implemented
-        d1_t0reply=False
-        d1_t1reply=False
-        jerkish=False
-        fan=False
+
         #End line
-        speedrun_c1=False
-        speedrun_c2=False
-        d2wicker_read=False
-        d2moment37_read=False
-        d2lf12_read=False
-        d2_t0read=False
-        d2_t0reply=False
-        d2_t1read=False
-        d2_t1reply=False
+        # speedrun_c1=False
+        # speedrun_c2=False
+        # d2wicker_read=False
+        # d2moment37_read=False
+        # d2lf12_read=False
+        # d2_t0read=False
+        # d2_t0reply=False
+        # d2_t1read=False
+        # d2_t1reply=False
         make_day_2_forum()
         forum.load_home()
         forum.load_forum_vestiges()
@@ -144,58 +140,59 @@ label d2_speedrun_thread:
     python:
         forum.load_full_thread(forum.story_thread)
         visual_novel.stop_forum()
+        new_reply = make_reply(amelie_profile)
+        current_thread = forum.todays_threads[0]
+        visual_novel.stop_forum()
+        new_msg = str()
+        amelie_profile.is_read.append("d2_speedrun_thread")
+        
         stillMakingReply = True 
     amelie "I've been interested enough in speedrunning Hallowed Winds to practice some of the skips in the past, but not enough to actually set up recording and timing a playthrough of the game."
 
-    amelie "It always felt like I needed one last push to actually do a speedrun."
+    amelie "It always felt like I needed one last push to actually do a speedrun. I had no incentive to do it, and it wasn't like I would be able to talk about my achievements with anyone."
 
-    amelie "It's not like anything encouraged me to do it, or like I would be able to talk about my achievements with anyone."
+    amelie "The club could have been that encouragement, but with how busy I was trying to run it...Well, it didn't work out in more ways than one."
 
-    amelie "The club could have been that encouragement, but with how busy I was trying to run it..."
-
-    amelie "Well, it didn't work out in more ways than one."
-
-    amelie "This feels like a sign. No, this is a sign."
-
-    amelie "I'm participating. No ifs, ands, or buts about it."
+    amelie "This feels like a sign. No, this is a sign. I'm participating. No ifs, ands, or buts about it."
 
     amelie "It looks like I have to submit a score within the next week. I should practice, too."
 
-    amelie "I should post that I'm joining in first before I do anything else."
+    amelie "I should post that I'm joining in before I do anything else."
 
 #please force the user to hit the reply button and then have this menu come up. The corresponding forum post should be made too.
 
     menu:
-        "I should post that I'm joining in first before I do anything else."
+        "I should post that I'm joining in before I do anything else."
 
         "Count me in! This will be so much fun!":
             #-1 point
-            $ speedrun_c1=True
+            $ amelie_profile.replies_made.append("speedrun_c1")
             #posted as reply:
             python:
-                comp1_reply_7=make_reply(amelie_profile)
-                comp1_reply_7.msg="Count me in! This will be so much fun!"
-                forum.story_thread.replies.append(comp1_reply_7)
+                new_msg="Count me in! This will be so much fun!"
+
 
         "How exciting! I can't wait to win!":
             #+1 point
-            $ speedrun_c2=True
+            $ amelie_profile.replies_made.append("speedrun_c2")
             #posted as reply:
             python:    
-                comp1_reply_7=make_reply(amelie_profile)
-                comp1_reply_7.msg="How exciting! I can't wait to win!"
-                forum.story_thread.replies.append(comp1_reply_7)
+                new_msg="How exciting! I can't wait to win!"
 
-    if speedrun_c1==True:
+
+    python:
+        new_reply.msg = new_msg
+        current_thread.replies.append(new_reply)
+        visual_novel.enable_forum()
+
+
+    if "speedrun_c1" in amelie_profile.replies_made:
         amelie "That seems friendly enough. It doesn't really show that I'm in it to win it, but maybe that's better."
-    elif speedrun_c2==True:
+    elif "speedrun_c2" in amelie_profile.replies_made:
         amelie "I don't know if I actually will win, but if I do, that would be amazing."
 
-    amelie "I should make sure to turn in early so that I have enough energy to play after this."
-
-    amelie "At the same time, if I miss a thread today, I won't be able to reply to it tomorrow. I think I can't reply to DMs if I let them sit too long, either."
-
-    amelie "Speaking of DMs, looks like I have some new ones, but I haven't checked out the other threads yet today. Wonder what I should do first..."
+    amelie "{b}I should make sure to turn in early so that I have enough energy to play after this.{/b}"
+    amelie "It looks like I have some new DMs, but I haven't checked out the other threads yet today. Wonder what I should do first..."
 #User wicker-scarecrow will be referred to as wicker in code, so wicker_nvl for DMs from them
     jump d2_dms
 
