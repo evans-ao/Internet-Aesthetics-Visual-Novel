@@ -70,7 +70,7 @@ init python:
         thread_3.replies=[comp1_reply_1, comp1_reply_2, comp1_reply_3, comp1_reply_4, comp1_reply_5, comp1_reply_6]
 
 
-        day_2 = [thread_3, thread_1,thread_2]
+        day_2 = [thread_3, thread_1, thread_2]
         forum.todays_threads = day_2
         forum.story_thread  = thread_3
 
@@ -424,6 +424,7 @@ label d2_dm_moment37:
                 amelie "No need to respond."
                 jump day2_explore
 
+
     elif "fan" in moment37_profile.impressions:
         moment37_nvl "hey [amelie_profile.user_name]! here's a sneak peek at what i'mma say on stream tonight:"
         moment37_nvl "i'm going to rock this speedrun competition."
@@ -447,6 +448,7 @@ label d2_dm_moment37:
             "Don't respond":
                 amelie "I'm not sure what to say, so I guess I won't reply..."
                 jump day2_explore
+
 
 
     else:
@@ -533,12 +535,12 @@ label d2_dm_legendforce12:
     #call d2_t1
 
 label d2_t0:
-
-label d2_t1:
     python:
-        if d2_t0read != True:
-            d2_t0reply= False
-        d2_t0read=True
+        new_reply = make_reply(amelie_profile)
+        current_thread = forum.todays_threads[1]
+        visual_novel.stop_forum()
+        new_msg = str()
+        has_denied_post = False
 
 
     amelie "Uh..."
@@ -548,24 +550,77 @@ label d2_t1:
 
         "What.":
             #no points
-            $ d2_t1reply=True
             #amelie's reply:
             amelie "What."
-            $ love_reply_6=make_reply(amelie_profile)
-            $ love_reply_6.msg="What."
-            $ thread_1.replies.append(love_reply_6)
+            $ new_msg = "What."
             amelie "I just...what?"
 
         "I see it now! D:":
             #+1 point
-            $ d2_t1reply=True
             #amelie's reply
             amelie "I see it now! D:"
-            $ love_reply_6=make_reply(amelie_profile)
-            $ love_reply_6.msg="I see it now! D:"
-            $ thread_1.replies.append(love_reply_6)
+            $ new_msg = "I see it now! D:"
             amelie "I really wish I didn't see what FarenLove means, but I do."
 
         "Cancel":
             #don't reply"
-            $ d2_t1mark=True
+            $ has_denied_post = True
+
+    python: 
+        if not has_denied_post:
+            new_reply.msg = new_msg
+            current_thread.replies.append(new_reply)
+
+        #forum.load_full_thread(current_thread)
+            visual_novel.enable_forum()
+            amelie_profile.is_read.append("d2_t0")
+            amelie_profile.replies_made.append("d2_t0_reply")
+            jump day2_explore
+
+
+
+label d2_t1:
+    python:
+        new_reply = make_reply(amelie_profile)
+        current_thread = forum.todays_threads[2]
+        visual_novel.stop_forum()
+        new_msg = str()
+        has_denied_post = False
+
+    amelie "Judging by their username, I guess this is referring to the time Tila and Tula get in a huge fight and split up?"
+
+    menu:
+        "Reply"
+
+        "I can see Tila's point in the argument, but I always side with Tula.":
+            #no points
+            #amelie's reply:
+            amelie "I can see Tila's point in the argument, but I always side with Tula."
+            $ new_msg = "I can see Tila's point in the argument, but I always side with Tula."
+
+
+        "I side with Tula in the game, but Tila's the one who has it right.":
+            #+1 point
+            #amelie's reply
+            $ teamtila_profile.impressions.append("hypocrite")
+            amelie "I side with Tula in the game, but Tila's the one who has it right."
+            $ new_msg = "I side with Tula in the game, but Tila's the one who has it right."
+
+        "Cancel":
+            #don't reply"
+            $ has_denied_post = True
+
+
+    python: 
+        if not has_denied_post:
+            new_reply.msg = new_msg
+            current_thread.replies.append(new_reply)
+
+        #forum.load_full_thread(current_thread)
+            visual_novel.enable_forum()
+            amelie_profile.is_read.append("d2_t1")
+            amelie_profile.replies_made.append("d2_t1_reply")
+    
+    if "hypocrite" in teamtila_profile.impressions:
+        $ new_reply2= make_reply(teamtila_profile)
+        "Why not side with who you agree with?"

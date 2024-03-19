@@ -447,14 +447,19 @@ label d1_t1:
             amelie "Always nice to see cat and dog photos!"
             $ new_msg = "Always nice to see cat and dog photos!"
 
-    python: 
-        new_reply.msg = new_msg
-        current_thread.replies.append(new_reply)
+        "Cancel":
+            #cancels reply, exits menu, back to previous screen. User can theoretically re-enter the menu from the reply button again
+            $ has_denied_post = True
 
-        #forum.load_full_thread(current_thread)
-        visual_novel.enable_forum()
-        amelie_profile.is_read.append("d1_t1")
-        amelie_profile.replies_made.append("d1_t1_reply")
+    python: 
+        if not has_denied_post:
+            new_reply.msg = new_msg
+            current_thread.replies.append(new_reply)
+
+            #forum.load_full_thread(current_thread)
+            visual_novel.enable_forum()
+            amelie_profile.is_read.append("d1_t1")
+            amelie_profile.replies_made.append("d1_t1_reply")
 
     jump day1_explore_forum
         
