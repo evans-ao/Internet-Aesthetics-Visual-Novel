@@ -103,6 +103,7 @@ label d2_intro:
         forum.load_forum_vestiges()
         game_manager.show_laptop_ui()
         forum.is_dm_accesible = True
+        forum.current_dms_screen = "d2_dms"
         visual_novel.enable_forum()
     
     show screen story_overlay
@@ -114,20 +115,17 @@ label d2_intro:
         renpy.pause()
 
     hide screen chapter_overlay           
-    show screen forum_signup
-
     hide screen story_overlay    
+
     $ game_manager.switch_game_context("laptop")
 
     show amelie neutral zorder 3 at left  onlayer screens
 
-    amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but I've been looking forward to this all day."
+    amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but for some reason I've been looking forward to this all day."
 
 #perhaps something on the screen to highlight the top thread--the speedrunning announcement thread
 
-    amelie "Hm?"
-
-    amelie "A speedrunning competition? Now this I {i}have{/i} to check out."
+    amelie "Hm? A speedrunning competition? Now this I {i}have{/i} to check out."
 
     jump d2_speedrun_thread
 
@@ -188,232 +186,246 @@ label d2_speedrun_thread:
 
     if "speedrun_c1" in amelie_profile.replies_made:
         amelie "That seems friendly enough. It doesn't really show that I'm in it to win it, but maybe that's better."
+
     elif "speedrun_c2" in amelie_profile.replies_made:
         amelie "I don't know if I actually will win, but if I do, that would be amazing."
 
     amelie "{b}I should make sure to turn in early so that I have enough energy to play after this.{/b}"
     amelie "It looks like I have some new DMs, but I haven't checked out the other threads yet today. Wonder what I should do first..."
 #User wicker-scarecrow will be referred to as wicker in code, so wicker_nvl for DMs from them
-    jump d2_dms
+    jump day2_explore
+
+
+
+label day2_explore:
+    #just to keep place until the player chooses to go elsewhere.
+    hide amelie neutral onlayer screens
+    $ visual_novel.stop_until_forum_precondition()
+
+
 
 
 label d2_dms:
+    $ visual_novel.stop_forum()
+    $ dmlist=[]
     amelie "So what do I have?"
 
-#There should be code here to allow the player to choose between DMs, or I need to be told that such a page can't be implemented. 
-#for now I am going to put a menu here to choose which DM to read with conditional statements to make sure no DM can be selected twice.
+    if "d2wicker_read" in amelie_profile.is_read:
+        amelie "wicker-scarecrow messaged me."
+        $ dmlist.append("wicker")
 
-    if d2wicker_read==False and d2moment37_read==False:
-        if d2lf12_read==True:
-            amelie "Still have two messages left."
+    if "d2lf12_read" in amelie_profile.is_read:
+        amelie "LEGENDFORCE12 sent me a message."
+        $ dmlist.append("LF")
 
-            amelie "One's from wicker-scarecrow, and the other's from Moment37."
+    if "d2m37_read" in amelie_profile.is_read:
+        amelie "I have a message from Moment37."
+        $ dmlist.append("M37")
+    
+    $ listlength=len(dmlist)
 
-            menu:
-                "Which one should I read now?"
+    if listlength == 3:
+        menu:
+            "which one should I read now?"
 
-                "wicker-scarecrow's":
-                    call d2_dm_wicker
+            "wicker-scarecrow's":
+                call d2_dm_wicker
 
-                "Moment37's":
-                    call d2_dm_moment37
-                
-                "Neither":
-                    pass
-
-        else:
-            amelie "Wow, three messages?"
-
-            amelie "Let's see...one's from wicker-scarecrow...? Oh, the one who posts first in every thread! Right!"
-
-            amelie "Then there's another one from Moment37."
-
-            amelie "And LEGENDFORCE12 messaged me too. Didn't expect that."
-
-            menu:
-                "Which one should I read now?"
-
-                "wicker-scarecrow's":
-                    call d2_dm_wicker
-
-                "Moment37's":
-                    call d2_dm_moment37
-
-                "LEGENDFORCE12's":
-                    call d2_dm_legendforce12
-
-                "Never mind":
-                    amelie "I'll read my DMs later."
-
-    elif d2wicker_read==False and d2moment37_read==True:
-        if d2lf12_read==True:
-            amelie "Just have the message from wicker-scarecrow left."
-
-            menu:
-                "Should I read it now?"
-
-                "Yes":
-                    call d2_dm_wicker
-
-                "No":
-                    pass
-
-        else:
-            amelie "Still have two messages left."
-
-            amelie "One's from wicker-scarecrow, and the other's from LEGENDFORCE12."
-            menu:
-                "Which one should I read now?"
-
-                "wicker-scarecrow's":
-                    call d2_dm_wicker
-                
-                "LEGENDFORCE12's":
-                    call d2_dm_legendforce12
-
-                "Neither":
-                    pass
-
-    elif d2wicker_read==True and d2moment37_read==True:
-        if d2lf12_read==True:
-            amelie "I read all my DMs already."
-        else:
-            amelie "Just have the message from LEGENDFORCE12 left."
-
-            menu:
-                "Should I read it now?"
-
-                "Yes":
-                    call d2_dm_legendforce12
-
-                "No":
-                    pass
-
-
-    elif d2wicker_read==True and d2moment37_read==False:
-        if d2lf12_read==True:
-            amelie "Just have the message from Moment37 left."
-            menu:
-                "Should I read it now?"
-
-                "Yes":
-                    call d2_dm_moment37
-
-                "No":
-                    pass
-
-        else:
-            amelie "Still have two messages left."
+            "Moment37's":
+                call d2_dm_moment37
             
-            amelie "One's from Moment37 and the other's from LEGENDFORCE12."
+            "LEGENDFORCE12's":
+                call d2_dm_legendforce12
+            
+            "Don't read":
+                amelie "I'm not going to bother right now."
+                call day2_explore
 
+
+
+
+    elif listlength == 2:
+        if "d2wicker_read" in amelie_profile.is_read:
             menu:
-                "Which one should I read now?"
+                "which one should I read now?"
 
                 "Moment37's":
                     call d2_dm_moment37
-
+            
                 "LEGENDFORCE12's":
                     call d2_dm_legendforce12
+                
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
 
-                "Neither":
-                    pass
+
+        elif "d2lf12_read" in amelie_profile.is_read:
+            menu:
+                "which one should I read now?"
+
+                "wicker-scarecrow's":
+                    call d2_dm_wicker
+
+                "Moment37's":
+                    call d2_dm_moment37
+                
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
 
 
+        elif "d2m37_read" in amelie_profile.is_read:
+            menu:
+                "which one should I read now?"
+
+                "wicker-scarecrow's":
+                    call d2_dm_wicker
+                
+                "LEGENDFORCE12's":
+                    call d2_dm_legendforce12   
+                
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
+
+
+
+
+    elif listlength == 1:
+        if "d2wicker_read" not in amelie_profile.is_read:
+            menu:
+                "which one should I read now?"
+
+                "wicker-scarecrow's":
+                    call d2_dm_wicker
+
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
+
+        elif "d2lf12_read" not in amelie_profile.is_read:
+            menu:
+                "which one should I read now?"
+
+                "LEGENDFORCE12's":
+                    call d2_dm_legendforce12   
+                
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
+
+        elif "d2m37_read" not in amelie_profile.is_read:
+            menu:
+                "which one should I read now?"
+
+                "Moment37's":
+                    call d2_dm_moment37
+                
+                "Don't read":
+                    amelie "I'm not going to bother right now."
+                    call day2_explore
+
+
+
+        
+    elif listlength < 1:
+        amelie "I don't have any DMs to read..."
 
 
 
 label d2_dm_wicker:
-    python:
-        if d2wicker_read==False:
-            d2wicker_reply=False
-    $ d2wicker_read=True
+    $ amelie_profile.is_read.append("d2wicker_read")
     wicker_nvl "Hi [amelie_profile.user_name]! I'm wicker-scarecrow, a mod here. You probably saw me on the introduction thread!"
-    if d1_t0reply==True:
+    if "d1_t0_reply" in amelie_profile.replies_made:
         wicker_nvl "I saw you're excited for the new Hallowed Winds game! I am too! :-D"
-    elif d1_t1reply==True:
+        if "d1_t1_reply" in amelie_profile.replies_made:
+            wicker_nvl "I saw you comment on the cat thread too. That kitty was so cute *u* "
+
+    elif "d1_t1_reply" in amelie_profile.replies_made:
         wicker_nvl "I saw you comment on the cat thread. That kitty was so cute *u* "
+
     else:
         wicker_nvl "I haven't seen you anywhere but the introduction thread before today..."
+
     wicker_nvl "But I also saw you're going to participate in the speedrunning competition! I'm so excited! I don't enjoy speedrunning but a lot of people do, and I love seeing people active in the Hallowed Winds community."
 
     wicker_nvl "I hope you'll continue to be active here at the Hot Dog Stand!! :-)"
 
-    amelie "She seems nice. I am surprised she's so active on here."
-
-    amelie "I'd feel bad if I didn't reply somehow..."
+    amelie "She seems nice. I am surprised she's so active on here. I'd feel bad if I didn't reply somehow..."
 
     menu:
         "How should I reply?"
 
         "Hello! I've seen you on every thread so far. How are you always the first post? It's impressive.":
-            $ d2wicker_reply=True
+            $ amelie_profile.replies_made.append("d2wicker_reply")
+            $ wicker_profile.impressions.append("Noticed!")
             amelie_nvl "Hello! I've seen you on every thread so far. How are you always the first post? It's impressive."
             wicker_nvl "I really like the forums here, so I do my best to be active! It seems like I might be a bit too fast though... (^ ^)'' "
-            jump d2_dms
+            jump day2_explore
 #don't worry, that's two single apostrophes in a row so it won't mess with RenPy
 
         "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!":
-            $ d2wicker_reply=True
+            $ amelie_profile.replies_made.append("d2wicker_reply")
+            $ wicker_profile.impressions.append("Hopeful!")
             amelie_nvl "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!"
             wicker_nvl "Feel free to contact me or any of the other mods if you need something! I know you can't initiate DMs as a normal user, but you can always reply to a moderator's message."
-            jump d2_dms
+            jump day2_explore
 
 
         "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!":
-            $ d2wicker_reply=True
+            $ amelie_profile.replies_made.append("d2wicker_reply")
+            $ wicker_profile.impressions.append("Competitive?")
             amelie_nvl "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!"
             wicker_nvl "I hope to see you around too! I've been told I'm hard to miss here...(^ ^)'' "
-            jump d2_dms
+            jump day2_explore
 
         "Don't respond":
-            amelie "I'm not sure what to say, so I guess I'll hold off for now."
-            jump d2_dms
+            amelie "I'm not sure what to say, so I guess I won't reply..."
+            jump day2_explore
 
 
 
 
 
 label d2_dm_moment37:
-    python:
-        if d2moment37_read==False:
-            d2moment37_reply=False
-    $ d2moment37_read=True
-    if jerkish==True:
+    $ amelie_profile.is_read.append("d2m37_read")
+    if "jerkish" in moment37_profile.impressions:
         moment37_nvl "you may not have been too happy to hear from me last time, but i'm gonna tell you this anyway."
-        moment37_nvl "i'm going to rock this speedrun competition."
-        moment37_nvl "you're going down, kid. hope you're ready!"
+        moment37_nvl "i'm going to rock this speedrun competition. you're going down, kid. hope you're ready!"
+
         amelie "It looks like I made a bad impression yesterday. Maybe I should try to fix that?"
         menu:
             "How should I respond?"
 
             "I hope you're ready to lose!":
-                $ d2moment37_reply=True
+                $ amelie_profile.replies_made.append("d2moment37_reply")
                 amelie "Nah, let's just run with it."
                 amelie_nvl "I hope you're ready to lose!"
                 moment37_nvl "to you? not happening lol"
-                jump d2_dms
+                jump day2_explore
 
             "That sounds like a declaration of war. Let's do this!":
-                $ d2moment37_reply=True
-                $ jerkish=False
+                $ amelie_profile.replies_made.append("d2moment37_reply")
+                $ moment37.impressions.remove("jerkish")
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
-                jump d2_dms
+                jump day2_explore
 
             "I'm looking forward to it!":
-                $ d2moment37_reply=True
-                $ jerkish=False
+                $ amelie_profile.replies_made.append("d2moment37_reply")
+                $ moment37.impressions.remove("jerkish")
+                $ moment37_profile.impressions.append("what")
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then"
-                jump d2_dms
+                jump day2_explore
 
             "Don't respond":
-                amelie "I'm not sure how to respond right now..."
-                jump d2_dms
+                amelie "No need to respond."
+                jump day2_explore
 
-    elif fan==True:
-        moment37_nvl "hey [amelie_profile.user_name]! here's a sneak peek at what i'mma say on stream tonight."
+    elif "fan" in moment37_profile.impressions:
+        moment37_nvl "hey [amelie_profile.user_name]! here's a sneak peek at what i'mma say on stream tonight:"
         moment37_nvl "i'm going to rock this speedrun competition."
         moment37_nvl "if you watch me regularly, you might have picked up some speedrunning tricks. i hope so because i want this to be a challenge. you also know that i get real competitive, but it's pretty fun for me."
         amelie "It's fun to watch, too."
@@ -421,20 +433,20 @@ label d2_dm_moment37:
             "How should I respond?"
 
             "I did pick up some tricks. I guess we'll see if the student can beat the master?":
-                $ d2moment37_reply==True
+                $ amelie_profile.replies_made.append("d2moment37_reply")
                 amelie_nvl "I did pick up some tricks. I guess we'll see if the student can beat the master?"
                 moment37_nvl "huh i guess my viewers are kind of my students. you're not winning tho lol."
-                jump d2_dms
+                jump day2_explore
 
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
-                $ d2moment37_reply==True
+                $ amelie_profile.replies_made.append("d2moment37_reply")
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
-                jump d2_dms
+                jump day2_explore
 
             "Don't respond":
-                amelie "I might respond...later."
-                jump d2_dms
+                amelie "I'm not sure what to say, so I guess I won't reply..."
+                jump day2_explore
 
 
     else:
@@ -447,44 +459,41 @@ label d2_dm_moment37:
             "How should I respond?"
 
             "That sounds like a declaration of war. Let's do this!":
-                $ d2moment37_reply==True
-                $ jerkish=False
+                $ amelie_profile.replies_made.append("d2moment37_reply")
+                $ moment37_profile.impressions.append("competitive")
                 amelie_nvl "That sounds like a declaration of war. Let's do this!"
                 moment37_nvl "that's the spirit!"
-                jump d2_dms
+                jump day2_explore
 
             "I'm looking forward to it!":
-                $ d2moment37_reply==True
+                $ amelie_profile.replies_made.append("d2moment37_reply")
+                $ moment37_profile.impressions.append("what")
                 amelie_nvl "I'm looking forward to it!"
                 moment37_nvl "to losing??? ok then lol"
-                jump d2_dms
+                jump day2_explore
 
             "Your competitiveness makes your streams fun to watch. This is going to be a great week!":
-                $ fan==True
-                $ d2moment37_reply==True
+                $ moment37_profile.impressions.append("fan")
+                $ amelie_profile.replies_made.append("d2moment37_reply")
                 amelie_nvl "Your competitiveness makes your streams fun to watch. This is going to be a great week!"
                 moment37_nvl "aww thanks. i hope losing doesn't ruin your week lol"
-                jump d2_dms
+                jump day2_explore
 
             "Don't respond":
-                amelie "I'm not sure how to respond right now..."
-                jump d2_dms
+                amelie "I'm not sure how to respond, so I won't..."
+                jump day2_explore
 
    
         
 
 
 label d2_dm_legendforce12:
-    python:
-        if d2lf12_read==False:
-            d2lf12_reply=False
-        
-        d2lf12_read==True
+    $ amelie_profile.is_read.append("d2lf12_read")
 
     legendforce12_nvl " I SAW THAT YOU'RE PARTICIPATING IN THE SPEEDRUN COMPETITION. "
-    if speedrun_c1==True:
+    if "speedrun_c1" in amelie_profile.replies_made:
         legendforce12_nvl "IT'S GOOD TO BE EXCITED, BUT DON'T EXPECT TO WIN."
-    elif speedrun_c2==True:
+    elif "speedrun_c2" in amelie_profile.replies_made:
         legendforce12_nvl "YOU'RE NEW, SO DON'T GET OVERCONFIDENT."
 
     legendforce12_nvl "THERE ARE A TON OF SKILLED PLAYERS BESIDES MYSELF HERE, SO IT'S NOT GOING TO BE EASY TO PLACE WELL. I HAVEN'T SEEN YOU ON THE LEADERBOARDS BEFORE AND ANY\% IS HARD, SO YOU BETTER PRACTICE."
@@ -496,24 +505,25 @@ label d2_dm_legendforce12:
         "How should I respond?"
 
         "Thanks for the heads up! I don't plan on losing, though.":
-            $ d2lf12_reply==True
+            $ amelie_profile.replies_made.append("d2lf12_reply")
+            $ legend_profile.impressions.append("DUMB")
             amelie_nvl "Thanks for the heads up! I don't plan on losing, though."
             legendforce12_nvl "NOBODY PLANS TO LOSE. THAT WOULD BE STUPID."
             amelie "Haha, can't disagree with that!"
-            jump d2_dms
+            jump day2_explore
 
         "I'm not too worried, but that doesn't mean I won't be practicing!":
-            $ d2lf12_reply==True
+            $ amelie_profile.replies_made.append("d2lf12_reply")
+            $ legend_profile.impressions.append("OK")
             amelie_nvl "I'm not too worried, but that doesn't mean I won't be practicing!"
             legendforce12_nvl "GOOD. LET'S SEE WHAT YOU CAN DO."
             amelie "This is going to be so much fun."
-            jump d2_dms
+            jump day2_explore
 
         "Don't respond":
-            amelie "I'm not sure how to respond right now..."
-            jump d2_dms
+            amelie "I'm not sure how to respond, so I won't..."
+            jump day2_explore
 
-label d2_threads:
 
 #two threads besides intro and rules: d2_t0 and d2_t1. 
 #if statement for clicking thread IDK
