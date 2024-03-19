@@ -622,5 +622,10 @@ label d2_t1:
             amelie_profile.replies_made.append("d2_t1_reply")
     
     if "hypocrite" in teamtila_profile.impressions:
-        $ new_reply2= make_reply(teamtila_profile)
-        "Why not side with who you agree with?"
+        python:
+            new_reply2= make_reply(teamtila_profile)
+            new_reply2.msg="Why not side with who you agree with?"
+            new_reply.replies.append(new_reply2)
+        
+
+        
