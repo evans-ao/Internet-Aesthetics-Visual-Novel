@@ -32,16 +32,22 @@ init python:
 
         thread_1.replies = [intro_reply_1 ,intro_reply_2 ,intro_reply_3 ,intro_reply_4 , intro_reply_5, intro_reply_6 , intro_reply_7]
 
-        emoji_1 = ReactableEmojis("large smile", 8)
+        emoji_1 = ReactableEmojis("large smile", 7)
         emoji_1.reaction_intent = "Excited"
 
-        emoji_2 = ReactableEmojis("hotdog", 4)
+        emoji_2 = ReactableEmojis("hotdog", 3)
         emoji_2.reaction_intent = "HOTDOG"
 
         emoji_3 = ReactableEmojis("heart eyes", 2)
         emoji_3.reaction_intent = "Excited"
 
-        thread_1.all_react_emojis = [emoji_1,emoji_2,emoji_3]
+        emoji_4 = ReactableEmojis("joke", 2)
+        emoji_4.reaction_intent = "Excited"
+
+        emoji_5 = ReactableEmojis("exclamation", 1)
+        emoji_5.reaction_intent = "Attentiive"
+
+        thread_1.all_react_emojis = [emoji_1,emoji_2,emoji_3,emoji_4,emoji_5]
 
 
         thread_2 = make_thread(bingle_profile)   
@@ -67,8 +73,11 @@ init python:
         emoji_2_1.reaction_intent = "Unsure"
         emoji_3_1 = ReactableEmojis("star eyes", 7)
         emoji_3_1.reaction_intent = "Excited"
+        emoji_4_1 = ReactableEmojis("grimace", 2)
+        emoji_4_1.reaction_intent = "Unsure"
 
-        thread_2.all_react_emojis = [emoji_1_1,emoji_2_1,emoji_3_1]
+
+        thread_2.all_react_emojis = [emoji_1_1,emoji_2_1,emoji_3_1,emoji_4_1]
 
 
         thread_4 = make_thread(azure_winds_profile, "Picture")   
@@ -210,13 +219,18 @@ label day1_hdm:
     hotdog_man_nvl " Enjoy the forums, fellow Hallowed Winds fan!"
     $ amelie_profile.is_read.append("day1_hdm")
 
-    $ forum.load_home()
-    $ visual_novel.enable_forum()
+
 
     show amelie neutral zorder 3 at left  onlayer screens
 
-    amelie "Why would I join if I wasn't planning on posting...? Wait, did I mess up my username? It's spelled wrong here."
-    amelie "No, it's spelled correctly under my avatar. Did they hand-type this message? ...That's kind of weird."
+    python:
+        show_amelie_thoughts("Why would I join if I wasn't planning on posting...? Wait, did I mess up my username? It's spelled wrong here.")
+        renpy.pause()
+        show_amelie_thoughts("No, it's spelled correctly under my avatar. Did they hand-type this message? ...That's kind of weird.")
+        renpy.pause()
+        conditional_hide("amelie_thoughts")
+        forum.load_home()
+        visual_novel.enable_forum()
 
     jump day1_explore_forum 
 
@@ -224,14 +238,19 @@ label day1_hdm:
 
 label day1_mdm:
     $ amelie_profile.is_read.append("D1_DM_M37")
+    $ visual_novel.stop_forum()
 
     show amelie neutral zorder 3 at left  onlayer screens
 
     moment37_nvl "heya, nice to see a new face around here! i'm Moment37. maybe you've seen my streams? dunno, but i am a mod here too. welcome to the Hallowed Winds forum! anyway, lmk if you need any help!"
     #I'm using the nvl format here to indicate DMs, but as we discussed the DM will also be showing up as regular dialogue. LMK if you have a way you want me to add that the message will be in regular dialogue as well.
-    amelie "Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too."
-    amelie "At least, I hope she's being sincere. If not, well..."
     
+    python:
+        show_amelie_thoughts("Oh, Moment37! I've watched her stream a few times. It's cool that she's super friendly off stream too.")
+        renpy.pause()
+        show_amelie_thoughts("At least, I hope she's being sincere. If not, well...")
+        renpy.pause()
+        conditional_hide("amelie_thoughts")
 
     #Not sure if the next line is too long for the current format of the decision boxes. I'd definitely like to be able to preview the whole message to the player though, so we might have to change the formatting a bit if it is too long?
 
@@ -259,7 +278,9 @@ label day1_mdm:
 
         "Don't respond":
             "I don't feel like responding."
-
+        
+    $ visual_novel.enable_forum()
+    
     jump day1_continue_explore_forum 
 
 
@@ -464,5 +485,4 @@ label d1_t1:
     jump day1_explore_forum
         
 label end_forum_day:
-    #jump d2_intro
-    return
+    jump d2_intro

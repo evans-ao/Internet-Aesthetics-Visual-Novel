@@ -186,14 +186,9 @@ screen window_bar:
         background "images/game ui/browser_head_bg.png"
 
         if not game_manager.can_end_day:
-            hbox: 
-                xalign 0.5 yalign 0.5
-                spacing 32
 
-                image "images/game ui/left_small_arrow.png"
-                text "https://www.hotdogstand.com/HallowedWinds/": 
-                    yalign 0.5 size 60 color "#878787" bold True
-                image "images/game ui/right_small_arrow.png"
+            text "https://www.hotdogstand.com/HallowedWinds/": 
+                xalign 0.5 yalign 0.5 size 60 color "#878787" bold True
 
             hbox:
                 xpos 3026 yalign 0.5

@@ -29,6 +29,14 @@ init python:
         love_reply_5.msg = "My eyes have been opened and I hate it"
         
         thread_1.replies = [love_reply_1,love_reply_2,love_reply_3,love_reply_4, love_reply_5]
+        emoji_1 = ReactableEmojis("anger", 7)
+        emoji_1.reaction_intent = "Excited"
+        emoji_2 = ReactableEmojis("shocked", 3)
+
+        thread_1.all_react_emojis = [emoji_1,emoji_2,]
+
+
+
 
         thread_2= make_thread(teamtila_profile)
         thread_2.title= "Which team are you?"
@@ -74,14 +82,12 @@ init python:
         forum.todays_threads = day_2
         forum.story_thread  = thread_3
 
+        visual_novel.next_day = "end_day_2"
         game_manager.social_battery = 100
 
 
-
-
-
-
-
+label end_day_2:
+    return
 #remove the following two lines after day 1 has had these variables implemented
 
 
@@ -123,6 +129,7 @@ label d2_intro:
 
     amelie "What a busy day. It's kind of weird to be this excited about something about a community I've barely even touched, but for some reason I've been looking forward to this all day."
 
+
 #perhaps something on the screen to highlight the top thread--the speedrunning announcement thread
 
     amelie "Hm? A speedrunning competition? Now this I {i}have{/i} to check out."
@@ -130,7 +137,6 @@ label d2_intro:
     jump d2_speedrun_thread
 
 #forced navigation to the speedrunning competition thread (?)
-
 
 
 #on the speedrunning thread
@@ -191,6 +197,7 @@ label d2_speedrun_thread:
         amelie "I don't know if I actually will win, but if I do, that would be amazing."
 
     amelie "{b}I should make sure to turn in early so that I have enough energy to play after this.{/b}"
+    $ game_manager.can_end_day
     amelie "It looks like I have some new DMs, but I haven't checked out the other threads yet today. Wonder what I should do first..."
 #User wicker-scarecrow will be referred to as wicker in code, so wicker_nvl for DMs from them
     jump day2_explore
@@ -201,8 +208,6 @@ label day2_explore:
     #just to keep place until the player chooses to go elsewhere.
     hide amelie neutral onlayer screens
     $ visual_novel.stop_until_forum_precondition()
-
-
 
 
 label d2_dms:
@@ -333,7 +338,6 @@ label d2_dms:
         amelie "I don't have any DMs to read..."
 
 
-
 label d2_dm_wicker:
     $ amelie_profile.is_read.append("d2wicker_read")
     wicker_nvl "Hi [amelie_profile.user_name]! I'm wicker-scarecrow, a mod here. You probably saw me on the introduction thread!"
@@ -371,7 +375,6 @@ label d2_dm_wicker:
             amelie_nvl "Hello! I really hope I'll become part of the Hot Dog Stand Hallowed Winds community. Thanks for reaching out!"
             wicker_nvl "Feel free to contact me or any of the other mods if you need something! I know you can't initiate DMs as a normal user, but you can always reply to a moderator's message."
             jump day2_explore
-
 
         "Hello! It's a shame you're not into speedrunning, but I'll definitely see you around!":
             $ amelie_profile.replies_made.append("d2wicker_reply")
@@ -485,9 +488,6 @@ label d2_dm_moment37:
                 amelie "I'm not sure how to respond, so I won't..."
                 jump day2_explore
 
-   
-        
-
 
 label d2_dm_legendforce12:
     $ amelie_profile.is_read.append("d2lf12_read")
@@ -575,8 +575,7 @@ label d2_t0:
             visual_novel.enable_forum()
             amelie_profile.is_read.append("d2_t0")
             amelie_profile.replies_made.append("d2_t0_reply")
-            jump day2_explore
-
+    jump day2_explore
 
 
 label d2_t1:

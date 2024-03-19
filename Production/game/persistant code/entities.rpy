@@ -87,10 +87,12 @@ init python:
             replies_dict = dict()
             for nested_reply in self.replies:
                 replies_dict[nested_reply] = indent_level
-                
-                if nested_reply.has_more_replies():
-                    new_dict = nested_reply.get_reply_dict(indent_level + 1)
-                    replies_dict.update(new_dict)
+                                
+                if isinstance(nested_reply, RespondableUserContent):
+                    if nested_reply.has_more_replies():
+                        new_dict = nested_reply.get_reply_dict(indent_level + 1)
+                        replies_dict.update(new_dict)
+
             return replies_dict
 
         def get_reply_user_names(self):
@@ -100,7 +102,8 @@ init python:
             all_usernames = ""
 
             for reply in all_reply_profile:
-                all_usernames += " " + reply.user_profile.user_name
+                if isinstance(reply, RespondableUserContent):
+                    all_usernames += " " + reply.user_profile.user_name
 
             return all_usernames
                 

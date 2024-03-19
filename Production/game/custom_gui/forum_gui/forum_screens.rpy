@@ -40,7 +40,7 @@ screen home_page():
                 
                 image "images/forum ui/hw/hw_logo.png" xalign 0.5
 
-                if forum.home_page_notice != None:
+                if forum.home_page_notice != "" and forum.home_page_notice != None :
                     use forum_notice("Welcome Everyone", forum.home_page_notice)
 
 
@@ -263,7 +263,12 @@ screen threads_display(thread_info):
             xsize 1350 ysize 292
             background None
 
-            text thread_info.msg color "#000000" size 50
+            python: 
+                short_msg = thread_info.msg
+                if len(thread_info.msg) > 181:
+                    short_msg = thread_info.msg[:181] + "..."
+
+            text short_msg color "#000000" size 50
 
         # button to see full thread
         imagebutton: 
@@ -275,14 +280,21 @@ screen threads_display(thread_info):
             unhovered Function(conditional_hide,"show_social_cost")
 
 
-        # framed user short message
+        # all remaining users
         frame:
-            xpos 785 ypos 528 
-            xsize 1081 ysize 71
+            xpos 600 ypos 515 
+            xsize 1259 ysize 71
             background None
 
-            text thread_info.get_reply_user_names():
-                color "#000000" xsize 1081
+            python:
+                
+                short_user_list = thread_info.get_reply_user_names()[:70]
+                
+                if len(thread_info.get_reply_user_names()) > 60:
+                    short_user_list +="..."
+
+            text short_user_list:
+                color "#000000" xsize 1200
                 size 25 bold True
 
 
@@ -293,16 +305,17 @@ screen threads_display(thread_info):
             background None
 
             vbox:
-                yalign 0.15 xalign 0.5
-                spacing 20
+                yalign 0.3 xalign 0.5
+                spacing 30
                 text "Top Reactions": 
                     xalign 0.5  bold True color "#ffffff" size 48 
 
                 vbox:
                     xalign 0.5 spacing 60
 
-                    $ short_emojis_num = 0.6 * len(thread_info.all_react_emojis)
-                    $ emojis_to_show = 3 if short_emojis_num < 3.0 else int(short_emojis_num)
+                    python:
+                        short_emojis_num = 0.6 * len(thread_info.all_react_emojis)
+                        emojis_to_show = len(thread_info.all_react_emojis) if short_emojis_num < 3.0 else int(short_emojis_num)
                     for emoji_index in range(0,emojis_to_show):
                         use emoji_reaction_btn(thread_info.all_react_emojis[emoji_index])
 
@@ -347,21 +360,42 @@ screen picture_threads_display(thread_info):
 
             text thread_info.msg color "#000000" size 50
 
+        # all replying users
+        frame:
+            xpos 675 ypos 510 
+            xsize 1259 ysize 71
+            background None
 
-        # picture 
-        hbox:
-            spacing 50
-            xpos 147 ypos 526
+            python:
+                short_user_list = thread_info.get_reply_user_names()[:70]
+                
+                if len(thread_info.get_reply_user_names()) > 60:
+                    short_user_list +="..."
 
+            text short_user_list:
+                color "#000000" xsize 1200
+                size 25 bold True
+
+        # picture
+        vbox:
+            xpos 1920 ypos 125
+            spacing 40
             frame:
-                xsize 375 ysize 375
+                xsize 500 ysize 500
                 background Frame(thread_info.img_1,23,23,23,23)
 
-            #frame:
-            #    xsize 375 ysize 375
-            #    background Frame(thread_info.img_2,23,23,23,23)
+                #frame:
+                #    xsize 375 ysize 375
+                #    background Frame(thread_info.img_2,23,23,23,23)
 
-        # button to see full thread
+            # button to see full img
+            imagebutton: 
+                xalign 0.5
+                idle "images/forum ui/universal/full_img_btn.png"
+                action Show("display_full_IMG",None,thread_info.img_1)
+                sensitive visual_novel.has_active_forum
+
+                    # button to see full thread
         imagebutton: 
             xpos 1550 ypos 340
             idle "images/forum ui/hw/view_thread_btn.png"
@@ -372,11 +406,11 @@ screen picture_threads_display(thread_info):
 
         # reaction buttons
         frame: 
-            xsize 800 ysize 300
-            xpos 1100 ypos 550
+            xsize 1200 ysize 150
+            xpos 600 ypos 625
             background None
 
-            vbox:
+            hbox:
                 yalign 0.15 xalign 0.5
                 spacing 50
                 text "Top Reactions": 
@@ -384,10 +418,26 @@ screen picture_threads_display(thread_info):
 
                 hbox:
                     xalign 0.5 spacing 30
-                    for reactable_emoji in thread_info.all_react_emojis:
-                        use emoji_reaction_btn(reactable_emoji)
+
+                    $ short_emojis_num = 0.6 * len(thread_info.all_react_emojis)
+                    $ emojis_to_show = 3 if short_emojis_num < 3.0 else int(short_emojis_num)
+                    for emoji_index in range(0,emojis_to_show):
+                        use emoji_reaction_btn(thread_info.all_react_emojis[emoji_index])
 
 
+screen display_full_IMG(image_to_show):
+    frame:
+        xalign 0.5 yalign 0.5
+        xsize 1500 ysize 1500
+        background Frame(image_to_show,23,23,23,23)
+
+        imagebutton: 
+            xalign 0.9 yalign 0.1
+            idle "images/forum ui/universal/close_btn.png"
+            action Function(conditional_hide,"display_full_IMG")
+            sensitive visual_novel.has_active_forum
+
+    
 screen emoji_reaction_btn(reactable_emoji):
 
     python:
@@ -487,7 +537,7 @@ screen full_normal_thread(thread_info):
             xsize 1980
 
         text thread_info.msg: 
-            color "#000000" size 50
+            color "#000000" size 45
             xpos 530 ypos 156 
             xsize 1980
 
@@ -510,7 +560,7 @@ screen full_normal_thread(thread_info):
 
         # all displayable emojis
         vbox:
-            yalign 0.65 xalign 0.75
+            yalign 0.622 xalign 0.85
             spacing 20
             #text "Top Reactions": 
             #    xalign 0.5  bold True color "#ffffff" size 48 
@@ -605,33 +655,35 @@ screen display_all_replies(thread_info):
         xpos 170 ypos -100
         spacing 25
         for reply, indent_value in all_replies.items():
-            
-            python:
-                fromated_indent = indent_value if indent_value < 1 else 1
-                indent_pos = (fromated_indent +1) * indent_size
-                reply_bg = all_reply_bgs[0] # formated_indentat the moment
+            $ is_right_type = isinstance(reply, RespondableUserContent)
 
-            frame:
-                xpos indent_pos
-                xsize 2150 ysize 650
-                background reply_bg
-
+            if is_right_type:
                 python:
-                    avatar_img = reply.user_profile.user_avatar
-                    has_avatar = not(str() == avatar_img)
-                
+                    fromated_indent = indent_value if indent_value < 1 else 1
+                    indent_pos = (fromated_indent +1) * indent_size
+                    reply_bg = all_reply_bgs[0] # formated_indentat the moment
+
+                frame:
+                    xpos indent_pos
+                    xsize 2150 ysize 650
+                    background reply_bg
+
+                    python:
+                        avatar_img = reply.user_profile.user_avatar
+                        has_avatar = not(str() == avatar_img)
+                    
 
 
-                if has_avatar:
-                    frame:
-                        xsize 180 ysize 180 xpos 70 ypos 370
-                        background Frame(avatar_img, 0,0,0,0)
+                    if has_avatar:
+                        frame:
+                            xsize 180 ysize 180 xpos 70 ypos 370
+                            background Frame(avatar_img, 0,0,0,0)
 
-                text reply.user_profile.user_name: 
-                    color "#000000" size 48 bold True xpos 410 ypos 310 
+                    text reply.user_profile.user_name: 
+                        color "#000000" size 48 bold True xpos 410 ypos 310 
 
-                text reply.msg: 
-                    color "#000000" size 42 xpos 410 ypos 375 xsize 1700
+                    text reply.msg: 
+                        color "#000000" size 42 xpos 410 ypos 375 xsize 1700
 
 
             

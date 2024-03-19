@@ -66,6 +66,7 @@ init python:
         def reset_game_state(self):
             self.social_battery = 100
             self.can_end_day = False
+            forum.prepNewDay()
 
 
         def drain_social_battery(self, drain_amount=1):
@@ -73,7 +74,7 @@ init python:
             self.social_battery -= drain_amount
 
             if self.social_battery <= 20:
-                game_manager.can_end_day = True
+                self.can_end_day = True
 
             if self.can_end_day:
                 renpy.show_screen("window_bar")
@@ -177,6 +178,17 @@ init python:
             self.all_forum_profiles = dict()
             self.all_dms = set()
             self.home_page_notice = str()
+
+
+        def prepNewDay(self):
+            self.todays_threads = list()
+            self.hotdog_thread = None
+            self.home_page_notice = str()
+            # TODO self.hotdog_thread = None
+            # TODO self.events_thread = None
+            # TODO self.past_threads = list()
+            # TODO self.all_forum_profiles
+            
 
 
         def _clear_forum_stack(self):

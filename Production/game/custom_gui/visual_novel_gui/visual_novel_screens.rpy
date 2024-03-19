@@ -12,16 +12,16 @@ screen say(who, what):
 
         has_content =  not (what == str())
         y_align = 1.0 if game_manager.context == "visual novel" else 0.93
-        is_on_forum = forum.fandom == "Hallowed Winds" and game_manager.context == "laptop"
+        is_on_forum = (forum.fandom == 'Hallowed Winds' and game_manager.context == 'laptop')
 
     if has_content:
 
-        # todo is on forum
-        if False:
+        if is_on_forum:
+            # forum saybox
             frame:
                 xsize 2745.79 ysize 717
                 xpos 615 yalign y_align
-                background "images/visual novel ui/say boxes/irl_say_box.png"
+                background "images/visual novel ui/say boxes/amelie_hw_say_box.png"
                 
                 if who is not None:
                     frame:
@@ -30,20 +30,36 @@ screen say(who, what):
                         background None
 
                         text who id "who":
-                            xalign 0.5 yalign 0.5
+                            xalign 0.2 yalign 0.5
                             color "#ffffff"
  
-            frame:
-                xpos 320 ypos 258
-                xsize 2111.69 ysize 458.91 
-                background None
+                frame:
+                    xpos 719 ypos 258
+                    xsize 1675 ysize 458.91 
+                    background None
 
-                text what id "what": 
-                    xpos 50 ypos 50 
-                    color "#000000" size 50 
-                    xsize 1900
-        
+                    text what id "what": 
+                        xpos 50 ypos 50 
+                        color "#000000" size 50 
+                        xsize 1550
+                        
+                if who == "Amelie":
+                    frame:
+                        xsize 390 ysize 78
+                        xpos 275 ypos 220
+                        background None
+
+                        text amelie_profile.user_name:
+                            xalign 0.5 yalign 0.5
+                            color "#000000" size 40
+
+                    if amelie_profile.user_avatar != "":
+                        frame: 
+                            xsize 270 ysize 270
+                            xpos 335 ypos 355
+                            background Frame(amelie_profile.user_avatar,23,23,23,23)
         else:
+            # irl saybox
             frame:
                 #id "window"
                 # xalign 0.5 yalign 0.5
@@ -59,7 +75,7 @@ screen say(who, what):
                         background None
 
                         text who id "who":
-                            xalign 0.5 yalign 0.5
+                            xalign 0.2 yalign 0.5
                             color "#ffffff"
 
                 frame:
@@ -77,6 +93,35 @@ screen say(who, what):
         ## phone variant - there's no room.
         if not renpy.variant("small"):
             add SideImage() xalign 0.0 yalign 1.0
+
+
+screen amelie_thoughts(what):
+    # irl saybox
+    zorder 5
+    frame:
+
+        xsize 2745.79 ysize 717
+        xpos 615 yalign 0.93
+        background "images/visual novel ui/say boxes/internal_say_box.png"
+        
+        frame:
+            xpos 90 ypos 45
+            xsize 1171 ysize 157
+            background None
+
+            text "Amelie":
+                xalign 0.2 yalign 0.5
+                color "#ffffff"
+
+        frame:
+            xpos 320 ypos 258
+            xsize 2111.69 ysize 458.91 
+            background None
+
+            text what:
+                xpos 50 ypos 50 
+                color "#000000" size 50 
+                xsize 1900
 
 
 ## Make the namebox available for styling through the Character object.
@@ -188,26 +233,6 @@ screen choice(items):
         image "images/visual novel ui/choice menus/people.png"  xalign 0.2 yalign 0.1
 
 
-#    Default styling for choice menus in renpy
-"""
-    # style_prefix "choice"
-    # style choice_vbox is vbox
-    # style choice_button is button
-    # style choice_button_text is button_text
-
-    style choice_vbox:
-        xalign 0.5
-        ypos 810
-        yanchor 0.5
-
-        spacing gui.choice_spacing
-
-    style choice_button is default:
-        properties gui.button_properties("choice_button")
-
-    style choice_button_text is default:
-    properties gui.button_text_properties("choice_button")
-"""
 screen story_overlay():
     zorder 3
     frame:

@@ -54,6 +54,10 @@ init python:
         # remove a screen if its on the screen
         if renpy.get_screen(screen_name):
             renpy.hide_screen(screen_name)
+
+
+    def show_amelie_thoughts(what):
+        renpy.show_screen("amelie_thoughts",what)
    
 
 label switch_forum_pages():
