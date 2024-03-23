@@ -11,6 +11,32 @@
 
 init python:
     def make_day_2_forum():
+
+        thread_4 = make_thread(jared_profile)   
+        thread_4.title = "Introductions"
+        thread_4.social_cost = 50
+        thread_4.emojis = ["happy","relived"]
+        thread_4.impressions = ["speed running"]
+        thread_4.msg = """Hey everyone! This thread is here by popular demand, so feel free to introduce yourselves!"""
+
+
+        intro_reply_1 = make_reply(wicker_profile)
+        intro_reply_1.msg = "Hi, I'm wicker-scarecrow, one of the mods! I just love talking about Hallowed Winds with everyone. :-)"
+        intro_reply_2 = make_reply(legend_profile)
+        intro_reply_2.msg = "MY NAME IS LEGENDFORCE12. I AM A MODERATOR OF THIS FORUM. AS FOR MY INTERESTS, THE ONLY ONE THAT MATTERS IS THAT I LIKE GAMING. THAT IS ALL, CARRY ON EVERYONE."
+        intro_reply_3 = make_reply(moment37_profile)
+        intro_reply_3.msg = "yo this is Moment37. i'm a mod here and a streamer on shiver, same name as here! lmk if you want a link"
+        intro_reply_4 = make_reply(teamtila_profile)
+        intro_reply_4.msg = "I'm teamtila! It's pretty clear whose team I am on. Tula's not bad, but Tila? Tila's great."
+        intro_reply_5 = make_reply(hollowed_profile)
+        intro_reply_5.msg = "I'm hollowed and now you know the biggest hollowed winds fan here"
+        intro_reply_6 = make_reply(azure_winds_profile)
+        intro_reply_6.msg = "Hey, I'm azure_winds. You can call me any variation of my username. I've loved Hallowed Winds for what feels like forever. I also love anime, manga, drawing, and cats."
+        intro_reply_7 = make_reply(faren_love_profile)
+        intro_reply_7.msg = "Hello! I love Faren!"
+
+        thread_1.replies = [intro_reply_1 ,intro_reply_2 ,intro_reply_3 ,intro_reply_4 , intro_reply_5, intro_reply_6, intro_reply_7]
+
         thread_1 = make_thread(faren_love_profile)
         thread_1.title = "Faren is HOT"
         thread_1.social_cost = 20
@@ -78,7 +104,7 @@ init python:
         thread_3.replies=[comp1_reply_1, comp1_reply_2, comp1_reply_3, comp1_reply_4, comp1_reply_5, comp1_reply_6]
 
 
-        day_2 = [thread_3, thread_1, thread_2]
+        day_2 = [thread_3, thread_4, thread_1, thread_2]
         forum.todays_threads = day_2
         forum.story_thread  = thread_3
 

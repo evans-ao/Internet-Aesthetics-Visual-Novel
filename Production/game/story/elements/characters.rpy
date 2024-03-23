@@ -66,11 +66,11 @@ init python:
     teamtula_profile.user_avatar = "images/characters/avatars/hw_avatars/teamtula_avatar.png"
     #persistent.teamtula_profile = teamtula_profile
 
-    pie_herald_profile = ForumProfile("teamtila", "teamtila")
+    pie_herald_profile = ForumProfile("herald", "PieHerald")
     pie_herald_profile.user_avatar = "images/characters/avatars/hw_avatars/pie_herald_avatar.png"
     #persistent.pie_herald_profile = pie_herald_profile
 
-    rock_the_boat9_profile = ForumProfile("teamtila", "teamtila")
+    rock_the_boat9_profile = ForumProfile("rocktheboat9", "rock_the_boat9")
     rock_the_boat9_profile.user_avatar = "images/characters/avatars/hw_avatars/boat_avatar.png"
     #persistent.rock_the_boat9_profile = rock_the_boat9_profile
 
