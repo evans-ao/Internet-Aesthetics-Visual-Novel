@@ -1,59 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/hallowed winds/hw_day_2.rpy", line 110, in script
-    python:
-  File "game/story/hallowed winds/hw_day_2.rpy", line 113, in <module>
-    renpy.pause()
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 23, in execute
-    screen home_page():
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 23, in execute
-    screen home_page():
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 25, in execute
-    viewport:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 34, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 38, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 47, in execute
-    for thread_info in forum.todays_threads:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 48, in execute
-    if thread_info.type == "Text":
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 49, in execute
-    use threads_display(thread_info)
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 229, in execute
-    screen threads_display(thread_info):
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 229, in execute
-    screen threads_display(thread_info):
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 236, in execute
+  File "game/story/introduction/prologue.rpy", line 42, in script
+    hide screen chapter_overlay with dissolve
+  File "renpy/common/000statements.rpy", line 684, in execute_hide_screen
+    renpy.with_statement(eval(transition_expr))
+  File "game/custom_gui/game_gui/game_screens.rpy", line 182, in execute
+    screen window_bar:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 182, in execute
+    screen window_bar:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 184, in execute
     frame:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 297, in execute
-    frame:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 302, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 308, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 311, in execute
-    python:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 312, in <module>
-    len()
-TypeError: len() takes exactly one argument (0 given)
+  File "game/custom_gui/game_gui/game_screens.rpy", line 188, in execute
+    if not game_manager.can_end_day:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 195, in execute
+    hbox:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 200, in execute
+    text amelie_moods xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
+Exception: String '[]' ends with an open format operation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/story/hallowed winds/hw_day_2.rpy", line 110, in script
-    python:
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 1138, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\python.py", line 1122, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/story/hallowed winds/hw_day_2.rpy", line 113, in <module>
-    renpy.pause()
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\exports.py", line 1638, in pause
-    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
-  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "game/story/introduction/prologue.rpy", line 42, in script
+    hide screen chapter_overlay with dissolve
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 2259, in execute
+    self.call("execute")
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\ast.py", line 2241, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\statements.py", line 342, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 684, in execute_hide_screen
+    renpy.with_statement(eval(transition_expr))
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\exports.py", line 1758, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 2978, in do_with
+    return self.interact(trans_pause=True,
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 3582, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 4055, in interact_core
@@ -64,6 +46,7 @@ Full traceback:
     d.visit_all(callback, seen)
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 684, in visit_all
     d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\screen.py", line 476, in visit_all
     callback(self)
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\core.py", line 4055, in <lambda>
@@ -72,41 +55,31 @@ Full traceback:
     self.update()
   File "C:\Program Files\renpy-8.1.1-sdk\renpy\display\screen.py", line 680, in update
     self.screen.function(**self.scope)
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 23, in execute
-    screen home_page():
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 23, in execute
-    screen home_page():
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 25, in execute
-    viewport:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 34, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 38, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 47, in execute
-    for thread_info in forum.todays_threads:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 48, in execute
-    if thread_info.type == "Text":
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 49, in execute
-    use threads_display(thread_info)
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 229, in execute
-    screen threads_display(thread_info):
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 229, in execute
-    screen threads_display(thread_info):
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 236, in execute
+  File "game/custom_gui/game_gui/game_screens.rpy", line 182, in execute
+    screen window_bar:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 182, in execute
+    screen window_bar:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 184, in execute
     frame:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 297, in execute
-    frame:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 302, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 308, in execute
-    vbox:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 311, in execute
-    python:
-  File "game/custom_gui/forum_gui/forum_screens.rpy", line 312, in <module>
-    len()
-TypeError: len() takes exactly one argument (0 given)
+  File "game/custom_gui/game_gui/game_screens.rpy", line 188, in execute
+    if not game_manager.can_end_day:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 195, in execute
+    hbox:
+  File "game/custom_gui/game_gui/game_screens.rpy", line 200, in execute
+    text amelie_moods xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\text.py", line 1633, in __init__
+    self.set_text(text, scope, substitute) # type: ignore
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\text\text.py", line 1763, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute) # type: ignore
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\substitutions.py", line 278, in substitute
+    s = formatter.vformat(s, (), kwargs) # type: ignore
+  File "/home/tom/ab/renpy-build-fix/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
+  File "/home/tom/ab/renpy-build-fix/tmp/install.linux-x86_64/lib/python3.9/string.py", line 174, in _vformat
+  File "C:\Program Files\renpy-8.1.1-sdk\renpy\substitutions.py", line 162, in parse
+    raise Exception("String {0!r} ends with an open format operation.".format(s))
+Exception: String '[]' ends with an open format operation.
 
 Windows-10-10.0.22631 AMD64
 Ren'Py 8.1.3.23091805
 Production 1.0
-Tue Mar 19 13:59:31 2024
+Tue Mar 26 11:13:52 2024

@@ -10,7 +10,7 @@ screen PhoneDialogue(dialogue, items=None):
     frame:
         background None
         xpos 920 ypos 225 
-        xsize 2769 ysize 1782
+        xsize 2755 ysize 1733
 
         # DM Banner
         frame:
@@ -29,14 +29,51 @@ screen PhoneDialogue(dialogue, items=None):
             background "images/Phone Assets/msg_bg.png"
 
             use nvl_phonetext(dialogue,items)
-            image "images/Phone Assets/msg_heirloom_bg.png" xalign 0.5 ypos -200
+            image "images/Phone Assets/msg_heirloom_bg.png" xalign 0.5 ypos -190
+        
+        # DM Choice Menu with items
+        # no items and items
+        if len(items)==0:
+            frame:
+                xsize 2591 ysize 467
+                xalign 0.5 ypos 1200
+                background "images/Phone Assets/nvl_choices_bg.png"
+        else:
+            frame:
+                # is in direct message mode
+                xsize 2591 ysize 467
+                xalign 0.5 ypos 1200        
+                background "images/forum ui/hw/dm_choice_bg.png"
 
+                hbox:
+                    xalign 0.5 ypos 125
+                    spacing 80
+                    for choice in items:
+                        use dm_choice_btn(choice)
+
+
+screen dm_choice_btn(choice):
+    button:
+        xysize (551,310)
+        action choice.action
+        # hovered Show("show_social_cost",None,5)
+        # unhovered Function(conditional_hide,"show_social_cost")
+        
+        xalign 0.5
         frame:
-            xsize 2750 ysize 565
-            xalign 0.5 ypos 1200
-            background "images/Phone Assets/nvl_choices_bg.png"
-            
-    
+            xysize (551,310)
+            foreground None
+            background "images/forum ui/hw/dm_choice.png"
+                                    
+        frame:
+            background None
+            xpos -15 ypos 0
+            xsize 518 ysize 220
+            text choice.caption: 
+                size 32  xalign 0.5 yalign 0.5 xsize 490
+                color "#000000" bold True
+
+
 # The actual messenger screen
 screen nvl_phonetext(dialogue,items):
     viewport:

@@ -244,23 +244,18 @@ screen create_account():
         viewport:
             xpos 297 ypos 400
             xsize 1900 ysize 910
-            style_prefix "login"
-            scrollbars "vertical"
-            mousewheel True
-            pagekeys True
 
             vbox:
-                spacing 112
+                spacing 75
                 use special_info_bar("Username",amelie_profile.user_name)
                 use special_info_bar("Password","************")
-                use special_info_bar("Confirm Password","************")
                 use info_bar("Name","Amelie")
                 use info_bar("Age","20")
                 use info_bar("Birthdate","June 21")
-                use info_bar("Favorite Color","Emerald")
-                use info_bar("Favorite Flower","Foxglove")
-                use info_bar("Best Hotdog Add-On","Homemade Chili")
-                use info_bar("Fun Fact","I like running")
+                #use info_bar("Favorite Color","Emerald")
+                #use info_bar("Favorite Flower","Foxglove")
+                #use info_bar("Best Hotdog Add-On","Homemade Chili")
+                #use info_bar("Fun Fact","I like running")
 
 
         frame:            

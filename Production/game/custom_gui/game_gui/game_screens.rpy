@@ -186,29 +186,43 @@ screen window_bar:
         background "images/game ui/browser_head_bg.png"
 
         if not game_manager.can_end_day:
+            python:
+                amelie_moods = str(amelie_profile.emojis[-3:]).replace("'",str())
+                amelie_moods = amelie_moods.replace("[",str())
+                amelie_moods = amelie_moods.replace("]",str())
+            
+            # Amelie's Reactions
+            hbox:
+                xpos 75 yalign 0.6
+                spacing 30
 
-            text "https://www.hotdogstand.com/HallowedWinds/": 
-                xalign 0.5 yalign 0.5 size 60 color "#878787" bold True
+                text "Amelie Moods:" xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
+                text amelie_moods xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
+            
+            text "https://www.hotdogstand.com/"+ forum.fandom:
+                xalign 0.5 yalign 0.5 size 60 color "#757575" bold True
 
             hbox:
                 xpos 3026 yalign 0.5
                 image "images/game ui/dismiss_btn.png"
                 image "images/game ui/close_btn.png"
-
-        if game_manager.can_end_day:
-            hbox: 
+        else:
+            hbox:
                 xpos 985 yalign 0.5
                 spacing 32
 
-                image "images/game ui/left_small_arrow.png"
-                text ".../Home": 
+                text "/hotdog...": 
                     yalign 0.5 size 60 color "#878787" bold True
-                image "images/game ui/right_small_arrow.png"
+            
+            # Amelie's Reactions
+            hbox:
+                xpos 75 yalign 0.6
+                spacing 30
 
-            text "--or--": 
-                xpos 1491 yalign 0.5 size 60 color "#878787" bold True
+                text "Amelie Moods:" xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
+                text amelie_moods xalign 0.5 yalign 0.5 size 36 color "#757575" bold True
 
-
+            # End day banner    
             hbox:
                 xpos 1761 yalign 0.5
                 spacing 42
@@ -219,7 +233,7 @@ screen window_bar:
                     background Frame("images/game ui/emphasis_block.png",0,0)
 
                     text "Maybe That's enough for Today?": 
-                        xalign 0.5 yalign 0.5 size 50 color "#CBCBCB" bold True
+                        xalign 0.5 yalign 0.5 size 50 color "#ffffff" bold True
 
                 image "images/game ui/right_large_arrow.png"
 
@@ -267,6 +281,35 @@ screen end_day:
                 action Function(forum.load_next_day)
                 sensitive visual_novel.has_active_forum
 
+
+screen not_enough_battery:
+
+    frame:
+        xsize 2501 ysize 1036
+        xalign 0.5 yalign 0.5
+        background "images/game ui/transparent_bg.png"
+
+
+        frame:
+            xsize 2200 ysize 608
+            xalign 0.5 yalign 0.5
+            background "images/game ui/end_day_window.png"
+
+            text "Your Social Battery left: " + str(game_manager.social_battery) +"%": 
+                xalign 0.5 ypos 55 size 50 color "#ffffff" bold True
+
+            hbox:
+                xalign 0.5 yalign 0.5
+                spacing 123
+
+                text "Can't really do this huh:": 
+                    yalign 0.5 size 60 color "#000000" bold True
+
+                imagebutton:
+                    ypos 50
+                    idle "images/game ui/not_enough_battery_btn.png"
+                    action Hide("not_enough_battery") #Function(forum.load_next_day)
+                    sensitive visual_novel.has_active_forum
 
 
         

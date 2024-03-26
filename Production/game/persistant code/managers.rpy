@@ -24,6 +24,7 @@ init python:
         def __init__(self):
             self.day = 0
             self.social_battery = 100
+            self.min_battery_end = 20
             self.init_game_cofigs()
             self.context = "visual novel"
             self.can_end_day = False
@@ -73,11 +74,8 @@ init python:
             # remove an amount from social battery
             self.social_battery -= drain_amount
 
-            if self.social_battery <= 20:
+            if self.social_battery <= game_manager.min_battery_end:
                 self.can_end_day = True
-
-            if self.can_end_day:
-                renpy.show_screen("window_bar")
 
 
         def can_use_battery(self, drain_amount):
@@ -102,6 +100,7 @@ init python:
             self.name = "Visual Novel Manager"
             self.has_active_forum = True
             self.has_continue_flag = False
+            self.is_nvl_mode = True
             self.next_day = str()
 
 
@@ -144,13 +143,6 @@ init python:
                 renpy.pause()
 
 
-        def not_enough_battery(self):
-            # call forth a visual novel interactiion where Amelie laments
-            # about their low energy TODO rotate/random self -commentary options
-            # renpy.call("not_enough_battery")
-            pass
-
-
         def call_story_thread(self,thread_info): 
 
             if thread_info.is_story: 
@@ -175,7 +167,7 @@ init python:
             self.events_thread = None
             self.hotdog_thread = None
             self.past_threads = list()
-            self.all_forum_profiles = dict()
+            self.all_profiles = dict()
             self.all_dms = set()
             self.home_page_notice = str()
 
@@ -187,7 +179,7 @@ init python:
             # TODO self.hotdog_thread = None
             # TODO self.events_thread = None
             # TODO self.past_threads = list()
-            # TODO self.all_forum_profiles
+            # TODO all_profiles
             
 
 
@@ -249,8 +241,6 @@ init python:
                     reactable_emoji.has_paid_cost = True
                     reactable_emoji.num_people_reacted +=1
                     amelie_profile.emojis.append(reactable_emoji.reaction_intent)
-            else:
-                visual_novel.not_enough_battery()
 
 
         def load_forum_vestiges(self):
@@ -289,7 +279,8 @@ init python:
 
                 else:
                     is_accessible = False
-            
+                    renpy.show_screen("not_enough_battery")
+
             return is_accessible
 
 
@@ -298,8 +289,6 @@ init python:
             if self.has_battery_interaction(thread_info):
                 self._clear_forum_stack()
                 renpy.show_screen("display_full_thread",thread_info)
-            else:
-                visual_novel.not_enough_battery()
 
         
         def load_page(self, page_name,has_buffer=False,buffer_timer=0.2):

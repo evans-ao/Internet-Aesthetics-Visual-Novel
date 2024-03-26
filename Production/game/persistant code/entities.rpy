@@ -9,11 +9,6 @@ init python:
         Thread
         Replies
     """  
-    simple_declarations = -4
-    custom_game_tools = -3
-    at_application = -2
-    at_base_game = -1
-    before_game_start = 0
 
 
     class ForumProfile():
@@ -36,6 +31,15 @@ init python:
             self.threads_made = list()
             self.replies_made = list()
 
+
+        def __eq__(self, other):
+            has_simple_equality = self.character_name == other.character_name and self.user_avatar == other.user_avatar and self.user_name == other.user_name and self.activity == other.activity and self.is_moderator == other.is_moderator
+
+            list_equality = self.impressions == other.impressions and self.emojis == other.emojis and self.is_read == other.is_read and self.threads_made == other.threads_made and self.replies_made == other.replies_made
+
+            set_equailty = self.friends == other.friends
+
+            return has_simple_equality and list_equality and set_equailty
 
         def make_reply(self, new_reply):
             # add a reply they made to their profile
@@ -99,13 +103,13 @@ init python:
             replies_dict = self.get_reply_dict()
 
             all_reply_profile = list(replies_dict.keys())
-            all_usernames = ""
+            all_usernames = set()
 
             for reply in all_reply_profile:
                 if isinstance(reply, RespondableUserContent):
-                    all_usernames += " " + reply.user_profile.user_name
+                    all_usernames.add(reply.user_profile.user_name)
 
-            return all_usernames
+            return list(all_usernames)
                 
 
 
@@ -146,6 +150,8 @@ init python:
         """  
         def __init__(self, user_profile, short_msg="", msg="", title=""):
             super().__init__(user_profile=user_profile, short_msg=short_msg, msg=msg, title=title)
+
+            self.reply_img = str()
 
 
     def make_reply(user_profile):

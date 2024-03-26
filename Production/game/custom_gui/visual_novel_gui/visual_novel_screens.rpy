@@ -178,7 +178,6 @@ screen choice(items):
         xalign 0.5 yalign 0.2
         background None
 
-
         # tranparent bg
         frame:
             xpos 80  
@@ -225,13 +224,11 @@ screen choice(items):
             image "images/visual novel ui/choice menus/slanted_question.png":
                 xalign 0.97 yalign 0.95
 
-
-
         # top section
         image "images/visual novel ui/choice menus/no_thoughts.png" xalign 0.9 yalign 0.1
         image "images/visual novel ui/choice menus/mini_post.png" xalign 0.5 yalign 0.1
         image "images/visual novel ui/choice menus/people.png"  xalign 0.2 yalign 0.1
-
+                        
 
 screen story_overlay():
     zorder 3
